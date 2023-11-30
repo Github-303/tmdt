@@ -1,0 +1,289 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+
+/*------------------header------------------------*/
+header {
+    background-color: #858080;
+    display: flex;
+    justify-content: center;
+    /* Căn giữa theo chiều ngang */
+    align-items: center;
+    /* Căn giữa theo chiều dọc */
+    height: 80px;
+    /* Đặt chiều cao cho header */
+}
+
+.logo a {
+    text-decoration: none;
+}
+
+.logo a img {
+    width: 80px;
+}
+
+/*--------------------Cart---------------------------*/
+.cart {
+    max-width: 950px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 20px auto;
+    font-size: 10px;
+    line-height: 1.3em;
+    color: rgb(51, 51, 51);
+
+}
+
+.card-form-left {
+    background: rgb(180, 180, 180);
+    padding: 15px;
+    width: 550px;
+    display: flex;
+    flex-direction: column;
+    -moz-box-align: center;
+    align-items: center;
+    -moz-box-pack: justify;
+    justify-content: space-between;
+}
+
+.card-form-left-text h1 {
+    font-size: 24px;
+    font-weight: bold;
+    position: absolute;
+    /* Sử dụng position: absolute; */
+    top: 100px;
+    /* Điều chỉnh vị trí theo chiều dọc theo ý muốn */
+    left: 300px;
+    /* Điều chỉnh vị trí theo chiều ngang theo ý muốn */
+}
+
+
+.ion-ios-cart-outline {
+    display: block;
+    font-size: 180px;
+}
+
+.card-form-left span {
+    font-size: 16px;
+    line-height: 1.3em;
+    color: rgb(51, 51, 51);
+    display: block;
+}
+
+.Browse-ART {
+    display: flex;
+    -moz-box-align: center;
+    align-items: center;
+    -moz-box-pack: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    margin: 50px 0px;
+    max-width: 350px;
+    padding: 5px 20px;
+    border: medium;
+    outline: none;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.Browse-ART a {
+    color: white;
+    /* Loại bỏ giới hạn chiều rộng 100% và để nút tự điều chỉnh chiều rộng */
+    text-align: center;
+    /* Căn giữa nút theo chiều ngang */
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0s;
+}
+
+
+.Browse-ART a:hover {
+    color: white;
+}
+
+/*----------------card-form-right---------------------------------*/
+.card-form-right {
+    position: sticky;
+    align-self: start;
+    top: 2rem;
+    display: flex;
+    flex-direction: column;
+    width: 380px;
+    padding: 10px 15px;
+    margin-left: 600px;
+    margin-top: -380px;
+    background-color: rgb(171, 171, 171);
+}
+
+/*-row*/
+.card-form-right-row-1 {
+    display: flex;
+    margin: 10px auto 10px;
+    max-width: 350px;
+}
+
+.text-row-1 p {
+    font-family: "Crimson Text";
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 5px;
+}
+
+.text-row-1 span {
+    font-size: 10px;
+    line-height: 11px;
+}
+
+.card-form-right-row-1 .star {
+    display: flex;
+    /* Sử dụng display: flex; để căn chỉnh các sao trên cùng một hàng */
+    align-items: center;
+    /* Căn giữa các sao theo chiều dọc */
+    margin-top: 45px;
+    margin-left: -10px;
+    font-size: 5px;
+}
+
+.card-form-right-row-1 .star i {
+    margin-right: 5px;
+    margin-top: -50px;
+    /* Tạo khoảng cách nhỏ giữa các sao */
+}
+
+/*row-2*/
+.card-form-right-row-2 {
+    display: flex;
+    margin: 0px auto 20px;
+    max-width: 350px;
+    margin-top: 10px;
+}
+
+.ion-checkmark-circled {
+    font-size: 20px;
+    margin-right: 30px;
+    margin-left: 10px;
+
+}
+
+
+
+/*row-3*/
+.card-form-right-row-3 {
+    display: flex;
+    margin: 0px auto 20px;
+    max-width: 350px;
+}
+
+.ion-locked {
+    font-size: 20px;
+    margin-right: 20px;
+    margin-left: -20px;
+    margin-top: 10px;
+}
+
+/*row-4*/
+.card-form-right-row-4 {
+    display: flex;
+    margin: 0px auto 20px;
+    max-width: 350px;
+    margin-top: 10px;
+}
+
+.ion-social-usd {
+    font-size: 20px;
+    margin-right: 20px;
+    margin-left: -10px;
+
+}
+
+/*help*/
+.help {
+    display: flex;
+    flex-direction: column;
+    -moz-box-align: center;
+    align-items: center;
+}
+
+.help p {
+    font-family: "Crimson Text";
+    font-size: 18px;
+    line-height: 20px;
+    margin-bottom: 15px;
+}
+
+.links {
+    display: flex;
+    -moz-box-pack: justify;
+    justify-content: space-between;
+}
+
+.links a {
+    display: flex;
+    -moz-box-pack: center;
+    justify-content: center;
+    -moz-box-align: center;
+    align-items: center;
+    border: 1px solid rgb(51, 51, 51);
+    width: 165px;
+    height: 50px;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    margin-right: 10px;
+    text-decoration: none;
+    color: rgb(242, 236, 236);
+    transition: color 0s;
+}
+
+.links a:hover {
+    color: rgb(28, 28, 28);
+}
+
+/*info*/
+.info {
+    max-width: 550px;
+    margin-top: 20px;
+    font-size: 11px;
+    line-height: 18px;
+}
+
+.info p {
+    margin: 0px;
+    padding: 0px;
+    font-size: 11px;
+    line-height: 18px;
+    color: rgb(51, 51, 51);
+}
+
+/*links-2*/
+.links-2 a {
+    display: inline-block;
+    color: rgb(72, 162, 209);
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.2s ease 0s;
+    will-change: opacity;
+    margin-right: 10px;
+    /* Tạo khoảng cách bên phải giữa các thẻ a */
+    border-right: 1px solid #070707;
+    /* Thêm dấu gạch dọc giữa các thẻ a */
+    padding-right: 10px;
+    margin-top: 10px;
+    /* Tạo khoảng cách bên phải của dấu gạch dọc */
+}
+
+.links-2 a:last-child {
+    border-right: none;
+    /* Loại bỏ dấu gạch dọc ở phần tử cuối cùng */
+}
