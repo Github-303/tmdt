@@ -1,972 +1,1010 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+  --spanish-gray: hsl(0, 0%, 60%);
+  --sonic-silver: hsl(0, 0%, 47%);
+  --eerie-black: hsl(0, 0%, 13%);
+  --davys-gray: hsl(0, 0%, 33%);
+  --cultured: hsl(0, 0%, 93%);
+  --white: hsl(0, 100%, 100%);
+  --onyx: hsl(0, 0%, 27%);
 
+  --fs-1: 1.563rem;
+  --fs-2: 1.375rem;
+  --fs-3: 1.25rem;
+  --fs-4: 1.125rem;
+  --fs-5: 1rem;
+  --fs-6: 0.938rem;
+  --fs-7: 0.875rem;
+  --fs-8: 0.813rem;
+  --fs-9: 0.75rem;
+  --fs-10: 0.688rem;
+  --fs-11: 0.625rem;
+
+  --weight-300: 300;
+  --weight-400: 400;
+  --weight-500: 500;
+  --weight-600: 600;
+  --weight-700: 700;
+
+  --border-radius-md: 10px;
+  --border-radius-sm: 5px;
+
+  --transition-timing: 0.2s ease;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  box-sizing: border-box;
 }
 
 header {
-    background-color: #A14D43;
+  background-color: #a14d43;
 }
 
 .content_top {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 60px;
-    /* Điều chỉnh chiều cao theo nhu cầu của bạn */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  /* Điều chỉnh chiều cao theo nhu cầu của bạn */
 }
 
 .content_top_center {
-    display: flex;
-    flex-direction: row;
-    /* Hiển thị phần tử theo chiều dọc */
-    align-items: center;
-    text-align: center;
+  display: flex;
+  flex-direction: row;
+  /* Hiển thị phần tử theo chiều dọc */
+  align-items: center;
+  text-align: center;
 }
 
 .content_top_center a {
-    margin: 5px 15px 15px 15px;
-    color: #fff;
-    text-decoration: underline;
-    font-family: "Crimson Text", serif;
-    box-sizing: border-box;
-    transition: color 0s;
-    /* Thêm hiệu ứng màu khi hover */
+  margin: 5px 15px 15px 15px;
+  color: #fff;
+  text-decoration: underline;
+  font-family: "Crimson Text", serif;
+  box-sizing: border-box;
+  transition: color 0s;
+  /* Thêm hiệu ứng màu khi hover */
 }
 
 .content_top_center a:hover {
-    color: #fff;
-    /* Giữ màu văn bản #fff khi hover */
-    text-decoration: underline;
-    /* Thêm gạch chân khi hover */
+  color: #fff;
+  /* Giữ màu văn bản #fff khi hover */
+  text-decoration: underline;
+  /* Thêm gạch chân khi hover */
 }
 
 .content_top_center p {
-    margin-top: 5px;
-    color: #fff;
-    font-family: "Crimson Text", serif;
+  margin-top: 5px;
+  color: #fff;
+  font-family: "Crimson Text", serif;
 }
 
 /*-----------------------Menu--------------------------------------*/
 .menu {
-    border: 1px solid rgb(178, 171, 171);
-    /* Đặt màu và độ dày của viền */
-    padding: 10px;
-    /* Đặt khoảng cách giữa nội dung và viền */
+  border: 1px solid rgb(178, 171, 171);
+  /* Đặt màu và độ dày của viền */
+  padding: 10px;
+  /* Đặt khoảng cách giữa nội dung và viền */
 }
 
 .menu_top_logo_left a img {
-    width: 40px;
-    margin-left: 30px;
+  width: 40px;
+  margin-left: 30px;
 }
 
 .menu_top {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .menu_top_logo_right a {
-    margin-left: 10px;
-    margin-right: 30px;
-    font-family: Helvetica, sans-serif;
+  color: rgb(130, 0, 0);
+  margin-left: 10px;
+  margin-right: 30px;
+  font-family: Helvetica, sans-serif;
 }
 
 .menu_top_logo_right a.text {
-    color: black;
-    font-size: 15px;
-    text-decoration: none;
+  color: black;
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: 300;
 }
-
 
 .fa-regular.fa-hard-drive,
-.fa-regular.fa-heart {
-    color: rgb(130, 0, 0);
-    font-size: 20px;
+.fa-regular.fa-heart,
+.bi .bi-cart-fill {
+  color: rgb(130, 0, 0);
+  font-size: 22px;
+  font-weight: bold;
 }
-
-.ion-ios-cart-outline {
-    color: rgb(130, 0, 0);
-    font-size: 22px;
+i {
+  font-size: 22px;
 }
-
 
 .menu_top_logo_right {
-    margin-top: 7px;
-    /* Đặt khoảng cách từ phần tử trên cùng */
+  margin-top: 7px;
+  /* Đặt khoảng cách từ phần tử trên cùng */
 }
-
 
 /*--------------------------Navba-------------------------------------*/
 .navbar {
-    border: 1px solid black;
-    /* Đặt màu và độ dày của viền */
-    padding: 10px;
-    /* Đặt khoảng cách giữa nội dung và viền */
+  border: 1px solid black;
+  /* Đặt màu và độ dày của viền */
+  padding: 10px;
+  /* Đặt khoảng cách giữa nội dung và viền */
 }
 
 .navbar-brand {
-    font-family: Helvetica, sans-serif;
-    color: rgb(26, 24, 24);
-    transition: color 0s;
+  font-family: Helvetica, sans-serif;
+  color: rgb(26, 24, 24);
+  transition: color 0s;
 }
 
 .navbar-brand:hover {
-    color: rgb(26, 24, 24);
+  color: rgb(26, 24, 24);
 }
 
 .navbar-nav {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .navbar-nav {
-    display: flex;
-    justify-content: center;
-    flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
 }
 
 .navbar-nav li a {
-    color: rgb(51, 51, 51);
-    font-family: Helvetica, sans-serif;
-    transition: color 0s;
-    font-size: 14px;
+  color: rgb(51, 51, 51);
+  font-family: Helvetica, sans-serif;
+  transition: color 0s;
+  font-size: 14px;
 }
 
 .navbar-nav li a:hover {
-    color: rgb(51, 51, 51);
-
+  color: rgb(51, 51, 51);
 }
 
 .search-container {
-    position: relative;
-
+  position: relative;
 }
 
 .search-input {
-    padding-right: 30px;
-    /* Adjust as needed */
-
+  padding-right: 30px;
+  /* Adjust as needed */
 }
 
 .search-button {
-    position: absolute;
-    margin-top: -34px;
-    margin-left: 180px;
-    border: none;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    background: none;
-    font-size: 20px;
+  position: absolute;
+  margin-top: -34px;
+  margin-left: 180px;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background: none;
+  font-size: 20px;
 }
 
 .search-button:hover {
-    color: black;
-    background-color: #797878;
+  color: black;
+  background-color: #797878;
 }
 
 .ion-ios-search {
-    color: black;
-
+  color: black;
 }
 
 /*--------------------------submenu-------------------------------------------*/
-
-
 
 /*----------------------------Slides----------------------------------------*/
 
 /* Điều chỉnh kích thước của hình ảnh trong carousel */
 .carousel-inner .carousel-item img {
-    max-height: 500px;
-    /* Điều chỉnh chiều cao tùy ý */
-    width: auto;
-    /* Điều chỉnh chiều rộng tự động theo tỷ lệ */
+  max-height: 500px;
+  /* Điều chỉnh chiều cao tùy ý */
+  width: auto;
+  /* Điều chỉnh chiều rộng tự động theo tỷ lệ */
 }
-
 
 /*--------------------------List-items-----------------------------------------------*/
 .list_item {
-    list-style-type: none;
-    display: flex;
-    gap: 10px;
-    margin-left: 180px;
-    /* Đặt khoảng cách giữa các phần tử */
+  list-style-type: none;
+  display: flex;
+  gap: 10px;
+  margin-left: 180px;
+  /* Đặt khoảng cách giữa các phần tử */
 }
 
-
 .list_item li a {
-    text-decoration: none;
-    /* Loại bỏ dấu gạch chân của thẻ a */
-    border: 1px solid black;
-    /* Thêm viền cho mỗi phần tử */
-    padding: 10px;
-    /* Thêm khoảng cách giữa nội dung và viền */
-    color: rgb(51, 51, 51);
-
+  text-decoration: none;
+  /* Loại bỏ dấu gạch chân của thẻ a */
+  border: 1px solid black;
+  /* Thêm viền cho mỗi phần tử */
+  padding: 10px;
+  /* Thêm khoảng cách giữa nội dung và viền */
+  color: rgb(51, 51, 51);
 }
 
 .item {
-    margin-top: 80px;
+  margin-top: 80px;
 }
 
 /*--------------------h1_text--------------------------------*/
 .h1_text {
-    width: 448px;
-    font-size: 30px;
-    font-weight: 300;
-    margin: 50px auto 0px;
-    text-align: center;
-    color: rgb(51, 51, 51);
-    font-family: Helvetica, sans-serif;
+  width: 448px;
+  font-size: 30px;
+  font-weight: 300;
+  margin: 50px auto 0px;
+  text-align: center;
+  color: rgb(51, 51, 51);
+  font-family: Helvetica, sans-serif;
 }
-
-
 
 /*-------------------------Three-Pictures-------------------------------*/
 .Advertisement_picture_three {
-    display: flex;
-    /* Sử dụng flexbox để xếp ảnh trong một hàng ngang */
+  display: flex;
+  /* Sử dụng flexbox để xếp ảnh trong một hàng ngang */
 }
 
 .Advertisement_picture_three .picture-1,
 .Advertisement_picture_three .picture-2,
 .Advertisement_picture_three .picture-3 {
-    flex: 1;
-    /* Chia đều không gian trong hàng ngang */
-    margin: 5px;
-    /* Khoảng cách giữa các ảnh */
-    text-align: center;
-    /* Căn giữa nội dung trong mỗi ảnh */
+  flex: 1;
+  /* Chia đều không gian trong hàng ngang */
+  margin: 5px;
+  /* Khoảng cách giữa các ảnh */
+  text-align: center;
+  /* Căn giữa nội dung trong mỗi ảnh */
 }
 
 .Advertisement_picture_three img {
-    max-width: 100%;
-    /* Đảm bảo rằng ảnh không vượt quá kích thước của các phần tử chứa nó */
-    height: auto;
-    /* Đảm bảo tỷ lệ khung hình không bị méo */
+  max-width: 100%;
+  /* Đảm bảo rằng ảnh không vượt quá kích thước của các phần tử chứa nó */
+  height: auto;
+  /* Đảm bảo tỷ lệ khung hình không bị méo */
 }
 
 .Advertisement_picture_three .picture-1 a img {
-    height: 585px;
+  height: 585px;
 }
 
 .Advertisement_picture_three .picture-3 a img {
-    height: 585px;
-    width: 430px;
+  height: 585px;
+  width: 430px;
 }
 
 .Advertisement_picture_three .picture-1 .text_pic1 h2 {
-    color: rgb(51, 51, 51);
-    font-family: Crimson Text, serif;
-    margin: 0px auto;
-    font-weight: normal;
-    font-size: 36px;
+  color: rgb(51, 51, 51);
+  font-family: Crimson Text, serif;
+  margin: 0px auto;
+  font-weight: normal;
+  font-size: 36px;
 }
 
 .Advertisement_picture_three .picture-1 .text_pic1 a {
-    color: rgb(51, 51, 51);
-    font-family: Helvetica, sans-serif;
-    margin: 8px 0px 0px;
-    text-decoration: underline;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 0.7px;
+  color: rgb(51, 51, 51);
+  font-family: Helvetica, sans-serif;
+  margin: 8px 0px 0px;
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.7px;
 }
 
-
-
-
-
 .Advertisement_picture_three .picture-2 .text_pic2 h2 {
-    color: rgb(51, 51, 51);
-    font-family: Crimson Text, serif;
-    margin: 0px auto;
-    font-weight: normal;
-    font-size: 36px;
+  color: rgb(51, 51, 51);
+  font-family: Crimson Text, serif;
+  margin: 0px auto;
+  font-weight: normal;
+  font-size: 36px;
 }
 
 .Advertisement_picture_three .picture-2 .text_pic2 a {
-    color: rgb(51, 51, 51);
-    font-family: Helvetica, sans-serif;
-    margin: 8px 0px 0px;
-    text-decoration: underline;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 0.7px;
+  color: rgb(51, 51, 51);
+  font-family: Helvetica, sans-serif;
+  margin: 8px 0px 0px;
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.7px;
 }
 
-
 .Advertisement_picture_three .picture-3 .text_pic3 h2 {
-    color: rgb(51, 51, 51);
-    font-family: Crimson Text, serif;
-    margin: 0px auto;
-    font-weight: normal;
-    font-size: 36px;
+  color: rgb(51, 51, 51);
+  font-family: Crimson Text, serif;
+  margin: 0px auto;
+  font-weight: normal;
+  font-size: 36px;
 }
 
 .Advertisement_picture_three .picture-3 .text_pic3 a {
-    color: rgb(51, 51, 51);
-    font-family: Helvetica, sans-serif;
-    margin: 8px 0px 0px;
-    text-decoration: underline;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 0.7px;
+  color: rgb(51, 51, 51);
+  font-family: Helvetica, sans-serif;
+  margin: 8px 0px 0px;
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.7px;
 }
-
-
-
 
 /*------------------------- Category-------------------------------*/
 .Category {
-    display: flex;
-    /* Sử dụng flexbox để xếp thẻ h2 và thẻ a cùng một hàng ngang */
-    flex-direction: column;
-    /* Đặt hướng của flexbox thành cột */
-    align-items: center;
-    /* Căn giữa theo chiều ngang */
+  display: flex;
+  /* Sử dụng flexbox để xếp thẻ h2 và thẻ a cùng một hàng ngang */
+  flex-direction: column;
+  /* Đặt hướng của flexbox thành cột */
+  align-items: center;
+  /* Căn giữa theo chiều ngang */
 }
 
 .Category h2 {
-    margin: 0;
-    /* Loại bỏ margin mặc định của thẻ h2 */
-    font-size: 40px;
+  margin: 0;
+  /* Loại bỏ margin mặc định của thẻ h2 */
+  font-size: 40px;
 }
 
 .Category_items {
-    display: flex;
-    /* Sử dụng flexbox để xếp các thẻ a cùng một hàng ngang */
+  display: flex;
+  /* Sử dụng flexbox để xếp các thẻ a cùng một hàng ngang */
 }
 
 .Category_items a {
-    display: flex;
-    /* Sử dụng flexbox cho mỗi thẻ a */
-    align-items: center;
-    /* Căn giữa nội dung theo chiều ngang */
-    padding: 10px;
-    /* Thêm padding để tạo hình chữ nhật xung quanh chữ */
-    margin: 80px;
-    /* Khoảng cách giữa các thẻ a */
-    border: 1px solid rgb(51, 51, 51);
-    /* Đường viền cho hình chữ nhật */
-    color: black;
-    text-decoration: none;
-    transition: color 0s;
-    margin-top: 30px;
-    width: 200px;
-    height: 60px;
-    font-size: 14px;
-    /* Điều chỉnh độ rộng của khung chữ nhật */
-    justify-content: center;
-    font-family: Helvetica, sans-serif;
+  display: flex;
+  /* Sử dụng flexbox cho mỗi thẻ a */
+  align-items: center;
+  /* Căn giữa nội dung theo chiều ngang */
+  padding: 10px;
+  /* Thêm padding để tạo hình chữ nhật xung quanh chữ */
+  margin: 80px;
+  /* Khoảng cách giữa các thẻ a */
+  border: 1px solid rgb(51, 51, 51);
+  /* Đường viền cho hình chữ nhật */
+  color: black;
+  text-decoration: none;
+  transition: color 0s;
+  margin-top: 30px;
+  width: 200px;
+  height: 60px;
+  font-size: 14px;
+  /* Điều chỉnh độ rộng của khung chữ nhật */
+  justify-content: center;
+  font-family: Helvetica, sans-serif;
 }
 
 .Category_items a:hover {
-    color: black;
+  color: black;
 }
-
-
 
 /*---------------------Features----------------------------*/
 .Features {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .Features h2 {
-    font-family: Crimson Text, serif;
-    font-weight: normal;
-    font-size: 60px;
+  font-family: Crimson Text, serif;
+  font-weight: normal;
+  font-size: 60px;
 }
 
 .pictures_Features {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .Features-1,
 .Features-2 {
-    text-align: center;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    /* Căn nội dung về phía trái */
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* Căn nội dung về phía trái */
 }
 
 .Features-1 img,
 .Features-2 img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .Features-1 h2 {
-    font-size: 44px;
-    line-height: 40px;
-    margin: 15px 0px;
+  font-size: 44px;
+  line-height: 40px;
+  margin: 15px 0px;
 }
 
 .Features-1 h3 {
-    font-family: Helvetica, sans-serif;
-    font-size: 22px;
-    margin: 10px 0px 20px;
+  font-family: Helvetica, sans-serif;
+  font-size: 22px;
+  margin: 10px 0px 20px;
 }
 
 .Features-1 a {
-    font-size: 14px;
-    color: rgb(51, 51, 51);
-    text-decoration: underline;
-    text-transform: uppercase;
-    font-weight: bold;
+  font-size: 14px;
+  color: rgb(51, 51, 51);
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .Features-2 h2 {
-    font-size: 44px;
-    line-height: 40px;
-    margin: 15px 0px;
+  font-size: 44px;
+  line-height: 40px;
+  margin: 15px 0px;
 }
 
 .Features-2 a {
-    font-size: 14px;
-    color: rgb(51, 51, 51);
-    text-decoration: underline;
-    text-transform: uppercase;
-    font-weight: bold;
+  font-size: 14px;
+  color: rgb(51, 51, 51);
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .Features-2 h3 {
-    font-family: Helvetica, sans-serif;
-    font-size: 22px;
-    margin: 10px 0px 20px;
+  font-family: Helvetica, sans-serif;
+  font-size: 22px;
+  margin: 10px 0px 20px;
 }
 
 /*---------------------------------------------*/
 .Threadwork {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
 }
 
 .Threadwork-text {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .Threadwork-text h2 {
-    margin-left: 70px;
+  margin-left: 70px;
 }
 
 .Threadwork-text a {
-    font-size: 14px;
-    font-weight: bold;
-    text-decoration: underline;
-    text-transform: uppercase;
-    color: rgb(51, 51, 51);
-    margin-right: 70px;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: underline;
+  text-transform: uppercase;
+  color: rgb(51, 51, 51);
+  margin-right: 70px;
 }
 
 .Threadwork-text a:hover {
-    color: black;
+  color: black;
 }
 
 .Threadwork-items {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .products-1 {
-    text-align: center;
-    padding: 10px;
-    margin: 10px;
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
 }
 
 .products-1 a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: left;
-    text-decoration: none;
-    color: black;
-    transition: color 0s;
-    /* Căn phụ đề về phía bên trái */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  text-decoration: none;
+  color: black;
+  transition: color 0s;
+  /* Căn phụ đề về phía bên trái */
 }
 
 .products-1 a:hover {
-    color: black;
+  color: black;
 }
 
 .products-1 img {
-    max-width: 200px;
-    height: auto;
+  max-width: 200px;
+  height: auto;
 }
-
-
-
 
 /*--------------------Rising-Stars-----------------------------*/
 .Rising_Stars {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
 }
 
 .Stars-text {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .Stars-text h2 {
-    margin-left: 70px;
+  margin-left: 70px;
 }
 
 .Stars-text a {
-    font-size: 14px;
-    font-weight: bold;
-    text-decoration: underline;
-    text-transform: uppercase;
-    color: rgb(51, 51, 51);
-    margin-right: 70px;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: underline;
+  text-transform: uppercase;
+  color: rgb(51, 51, 51);
+  margin-right: 70px;
 }
 
 .Stars-text a:hover {
-    color: black;
+  color: black;
 }
 
 .Stars-items {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 /*---------------- Shop-by-price-------------------------*/
 .Price {
-    display: flex;
-    /* Sử dụng flexbox để xếp thẻ h2 và thẻ a cùng một hàng ngang */
-    flex-direction: column;
-    /* Đặt hướng của flexbox thành cột */
-    align-items: center;
-    /* Căn giữa theo chiều ngang */
+  display: flex;
+  /* Sử dụng flexbox để xếp thẻ h2 và thẻ a cùng một hàng ngang */
+  flex-direction: column;
+  /* Đặt hướng của flexbox thành cột */
+  align-items: center;
+  /* Căn giữa theo chiều ngang */
 }
 
 .Price h2 {
-    margin: 0;
-    /* Loại bỏ margin mặc định của thẻ h2 */
-    font-size: 40px;
+  margin: 0;
+  /* Loại bỏ margin mặc định của thẻ h2 */
+  font-size: 40px;
 }
 
 .Price_items {
-    display: flex;
-    /* Sử dụng flexbox để xếp các thẻ a cùng một hàng ngang */
+  display: flex;
+  /* Sử dụng flexbox để xếp các thẻ a cùng một hàng ngang */
 }
 
 .Price_items a {
-    display: flex;
-    /* Sử dụng flexbox cho mỗi thẻ a */
-    align-items: center;
-    /* Căn giữa nội dung theo chiều ngang */
-    padding: 10px;
-    /* Thêm padding để tạo hình chữ nhật xung quanh chữ */
-    margin: 80px;
-    /* Khoảng cách giữa các thẻ a */
-    border: 1px solid rgb(51, 51, 51);
-    /* Đường viền cho hình chữ nhật */
-    color: black;
-    text-decoration: none;
-    transition: color 0s;
-    margin-top: 30px;
-    width: 200px;
-    height: 60px;
-    font-size: 14px;
-    /* Điều chỉnh độ rộng của khung chữ nhật */
-    justify-content: center;
-    font-family: Helvetica, sans-serif;
+  display: flex;
+  /* Sử dụng flexbox cho mỗi thẻ a */
+  align-items: center;
+  /* Căn giữa nội dung theo chiều ngang */
+  padding: 10px;
+  /* Thêm padding để tạo hình chữ nhật xung quanh chữ */
+  margin: 80px;
+  /* Khoảng cách giữa các thẻ a */
+  border: 1px solid rgb(51, 51, 51);
+  /* Đường viền cho hình chữ nhật */
+  color: black;
+  text-decoration: none;
+  transition: color 0s;
+  margin-top: 30px;
+  width: 200px;
+  height: 60px;
+  font-size: 14px;
+  /* Điều chỉnh độ rộng của khung chữ nhật */
+  justify-content: center;
+  font-family: Helvetica, sans-serif;
 }
 
 .Price_items a:hover {
-    color: black;
+  color: black;
 }
-
-
 
 /*------------------------------Find_Art----------------------------*/
 .Find_Art_You_Love {
-    position: relative;
-    width: 100%;
-    margin: 30px auto;
-    display: flex;
-    flex-direction: row;
+  position: relative;
+  width: 100%;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: row;
 }
 
 .Find_Art_You_Love img {
-    max-width: 980px;
-    width: 800px;
-    height: 693px;
-    margin-left: 100px;
-
+  max-width: 980px;
+  width: 800px;
+  height: 693px;
+  margin-left: 100px;
 }
 
 .Find_text {
-    background: rgb(249, 249, 249);
-    color: rgb(51, 51, 51);
-    font-family: Helvetica, sans-serif;
-    padding: 40px;
-    width: 36%;
-    display: flex;
-    flex-direction: column;
-    -moz-box-align: center;
-    align-items: center;
-    -moz-box-pack: center;
-    justify-content: center;
+  background: rgb(249, 249, 249);
+  color: rgb(51, 51, 51);
+  font-family: Helvetica, sans-serif;
+  padding: 40px;
+  width: 36%;
+  display: flex;
+  flex-direction: column;
+  -moz-box-align: center;
+  align-items: center;
+  -moz-box-pack: center;
+  justify-content: center;
 }
 
 .Find_text h2 {
-    font-family: Crimson Text, serif;
-    font-size: 40px;
-    margin: 0px 0px 20px;
-    font-weight: normal;
+  font-family: Crimson Text, serif;
+  font-size: 40px;
+  margin: 0px 0px 20px;
+  font-weight: normal;
 }
 
 .Find_text p {
-    margin: 0px;
-    font-size: 18px;
-    line-height: 24px;
-    font-weight: 300;
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 300;
 }
 
 .Find_text img {
-    height: 44px;
-    width: 220px;
-    margin: 10px auto;
+  height: 44px;
+  width: 220px;
+  margin: 10px auto;
 }
 
 .Find_text a {
-    color: rgb(51, 51, 51);
-    display: flex;
-    -moz-box-pack: center;
-    justify-content: center;
-    -moz-box-align: center;
-    align-items: center;
-    background: transparent;
-    text-transform: uppercase;
-    cursor: pointer;
-    width: 289px;
-    height: 50px;
-    margin: 20px auto 10px;
-    font-size: 14px;
-    line-height: 20px;
-    font-weight: bold;
-    padding: 1px 6px;
-    border: 1px solid rgb(79, 79, 79);
-    text-decoration: none;
-    transition: color 0s;
+  color: rgb(51, 51, 51);
+  display: flex;
+  -moz-box-pack: center;
+  justify-content: center;
+  -moz-box-align: center;
+  align-items: center;
+  background: transparent;
+  text-transform: uppercase;
+  cursor: pointer;
+  width: 289px;
+  height: 50px;
+  margin: 20px auto 10px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: bold;
+  padding: 1px 6px;
+  border: 1px solid rgb(79, 79, 79);
+  text-decoration: none;
+  transition: color 0s;
 }
 
 .Find_text a:hover {
-    color: rgb(51, 51, 51);
+  color: rgb(51, 51, 51);
 }
-
-
-
-
-
-
 
 /*-----------------------Explore----------------------*/
 .Explore {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
 }
 
 .Explore-text {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .Explore-text h2 {
-    color: rgb(51, 51, 51);
-    font-family: Crimson Text, serif;
-    font-size: 44px;
-    display: flex;
-    align-self: flex-start;
-    margin: 0px;
-    font-weight: normal;
-    text-align: left;
-    margin-left: 120px;
+  color: rgb(51, 51, 51);
+  font-family: Crimson Text, serif;
+  font-size: 44px;
+  display: flex;
+  align-self: flex-start;
+  margin: 0px;
+  font-weight: normal;
+  text-align: left;
+  margin-left: 120px;
 }
 
 .Explore-text a {
-    font-size: 14px;
-    font-weight: bold;
-    text-decoration: underline;
-    text-transform: uppercase;
-    color: rgb(51, 51, 51);
-    display: flex;
-    align-self: flex-start;
-    margin: 24px 140px 30px 10px;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: underline;
+  text-transform: uppercase;
+  color: rgb(51, 51, 51);
+  display: flex;
+  align-self: flex-start;
+  margin: 24px 140px 30px 10px;
 }
 
 .Explore-text a:hover {
-    color: black;
+  color: black;
 }
 
 .Explore-items {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .products-explore-1 {
-    text-align: center;
-    padding: 10px;
-    margin: 10px;
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
 }
 
 .products-explore-1 a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: left;
-    color: black;
-    transition: color 0s;
-    /* Căn phụ đề về phía bên trái */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  color: black;
+  transition: color 0s;
+  /* Căn phụ đề về phía bên trái */
 }
 
 .products-explore-1 a:hover {
-    color: black;
+  color: black;
 }
 
 .products-explore-1 img {
-    max-width: 400px;
-    height: auto;
+  max-width: 400px;
+  height: auto;
 }
 
 .products-explore-1-text {
-    color: rgb(51, 51, 51);
-    font-family: Crimson Text, serif;
-    margin: 0px auto;
-    font-weight: normal;
-    font-size: 30px;
-    text-decoration: none;
+  color: rgb(51, 51, 51);
+  font-family: Crimson Text, serif;
+  margin: 0px auto;
+  font-weight: normal;
+  font-size: 30px;
+  text-decoration: none;
 }
 
 .products-explore-1-text_2 {
-    color: rgb(51, 51, 51);
-    font-family: Helvetica, sans-serif;
-    margin: 8px 0px 0px;
-    text-decoration: underline;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 0.7px;
+  color: rgb(51, 51, 51);
+  font-family: Helvetica, sans-serif;
+  margin: 8px 0px 0px;
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.7px;
 }
-
-
 
 /*------------------Three-topic-----------------------*/
 .three-topic {
-    transform: translateX(0px);
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    width: 100%;
-    height: 175px;
-    background-color: rgb(51, 51, 51);
-    overflow: hidden;
-    /* Loại bỏ phần nội dung vượt ra ngoài khung */
-    justify-content: space-between;
-    /* Chia đều các topic-text theo chiều dọc */
-    align-items: center;
-    /* Canh giữa theo chiều ngang */
-    margin-left: 0px;
-}
-
-.three-topic-text {
-    display: flex;
-    justify-content: space-between;
-    /* Chia đều các topic-text theo chiều ngang */
-    width: 100%;
-}
-
-.topic-text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    color: white;
-    margin: 10px;
-    z-index: 1;
-}
-
-.topic-text i {
-    font-size: 24px;
-    margin-bottom: 10px;
-    /* Để tạo khoảng cách giữa biểu tượng và tiêu đề */
-}
-
-.topic-text h2 {
-    font-size: 20px;
-    margin: 0;
-    /* Loại bỏ margin mặc định của thẻ h2 */
-}
-
-.topic-text p {
-    font-size: 12px;
-    text-align: center;
-    /* Căn giữa nội dung của thẻ p */
-}
-
-.topic-text .topic-text-1 {
-    margin-left: 140px;
-}
-
-.topic-text .topic-text-1-p {
-    margin-left: 120px;
-}
-
-.topic-text .fa-solid.fa-check.one {
-    margin-left: 130px;
-}
-
-.topic-text .topic-text-2 {
-    margin-left: -50px;
-}
-
-.topic-text .topic-text-2-p {
-    margin-left: -20px;
-}
-
-.topic-text .fa-solid.fa-check.two {
-    margin-left: -50px;
-}
-
-.topic-text .topic-text-3 {
-    margin-right: 200px;
-}
-
-.topic-text .topic-text-3-p {
-    margin-right: 200px;
-}
-
-.topic-text .fa-solid.fa-check.three {
-    margin-left: -200px;
+  transform: translateX(0px);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 175px;
+  background-color: rgb(51, 51, 51);
+  overflow: hidden;
+  /* Loại bỏ phần nội dung vượt ra ngoài khung */
+  justify-content: space-between;
+  /* Chia đều các topic-text theo chiều dọc */
+  align-items: center;
+  /* Canh giữa theo chiều ngang */
+  margin-left: 0px;
 }
 
 /*----------------------footer----------------------*/
 .footer {
-    display: flex;
-    justify-content: space-between;
-    font-family: Helvetica, sans-serif;
-    padding: 0px 8% 15px;
+  background-color: #fff;
+  color: #000;
+  padding: 20px;
+  text-align: center;
 }
 
-.footer-left-1,
-.footer-left-2,
-.footer-left-3,
-.footer-left-4 {
-    width: 100%;
-    /* Đặt chiều rộng của mỗi phần cần hiển thị */
-    font-family: Helvetica, sans-serif;
+.back-to-top button {
+  background-color: #fff;
+  color: #000;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 1px solid #999;
+  align-items: center;
 }
 
-.footer-left-1 p {
-    font-weight: 400;
-    font-size: 15px;
-    margin-bottom: 7px;
-    font-family: "Crimson Text", serif;
+.email-signup p {
+  color: #777;
+  margin-bottom: 20px;
+  display: inline;
+  margin-right: 100px;
 }
 
-.footer-left-1 ul {
-    list-style: none;
-    margin: 0px;
-    padding: 0px;
+.email-signup button {
+  width: 100px;
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 20px;
 }
 
-.footer-left-1 ul li a {
-    font-size: 10px;
-    color: rgb(102, 102, 102);
-    display: block;
-    margin: 5px 0px;
-    text-decoration: none;
-    letter-spacing: 0.9px;
-    transition: color 0.2s ease 0s;
+.footer-nav {
+  background: var(--eerie-black);
+  padding: 20px 0;
+  border-bottom: 1px solid var(--onyx);
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+.footer-nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-.footer-left-2 p {
-    font-weight: 400;
-    font-size: 15px;
-    margin-bottom: 7px;
-    font-family: "Crimson Text", serif;
+.footer-nav-list:not(:last-child) {
+  margin-bottom: 20px;
+  display: inline-block;
 }
 
-.footer-left-2 ul {
-    list-style: none;
-    margin: 0px;
-    padding: 0px;
+.footer-nav .nav-title {
+  position: relative;
+  color: var(--white);
+  font-size: var(--fs-6);
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
 }
 
-.footer-left-2 ul li a {
-    font-size: 10px;
-    color: rgb(102, 102, 102);
-    display: block;
-    margin: 5px 0px;
-    text-decoration: none;
-    letter-spacing: 0.9px;
-    transition: color 0.2s ease 0s;
+.footer-nav .nav-title::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: var(--salmon-pink);
+  width: 60px;
+  height: 1px;
 }
 
-.footer-left-3 p {
-    font-weight: 400;
-    font-size: 15px;
-    margin-bottom: 7px;
-    font-family: "Crimson Text", serif;
+.footer-nav-item {
+  padding: 3px 0;
 }
 
-.footer-left-3 ul {
-    list-style: none;
-    margin: 0px;
-    padding: 0px;
+.footer-nav-link,
+.footer-nav-item .content-address {
+  width: max-content;
+  color: var(--sonic-silver);
+  font-size: var(--fs-6);
+  text-transform: capitalize;
+  transition: color var(--transition-timing);
 }
 
-.footer-left-3 ul li a {
-    font-size: 10px;
-    color: rgb(102, 102, 102);
-    display: block;
-    margin: 5px 0px;
-    text-decoration: none;
-    letter-spacing: 0.9px;
-    transition: color 0.2s ease 0s;
+.footer-nav-link:hover {
+  color: var(--salmon-pink);
 }
 
-.footer-left-4 p {
-    font-weight: 400;
-    font-size: 15px;
-    margin-bottom: 7px;
-    font-family: "Crimson Text", serif;
+.footer-nav-item.flex {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
 }
 
-.footer-left-4 ul {
-    list-style: none;
-    margin: 0px;
-    padding: 0px;
+.footer-nav-item .content-address {
+  font-style: normal;
+  margin-bottom: 5px;
 }
 
-.footer-left-4 ul li a {
-    font-size: 10px;
-    color: rgb(102, 102, 102);
-    display: block;
-    margin: 5px 0px;
-    text-decoration: none;
-    letter-spacing: 0.9px;
-    transition: color 0.2s ease 0s;
+.footer-nav-item .icon-box {
+  color: var(--sonic-silver);
+  font-size: 25px;
+}
+/* Follow Us Section */
+.footer-follow-us {
+  background: var(--eerie-black);
+  padding: 30px 0;
+  text-align: center;
 }
 
+.footer-follow-us .follow-us-title {
+  color: var(--white);
+  font-size: var(--fs-7);
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+}
 
+.footer-follow-us .follow-us-title::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--salmon-pink);
+  width: 60px;
+  height: 1px;
+}
 
-/*--*/
+.social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-link .footer-nav-link {
+  font-size: 25px;
+  margin: 0 10px;
+  color: var(--sonic-silver);
+  transition: color var(--transition-timing);
+}
+
+.social-link .footer-nav-link:hover {
+  color: var(--salmon-pink);
+}
+
+.footer-nav .social-link {
+  display: flex;
+  flex-direction: row;
+}
+
+.social-link .footer-nav-link {
+  font-size: 25px;
+  margin-left: 10px;
+  justify-items: center;
+}
+
+.payment-img {
+  max-width: 335px;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 15px;
+  margin-top: 5px;
+}
+
+.copyright {
+  color: var(--sonic-silver);
+  font-size: var(--fs-8);
+  font-weight: var(--weight-500);
+  text-transform: capitalize;
+  letter-spacing: 1.2px;
+}
+
+.copyright a {
+  display: inline;
+  color: inherit;
+}
+
+.p {
+  align-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  padding-left: 0px;
+  position: relative;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.container-footer {
+  background: var(--eerie-black);
+  padding: 0 15px;
+  border-radius: 1px var(--sonic-silver);
+}
+
+.giftcard-img img {
+  width: 250px;
+  margin-right: 80px;
+  align-items: center;
+}
+
+.giftcard-img {
+  max-width: 450px;
+  margin-bottom: 10px;
+  margin-right: 100px;
+  width: 250px;
+}
+
+.product_info {
+  border: 1px solid rgb(255, 255, 255);
+  align-items: center;
+  margin-left: 5px;
+  height: 80%;
+}

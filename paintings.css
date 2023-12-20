@@ -679,18 +679,6 @@ ul li {
   margin-right: 100px;
 }
 
-.email-signup form {
-  display: inline;
-  flex-direction: column;
-  align-items: center;
-}
-
-.email-signup input {
-  width: 500px;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-
 .email-signup button {
   width: 100px;
   background-color: #000;
@@ -698,14 +686,20 @@ ul li {
   padding: 10px;
   border: none;
   cursor: pointer;
+  margin-bottom: 20px;
 }
 
 .footer-nav {
   background: var(--eerie-black);
-  padding: 30px 0;
+  padding: 20px 0;
   border-bottom: 1px solid var(--onyx);
-  padding-bottom: 30px;
-  margin-bottom: 30px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+.footer-nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .footer-nav-list:not(:last-child) {
@@ -716,7 +710,7 @@ ul li {
 .footer-nav .nav-title {
   position: relative;
   color: var(--white);
-  font-size: var(--fs-7);
+  font-size: var(--fs-6);
   text-transform: uppercase;
   margin-bottom: 15px;
   padding-bottom: 5px;
@@ -737,12 +731,12 @@ ul li {
 }
 
 .footer-nav-link,
-.footer-nav-item .content {
+.footer-nav-item .content-address {
   width: max-content;
   color: var(--sonic-silver);
-  font-size: var(--fs-7);
+  font-size: var(--fs-6);
   text-transform: capitalize;
-  transition: var(--transition-timing);
+  transition: color var(--transition-timing);
 }
 
 .footer-nav-link:hover {
@@ -755,7 +749,7 @@ ul li {
   gap: 10px;
 }
 
-.footer-nav-item .content {
+.footer-nav-item .content-address {
   font-style: normal;
   margin-bottom: 5px;
 }
@@ -764,18 +758,58 @@ ul li {
   color: var(--sonic-silver);
   font-size: 25px;
 }
+/* Follow Us Section */
+.footer-follow-us {
+  background: var(--eerie-black);
+  padding: 30px 0;
+  text-align: center;
+}
+
+.footer-follow-us .follow-us-title {
+  color: var(--white);
+  font-size: var(--fs-7);
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+}
+
+.footer-follow-us .follow-us-title::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--salmon-pink);
+  width: 60px;
+  height: 1px;
+}
+
+.social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-link .footer-nav-link {
+  font-size: 25px;
+  margin: 0 10px;
+  color: var(--sonic-silver);
+  transition: color var(--transition-timing);
+}
+
+.social-link .footer-nav-link:hover {
+  color: var(--salmon-pink);
+}
 
 .footer-nav .social-link {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 10px;
-  margin-left: 400px;
+  flex-direction: row;
 }
 
 .social-link .footer-nav-link {
   font-size: 25px;
   margin-left: 10px;
+  justify-items: center;
 }
 
 .payment-img {
@@ -798,11 +832,87 @@ ul li {
   display: inline;
   color: inherit;
 }
+
 .p {
   align-content: center;
   margin-top: 30px;
   margin-bottom: 30px;
 }
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  padding-left: 0px;
+  position: relative;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.container-footer {
+  background: var(--eerie-black);
+  padding: 0 15px;
+  border-radius: 1px var(--sonic-silver);
+}
+
+.giftcard-img img {
+  width: 250px;
+  margin-right: 80px;
+  align-items: center;
+}
+
+.giftcard-img {
+  max-width: 450px;
+  margin-bottom: 10px;
+  margin-right: 100px;
+  width: 250px;
+}
+
+.product_info {
+  border: 1px solid rgb(255, 255, 255);
+  align-items: center;
+  margin-left: 5px;
+  height: 80%;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .menu_top_logo_right,
+  .navbar-nav,
+  .Saatchi_Art_eGift_Cards,
+  .eGift-text,
+  .content,
+  .container-body {
+    margin: 20px;
+  }
+
+  .eGift-text h1 {
+    font-size: 50px;
+  }
+
+  .eGift p {
+    font-size: 20px;
+  }
+
+  .eGift-text button {
+    width: 200px;
+    height: 50px;
+    margin: 20px 0;
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+@media (max-width: 767px) {
+
+}
+
 @media (max-width: 992px) {
   body {
     font-size: var(--fs-5);
@@ -890,16 +1000,6 @@ ul li {
   .filter-1 {
     margin-left: 0;
   }
-  .email-signup input {
-    width: 80%;
-  }
-  .footer-nav-item {
-    clear: both;
-    max-width: 90%;
-  }
-  .social-link {
-    overflow: hidden;
-  }
 }
 @media (max-width: 480px) {
   body {
@@ -940,16 +1040,6 @@ ul li {
 
   .filter-1 {
     margin-left: 0;
-  }
-  .email-signup input {
-    width: 80%;
-  }
-  .footer-nav-item {
-    clear: both;
-    max-width: 90%;
-  }
-  .social-link {
-    overflow: hidden;
   }
 }
 @media (max-width: 360px) {
@@ -1060,15 +1150,5 @@ ul li {
 
   .filter-1 {
     margin-left: 0;
-  }
-  .email-signup input {
-    width: 80%;
-  }
-  .footer-nav-item {
-    clear: both;
-    max-width: 90%;
-  }
-  .social-link {
-    overflow: hidden;
   }
 }
