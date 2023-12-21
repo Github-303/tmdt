@@ -56,7 +56,7 @@
           </div>
         </div>
         <div>
-          <nav class="navbar navbar-expand-lg bg-body-tertiary">
+          <nav class="navbar navbar-expand-lg bg-body-tertiary" aria-label="Site menu">
             <div class="container-fluid">
               <a class="navbar-brand" href="#"><img src="https://d3t95n9c6zzriw.cloudfront.net/navigation/sa-logo.svg"
                   alt=""> </a>
@@ -79,16 +79,8 @@
                 </ul>
                 <div class="search-container">
                   <div class="dropdown-search" style="display: flex;">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
-                      data-bs-toggle="dropdown" style="background: white;color: black; height: 48px; width: 48px;"
-                      aria-expanded="false">
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                      <li><a class="dropdown-item" href="#">Art</a></li>
-                      <li><a class="dropdown-item" href="#">Artist</a></li>
-                    </ul>
                     <input class="form-control search-input" type="search" placeholder="Search" aria-label="Search">
-                    <button class="search-button" type="submit"><i class="bi bi-search"></i></button>
+                    <button class="search-button" type="submit"></button>
                   </div>
 
                 </div>
@@ -99,7 +91,7 @@
           <div>
             <div>
               <article>
-                <nav font-size="1" class="nav-1">
+                <nav font-size="1" class="nav-1" aria-label="Site menu">
                   <ul style="display: flex;padding-top: 10px;">
                     <li><a href="#" title="See all artworks">All Artworks / </a></li>
                     <li style="margin-left: 15px;"><span>Paintings</span></li>
@@ -107,16 +99,8 @@
                 </nav>
               </article>
               <div>
-                <h1 class="h1" style="margin-left: 60px;">Original Paintings For Sale</h1>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                  <button class="btn btn-primary me-md-2" style="float:inline" type="button"><i
-                      class="bi bi-eye"></i>Try visual search</button>
-                </div>
+                <h1 class="h1" style="margin: 20px auto;">Original Paintings For Sale</h1>
                 <div class="dropdown-select-1">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2"
-                    data-bs-toggle="dropdown" style="float:inline-end" aria-expanded="false">
-                    <i class="bi bi-funnel-fill"></i>Sort
-                  </button>
                   <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
                     <li><a class="dropdown-item active" href="#">Action</a></li>
                     <li><a class="dropdown-item" href="#">Another action</a></li>
@@ -143,60 +127,53 @@
   <div class="filter-hr" data-type="hr" style="margin-bottom: 20px;"></div>
   <div class="main" style="display: grid; grid-template-columns: 20% 75%;">
     <div class="container-2">
-      <form role="form product-form">
+      <form class="form-category" role="form product-form">
         <div class="form-group">
           <label class="label-1">Category</label>
-          <select class="form-control hasCustomSelect"
-            style="-webkit-appearance: menulist-button; width: 231px; position: absolute; opacity: 0; height: 34px; font-size: 12px;">
+          <select class="form-control hasCustomSelect">
             <option>All</option>
             <option>Paintings</option>
             <option>Art Picture</option>
             <option>Photography</option>
           </select>
-          <span class="customSelect form-control" style="display: inline-block;"><span class="customSelectInner"
-              style="width: 209px; display: inline-block;">Paintings</span></span>
         </div>
       </form>
 
       <div class="container-1">
         <div class="card-1">
-          <label for="showMore1">Filters</label>
-
+          <label for="showMore1" style="margin-left:20px;font-size:22px">Filters</label>
           <div class="dropdown-category">
-            <button type="button" onclick="toggleFilter('styles')"> Style + </button>
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown"
+            aria-expanded="false" onclick="toggleFilter('styles')">
+          <i class="bi bi-funnel-fill"></i> Sort
+          </button>
             <ul class="dropdown-content" id="styles">
               <li><label class="option"><input type="checkbox"> Paintings</label></li>
               <li><label class="option"><input type="checkbox"> Abstract</label></li>
               <li><label class="option"><input type="checkbox"> Paintings</label></li>
-              <li><label class="option"><input type="checkbox"> Abstract</label></li>
-              <li><label class="option"><input type="checkbox"> Paintings</label></li>
-              <li><label class="option"><input type="checkbox"> Abstract</label></li>
-
             </ul>
           </div>
 
           <div class="dropdown-category">
-            <button type="button" onclick="toggleFilter('subjects')"> Subject + </button>
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown"
+            aria-expanded="false" onclick="toggleFilter('styles')">
+          <i class="bi bi-funnel-fill"></i> Sort
+          </button>
             <ul class="dropdown-content" id="subjects">
               <li><label class="option"><input type="checkbox"> Nature</label></li>
               <li><label class="option"><input type="checkbox"> Portrait</label></li>
               <li><label class="option"><input type="checkbox"> Nature</label></li>
-              <li><label class="option"><input type="checkbox"> Portrait</label></li>
-              <li><label class="option"><input type="checkbox"> Nature</label></li>
-              <li><label class="option"><input type="checkbox"> Portrait</label></li>
-
             </ul>
           </div>
 
           <div class="dropdown-category">
-            <button type="button" onclick="toggleFilter('mediums')"> Medium + </button>
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown"
+            aria-expanded="false" onclick="toggleFilter('styles')">
+          <i class="bi bi-funnel-fill"></i> Sort
+          </button>
             <ul class="dropdown-content" id="mediums">
               <li><label class="option"><input type="checkbox"> Oil</label></li>
               <li><label class="option"><input type="checkbox"> Nature</label></li>
-              <li><label class="option"><input type="checkbox"> Portrait</label></li>
-              <li><label class="option"><input type="checkbox"> Nature</label></li>
-              <li><label class="option"><input type="checkbox"> Portrait</label></li>
-
             </ul>
           </div>
         </div>
@@ -207,8 +184,6 @@
 
           }
         </script>
-
-
 
       </div>
     </div>
@@ -606,7 +581,7 @@
             </div>
 
             <div class="showcase-content">
-              <a href="#" class="showcase-category">pic/a>
+              <a href="#" class="showcase-category">pic</a>
 
                 <h3>
                   <a href="#" class="showcase-title">pic8</a>
@@ -847,21 +822,6 @@
     <a href="/paintings?page=2" aria-label="Next">&gt;</a>
 
   </div>
-
-  <div class="results-per-page">
-    <div class="dropdown-container">
-      <div class="options">
-        <a href="#" class="option">25 Results Per Page</a>
-        <a href="#" class="option">50 Results Per Page</a>
-        <a href="#" class="option">100 Results Per Page</a>
-      </div>
-      <select aria-label="hidden">
-        <option value="25">25 Results Per Page</option>
-        <option selected value="50">50 Results Per Page</option>
-        <option value="100">100 Results Per Page</option>
-      </select>
-    </div>
-  </div>
   <div class="results-count">
   </div>
   <div class="filter-hr" data-type="hr"></div>
@@ -878,10 +838,6 @@
           <a href="/paintings/fine-art">Fine Art</a>
           <a href="/paintings/abstract">Abstract</a>
           <a href="/paintings/modern">Modern</a>
-          <a href="/paintings/street-art">Street Art</a>
-          <a href="/paintings/pop-art">Pop Art</a>
-          <a href="/paintings/impressionism">Impressionism</a>
-          <a href="/paintings/photorealism">Photorealism</a>
         </p>
       </div>
     </div>
@@ -895,11 +851,6 @@
           <a href="/paintings/portrait">Portrait</a>
           <a href="/paintings/landscape">Landscape</a>
           <a href="/paintings/nature">Nature</a>
-          <a href="/paintings/still-life">Still Life</a>
-          <a href="/paintings/beach">Beach</a>
-          <a href="/paintings/nude">Nude</a>
-          <a href="/paintings/floral">Floral</a>
-          <a href="/paintings/animal">Animal</a>
         </p>
 
       </div>
@@ -914,23 +865,11 @@
           <a href="/paintings/oil">Oil</a>
           <a href="/paintings/watercolor">Watercolor</a>
           <a href="/paintings/acrylic">Acrylic</a>
-          <a href="/paintings/airbrush">Airbrush</a>
-          <a href="/paintings/color">Color</a>
-          <a href="/paintings/ink">Ink</a>
-          <a href="/paintings/latex">Latex</a>
-        </p>
       </div>
     </div>
 
     <div class="filter-hr" data-type="hr"></div>
   </div>
-  <div class="filter-1">
-    <h2>Related Searches</h2>
-    <div class="filter--2">
-      <p data-type="keyword"><a href="#">Abstract Paintings</a> <a href="#">Figurative Paintings</a> &nbsp;<a
-          href="#">Fine Art Paintings</a> &nbsp;<a href="#">Landscape Paintings</a> <a href="#">Modern Paintings</a> <a
-          href="#">Oil Paintings</a></p>
-    </div>
     <div class="filter-hr" data-type="hr"></div>
   </div>
   <div style="display: grid; grid-template-columns: 15% 80% ; column-gap: 10px; margin-top: 10px;margin-bottom: 5px;">
@@ -1012,14 +951,6 @@
     <div class="back-to-top">
       <button type="button" title="Go to top of the page"><a href="./paintings.html">BACK TO TOP</a></button>
     </div>
-
-    <section class="email-signup">
-
-      <form>
-        <input type="email" required placeholder="Email Address" value="">
-        <button type="submit">Sign up</button>
-      </form>
-    </section>
     <div class="filter-hr" data-type="hr"></div>
 
 
