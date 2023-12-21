@@ -161,24 +161,6 @@ ul li {
   margin: 0 20px 3px 0;
   font-size: 16px;
 }
-
-.nano-promo-wrapper .nano-promo-coupon-item-code {
-  display: flex;
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  font-size: 10px;
-  cursor: pointer;
-}
-
-.nano-promo-wrapper .nano-promo-coupon-item-code:before {
-  content: "Code:";
-  padding: 0 5px 0 0;
-  font-weight: 400;
-  font-size: 10px;
-  color: #ffffff;
-  font-family: Helvetica, Arial, sans-serif;
-}
-
 .nano-promo-wrapper .nano-promo-coupon-item-apply {
   font-size: 14px;
 }
@@ -758,7 +740,7 @@ ul li {
   color: var(--sonic-silver);
   font-size: 25px;
 }
-/* Follow Us Section */
+
 .footer-follow-us {
   background: var(--eerie-black);
   padding: 30px 0;
@@ -859,19 +841,6 @@ a {
   border-radius: 1px var(--sonic-silver);
 }
 
-.giftcard-img img {
-  width: 250px;
-  margin-right: 80px;
-  align-items: center;
-}
-
-.giftcard-img {
-  max-width: 450px;
-  margin-bottom: 10px;
-  margin-right: 100px;
-  width: 250px;
-}
-
 .product_info {
   border: 1px solid rgb(255, 255, 255);
   align-items: center;
@@ -880,40 +849,20 @@ a {
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
-  .menu_top_logo_right,
-  .navbar-nav,
-  .Saatchi_Art_eGift_Cards,
-  .eGift-text,
-  .content,
-  .container-body {
-    margin: 20px;
+  .div-logo {
+    flex-direction: row;
   }
 
-  .eGift-text h1 {
-    font-size: 50px;
+  .logo-left a img {
+    width: 180px;
   }
 
-  .eGift p {
-    font-size: 20px;
-  }
-
-  .eGift-text button {
-    width: 200px;
-    height: 50px;
-    margin: 20px 0;
-    margin-right: 0;
+  .logo-right {
+    margin-top: 7px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-
-}
-
-@media (max-width: 767px) {
-
-}
-
-@media (max-width: 992px) {
   body {
     font-size: var(--fs-5);
     max-width: 992px;
@@ -958,19 +907,57 @@ a {
     clear: both;
     max-width: 90%;
   }
-  .social-link {
-    overflow: hidden;
-  }
 }
-@media (max-width: 768px) {
+
+@media (max-width: 767px) {
   body {
     font-size: var(--fs-5);
     max-width: 100%;
+  }
+  .nano-promo-wrapper .nano-promo-layout {
+    flex-direction: column;
+  }
+
+  .nano-promo-wrapper .nano-promo-coupon-item:before {
+    display: none;
+  }
+  .nano-promo-mobile .nano-promo-mobile-tagline{
+    margin-left: 15px !important;
+  }
+  .nano-promo-wrapper .nano-promo-coupon-item {
+    margin: 5px auto;
   }
   .p {
     margin-right: 500px;
     display: flex;
     width: 50%;
+  }
+  .div-logo {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo-left a img {
+    width: 150p;
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+  .logo-right {
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .logo-right a {
+    margin: 0 5px;
+  }
+
+  .logo-right a.text {
+    font-size: 14px;
+  }
+
+  .logo-right i {
+    font-size: 18px;
   }
   .container {
     max-width: 100%;
@@ -1011,6 +998,33 @@ a {
     width: inherit;
     margin-right: 150px;
   }
+  .div-logo {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo-left a img {
+    width: 150px;
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+  .logo-right {
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .logo-right a {
+    margin: 0 5px;
+  }
+
+  .logo-right a.text {
+    font-size: 14px;
+  }
+
+  .logo-right i {
+    font-size: 18px;
+  }
   .container {
     max-width: inherit;
   }
@@ -1048,43 +1062,31 @@ a {
     width: 100%;
     box-sizing: border-box;
   }
-  .nano-promo-wrapper * {
-    display: flex;
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    line-height: 0.7em;
-    flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: row;
+  .div-logo {
+    flex-direction: column;
+    align-items: center;
   }
-  .logo {
-    border: 1px solid rgb(178, 171, 171);
-    padding: 5px;
-    display: flex;
-    flex-direction: column-reverse;
-  }
+
   .logo-left a img {
-    width: 100px;
-    margin-left: 5px;
-    margin-top: 10px;
+    width: 150px;
+    margin-bottom: 10px;
   }
+
   .logo-right {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-right: 5px;
-    justify-content: flex-end;
-  }
-  .h1 {
+    margin-top: 10px;
     text-align: center;
-    word-spacing: 5px;
-    font-size: 2rem;
-    margin: 0 auto;
-    margin-right: 50px;
   }
-  .collapse {
-    overflow: hidden;
+
+  .logo-right a {
+    margin: 0 5px;
+  }
+
+  .logo-right a.text {
+    font-size: 14px;
+  }
+
+  .logo-right i {
+    font-size: 18px;
   }
   .p {
     display: contents;
@@ -1097,7 +1099,7 @@ a {
     text-decoration: none;
     display: none;
   }
-  .container-2{
+  .container-2 {
     width: 120px !important;
   }
   .container-1 {
