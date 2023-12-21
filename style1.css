@@ -1,94 +1,84 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:400,100,200,300);
-* {
-  margin: 0;
-  padding: 0;
-}
-
 body {
-  color: #666;
-  background: #434346;  /* fallback for old browsers */
- /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
-  font: 16px/26px "Raleway", sans-serif;
-}
-a {
-    color: #666;
-    text-decoration: none;
-  }
-  a:hover {
-    color: #313151;
-  }
-  
-  input {
-    font: 16px/26px "Raleway", sans-serif;
-  }
-.form-wrap {
-  background-color: #fff;
-  width: 400px;
-  height: 400px;
-  margin: 3em auto;
-  border-radius: 7px;
-}
-.form-wrap .tabs {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   overflow: hidden;
-}
-.form-wrap .tabs h3 {
-  float: left;
-  width: 50%;
-}
-.form-wrap .tabs h3 a {
-  padding: 0.5em 0;
-  text-align: center;
-  font-weight: 400;
-  background-color: #e6e7e8;
-  display: block;
-  color: #666;
-  
-}
-.form-wrap .tabs h3 a.active {
-  background-color: #fff;
-}
-.form-wrap .tabs-content {
-  padding: 1.5em;
-}
-.form-wrap .tabs-content div[id$="tab-content"] {
-  display: none;
-}
-.form-wrap .tabs-content .active {
-  display: block !important;
-}
-.form-wrap form .input {
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  color: inherit;
-  font-family: inherit;
-  padding: 0.8em 0 10px 0.8em;
-  border: 1px solid #cfcfcf;
-  outline: 0;
-  display: inline-block;
-  margin: 0 0 0.8em 0;
-  padding-right: 2em;
-  width: 100%;
-  border-radius: 7px;
-}
-.form-wrap form .button {
-  width: 100%;
-  padding: 0.8em 0 10px 0.8em;
-  background-color: #24243e;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  text-transform: uppercase;
-  border-radius: 7px;
-}
-.form-wrap form .button:hover {
-  background-color: #313151;
+  margin: 0;
 }
 
-.form-wrap .help {
-  margin-top: 0.6em;
+.login-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
 }
-.form-wrap .help p {
+
+h1 {
+  font-size: 24px;
+  color: #333;
   text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-option {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.fb-login,
+.surna-login {
+  display: inline-block;
+  background-color: #3b5998;
+  color: #ffffff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 4px;
   font-size: 14px;
+  margin-bottom: 10px; /* Add margin-bottom to create spacing */
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.forgot-password {
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #3b5998;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button[type="submit"]:hover {
+  background-color: #2d4373;
+}
+
+.register {
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  display: block;
+  margin-top: 20px;
 }
