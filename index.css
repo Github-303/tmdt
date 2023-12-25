@@ -321,6 +321,7 @@ i {
 
 .Category_items {
   display: flex;
+  flex-wrap: wrap;
   /* Sử dụng flexbox để xếp các thẻ a cùng một hàng ngang */
 }
 
