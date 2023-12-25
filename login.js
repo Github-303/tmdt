@@ -1,33 +1,44 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Execute this code after the DOM has loaded
-
-  // Select the login form
   var loginForm = document.querySelector(".login-form");
 
   if (loginForm) {
-    // Add a submit event listener to the form
     loginForm.addEventListener("submit", function (event) {
-      // Prevent the default form submission
       event.preventDefault();
 
-      // Get the values entered by the user
       var email = loginForm.elements.email.value;
       var password = loginForm.elements.password.value;
 
-      // Call a function to perform the login process
-      // Replace this function with your actual login logic
-      handleLogin(email, password);
+      // Make an AJAX request to the server
+      fetch("http://localhost:3000/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.success) {
+            alert(data.message);
+            // Redirect or perform other actions upon successful login
+          } else {
+            alert(data.message);
+          }
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          alert("An error occurred. Please try again.");
+        });
     });
   }
+  function validateEmail(email) {
+    // Basic email validation
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
 
-  // Function to handle the login process
-  function handleLogin(email, password) {
-    // Simulate a login process (replace with your actual authentication logic)
-    if (email === "example@email.com" && password === "password") {
-      alert("Login successful!");
-      // You can redirect to another page or perform other actions upon successful login
-    } else {
-      alert("Invalid email or password. Please try again.");
-    }
+  function validatePassword(password) {
+    // Basic password validation (minimum length)
+    return password.length >= 6;
   }
 });
