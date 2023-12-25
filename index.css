@@ -764,13 +764,28 @@ i {
 }
 
 .back-to-top button {
-  background-color: #fff;
-  color: #000;
-  margin-bottom: 10px;
+  background-color: var(--eerie-black);
+  color: #fff;
   padding: 10px 15px;
   cursor: pointer;
-  border-radius: 1px solid #999;
-  align-items: center;
+  border: 2px silver #388e3c;
+  border-radius: 10px;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.back-to-top button a {
+  color: #fff;
+}
+
+.back-to-top button:hover {
+  background-color: #45a049;
+}
+
+.back-to-top {
+  margin-bottom: 10px;
 }
 
 .email-signup p {
