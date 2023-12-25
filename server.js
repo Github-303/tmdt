@@ -14,11 +14,7 @@ const port = 3000;
 app.use(bodyParser.json());
 
 mongoose.connect(
-  "mongodb+srv://admin:<admin>@exception.wrnvwew.mongodb.net/?retryWrites=true&w=majority",
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }
+  "mongodb+srv://admin:admin@exception.wrnvwew.mongodb.net/?retryWrites=true&w=majority"
 );
 
 const db = mongoose.connection;
