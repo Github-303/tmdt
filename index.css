@@ -1010,6 +1010,20 @@ a {
     flex: 1;
     margin: 5px 0;
   }
+  .Price_items {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .Category_items {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+    align-items: flex-start;
+  }
   .Price_items a,
   .Category_items a {
     margin: 10px 0;
