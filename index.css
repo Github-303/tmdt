@@ -84,9 +84,7 @@ header {
 /*-----------------------Menu--------------------------------------*/
 .menu {
   border: 1px solid rgb(178, 171, 171);
-  /* Đặt màu và độ dày của viền */
   padding: 10px;
-  /* Đặt khoảng cách giữa nội dung và viền */
 }
 
 .menu_top_logo_left a img {
@@ -126,15 +124,11 @@ i {
 
 .menu_top_logo_right {
   margin-top: 7px;
-  /* Đặt khoảng cách từ phần tử trên cùng */
 }
 
-/*--------------------------Navba-------------------------------------*/
 .navbar {
   border: 1px solid black;
-  /* Đặt màu và độ dày của viền */
   padding: 10px;
-  /* Đặt khoảng cách giữa nội dung và viền */
 }
 
 .navbar-brand {
@@ -175,7 +169,6 @@ i {
 
 .search-input {
   padding-right: 30px;
-  /* Adjust as needed */
 }
 
 .search-button {
@@ -198,40 +191,20 @@ i {
 .ion-ios-search {
   color: black;
 }
-
-/*--------------------------submenu-------------------------------------------*/
-
-/*----------------------------Slides----------------------------------------*/
-
-/* Điều chỉnh kích thước của hình ảnh trong carousel */
-.carousel-inner .carousel-item img {
-  max-height: 500px;
-  /* Điều chỉnh chiều cao tùy ý */
-  width: auto;
-  /* Điều chỉnh chiều rộng tự động theo tỷ lệ */
+/* Custom styles for carousel */
+#carouselExampleIndicators {
+  overflow: hidden;
 }
 
-/*--------------------------List-items-----------------------------------------------*/
-.list_item {
-  list-style-type: none;
+.carousel-inner {
+  transition: transform 0.5s ease-in-out;
   display: flex;
-  gap: 10px;
-  margin-left: 180px;
-  /* Đặt khoảng cách giữa các phần tử */
+  width: 300%; /* Set to the number of slides (100% for each slide) */
 }
 
-.list_item li a {
-  text-decoration: none;
-  /* Loại bỏ dấu gạch chân của thẻ a */
-  border: 1px solid black;
-  /* Thêm viền cho mỗi phần tử */
-  padding: 10px;
-  /* Thêm khoảng cách giữa nội dung và viền */
-  color: rgb(51, 51, 51);
-}
-
-.item {
-  margin-top: 80px;
+.carousel-item {
+  width: 100%;
+  flex: 0 0 auto;
 }
 
 /*--------------------h1_text--------------------------------*/
@@ -269,13 +242,11 @@ i {
   /* Đảm bảo tỷ lệ khung hình không bị méo */
 }
 
-.Advertisement_picture_three .picture-1 a img {
-  height: 585px;
-}
-
-.Advertisement_picture_three .picture-3 a img {
-  height: 585px;
-  width: 430px;
+.Advertisement_picture_three .picture-1 a img,
+.Advertisement_picture_three .picture-3 a img,
+.Advertisement_picture_three .picture-2 a img {
+  height: auto;
+  max-width: 100%;
 }
 
 .Advertisement_picture_three .picture-1 .text_pic1 h2 {
@@ -353,14 +324,15 @@ i {
   /* Sử dụng flexbox để xếp các thẻ a cùng một hàng ngang */
 }
 
-.Category_items a {
+.Category_items a,
+.Price_items a {
+  margin: 0;
   display: flex;
   /* Sử dụng flexbox cho mỗi thẻ a */
   align-items: center;
   /* Căn giữa nội dung theo chiều ngang */
   padding: 10px;
   /* Thêm padding để tạo hình chữ nhật xung quanh chữ */
-  margin: 80px;
   /* Khoảng cách giữa các thẻ a */
   border: 1px solid rgb(51, 51, 51);
   /* Đường viền cho hình chữ nhật */
@@ -606,28 +578,27 @@ i {
   width: 100%;
   margin: 30px auto;
   display: flex;
-  flex-direction: row;
+  flex-direction: column-reverse;
 }
 
 .Find_Art_You_Love img {
-  max-width: 980px;
-  width: 800px;
-  height: 693px;
-  margin-left: 100px;
+  max-width: 100%;
+  height: auto;
+  margin-left: 0;
 }
-
 .Find_text {
   background: rgb(249, 249, 249);
   color: rgb(51, 51, 51);
   font-family: Helvetica, sans-serif;
   padding: 40px;
-  width: 36%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   -moz-box-align: center;
   align-items: center;
   -moz-box-pack: center;
   justify-content: center;
+  margin: 30px 0;
 }
 
 .Find_text h2 {
@@ -698,7 +669,7 @@ i {
   margin: 0px;
   font-weight: normal;
   text-align: left;
-  margin-left: 120px;
+  margin-left: 0;
 }
 
 .Explore-text a {
@@ -709,7 +680,7 @@ i {
   color: rgb(51, 51, 51);
   display: flex;
   align-self: flex-start;
-  margin: 24px 140px 30px 10px;
+  margin: 10px 0;
 }
 
 .Explore-text a:hover {
@@ -1007,4 +978,63 @@ a {
   align-items: center;
   margin-left: 5px;
   height: 80%;
+}
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  .menu_top {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu_top_logo_right {
+    margin-top: 10px;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .search-container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .Advertisement_picture_three {
+    flex-direction: column;
+  }
+
+  .Advertisement_picture_three .picture-1,
+  .Advertisement_picture_three .picture-2,
+  .Advertisement_picture_three .picture-3 {
+    flex: 1;
+    margin: 5px 0;
+  }
+
+  .Category_items a,
+  .Price_items a {
+    margin: 0 10px;
+  }
+
+  .Find_Art_You_Love {
+    flex-direction: column;
+  }
+
+  .Find_Art_You_Love img {
+    margin-left: 0;
+  }
+
+  .Find_text {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .Explore-text h2,
+  .Explore-text a {
+    margin-left: 0;
+  }
+
+  .Explore-text a {
+    margin: 10px 0;
+  }
 }
