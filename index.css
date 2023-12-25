@@ -1066,7 +1066,7 @@ a {
   }
   .Threadwork-text {
     flex-direction: column;
-    align-items: left;
+    align-items: center;
   }
 
   .Threadwork-text h2,
