@@ -324,10 +324,8 @@ i {
   flex-wrap: wrap;
   /* Sử dụng flexbox để xếp các thẻ a cùng một hàng ngang */
 }
-
-.Category_items a,
-.Price_items a {
-  margin: 0;
+.Category_items a {
+  margin: 10px;
   display: flex;
   /* Sử dụng flexbox cho mỗi thẻ a */
   align-items: center;
@@ -543,6 +541,7 @@ i {
 
 .Price_items {
   display: flex;
+  flex-wrap: wrap;
   /* Sử dụng flexbox để xếp các thẻ a cùng một hàng ngang */
 }
 
@@ -553,7 +552,7 @@ i {
   /* Căn giữa nội dung theo chiều ngang */
   padding: 10px;
   /* Thêm padding để tạo hình chữ nhật xung quanh chữ */
-  margin: 80px;
+  margin: 10px;
   /* Khoảng cách giữa các thẻ a */
   border: 1px solid rgb(51, 51, 51);
   /* Đường viền cho hình chữ nhật */
@@ -1011,12 +1010,10 @@ a {
     flex: 1;
     margin: 5px 0;
   }
-
-  .Category_items a,
-  .Price_items a {
-    margin: 0 10px;
+  .Price_items a,
+  .Category_items a {
+    margin: 10px 0;
   }
-
   .Find_Art_You_Love {
     flex-direction: column;
   }
@@ -1037,5 +1034,22 @@ a {
 
   .Explore-text a {
     margin: 10px 0;
+  }
+  .Threadwork-text {
+    flex-direction: column;
+    align-items: left;
+  }
+
+  .Threadwork-text h2,
+  .Threadwork-text a {
+    margin: 0;
+  }
+
+  .Threadwork-items {
+    justify-content: flex-start;
+  }
+
+  .products-1 {
+    width: 100%;
   }
 }
