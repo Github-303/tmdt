@@ -1,21 +1,22 @@
+require("dotenv").config();
+
 process.on("unhandledRejection", (err) => {
   console.error("Unhandled Rejection:", err);
-  // Thêm các xử lý khác nếu cần
-  process.exit(1); // Dừng quá trình Node.js với mã lỗi 1
+  process.exit(1);
 });
 
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const path = require("path");
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, "../public")));
 
-mongoose.connect(
-  "mongodb+srv://admin:admin@exception.wrnvwew.mongodb.net/?retryWrites=true&w=majority"
-);
+mongoose.connect(process.env.MONGODB_URI);
 
 const db = mongoose.connection;
 db.on("error", (error) => {
@@ -25,10 +26,11 @@ db.on("error", (error) => {
 db.once("open", () => {
   console.log("Connected to MongoDB");
 });
-app.use(express.static("../"));
+
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/login.html");
+  res.sendFile(path.join(__dirname, "../tmdt/views/login.html"));
 });
+
 const User = mongoose.model("User", {
   email: String,
   password: String,
