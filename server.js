@@ -25,7 +25,10 @@ db.on("error", (error) => {
 db.once("open", () => {
   console.log("Connected to MongoDB");
 });
-
+app.use(express.static("../"));
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/login.html");
+});
 const User = mongoose.model("User", {
   email: String,
   password: String,
@@ -39,7 +42,9 @@ app.post("/login", async (req, res) => {
     if (user) {
       res.json({ success: true, message: "Login successful!" });
     } else {
-      res.status(401).json({ success: false, message: "Invalid email or password." });
+      res
+        .status(401)
+        .json({ success: false, message: "Invalid email or password." });
     }
   } catch (error) {
     console.error("Login error:", error);
@@ -53,7 +58,9 @@ app.post("/register", async (req, res) => {
     const existingUser = await User.findOne({ email });
 
     if (existingUser) {
-      res.status(400).json({ success: false, message: "Email already in use." });
+      res
+        .status(400)
+        .json({ success: false, message: "Email already in use." });
     } else {
       const newUser = new User({ username, email, password });
       await newUser.save();
