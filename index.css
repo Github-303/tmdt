@@ -1040,7 +1040,9 @@ a {
     align-items: flex-start;
   }
   .Price_items a,
-  .Category_items a {
+  .Category_items a ,
+  .Threadwork-text a ,
+  .Features-2 a {
     margin: 10px 0;
   }
   .Find_Art_You_Love {
