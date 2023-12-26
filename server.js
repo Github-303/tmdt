@@ -34,6 +34,9 @@ app.set('view engine', 'html');
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../tmdt/views/login.html"));
 });
+app.get("/tmdt/views/register.html", (req, res) => {
+  res.sendFile(path.join(__dirname, "../tmdt/views/register.html"));
+});
 
 
 const User = mongoose.model("User", {
