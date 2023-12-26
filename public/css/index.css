@@ -37,7 +37,9 @@
   text-decoration: none;
   box-sizing: border-box;
 }
-
+body{
+  max-width: 100%;
+}
 header {
   background-color: #a14d43;
 }
