@@ -37,7 +37,7 @@
   text-decoration: none;
   box-sizing: border-box;
 }
-body{
+body {
   max-width: 100%;
 }
 header {
@@ -209,15 +209,15 @@ i {
   width: 90%;
   flex: 0 0 auto;
 }
-.carousel-item img{
+.carousel-item img {
   max-width: 90%;
   margin: 10px auto;
 }
 
 /*--------------------h1_text--------------------------------*/
 .h1_text {
-  width: 448px;
-  font-size: 30px;
+  width: 100%;
+  font-size: 28px;
   font-weight: 300;
   margin: 50px auto 0px;
   text-align: center;
@@ -1046,9 +1046,15 @@ a {
     justify-content: center;
     align-items: flex-start;
   }
+  .Stars-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
   .Price_items a,
-  .Category_items a ,
-  .Threadwork-text a ,
+  .Category_items a,
+  .Threadwork-text a,
   .Features-2 a {
     margin: 10px 0;
   }
