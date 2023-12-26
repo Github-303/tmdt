@@ -2,8 +2,9 @@
   "name": "tmdt",
   "version": "1.0.0",
   "description": "",
-  "main": "login.js",
+  "main": "index.js",
   "scripts": {
+    "start": "server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -11,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.2",
+    "ejs": "^3.1.9",
     "express": "^4.18.2",
     "mongodb": "^6.3.0",
     "mongoose": "^8.0.3"

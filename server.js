@@ -14,7 +14,10 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, "../public",{"extensions": ["css"]})));
+app.use(express.static('public'))
+app.use('/css', express.static(__dirname + "public/css"));
+app.use('/images', express.static(__dirname + "public/images"));
+app.use('/js',express.static(__dirname + "public/js"));
 
 mongoose.connect(process.env.MONGODB_URI);
 
@@ -30,6 +33,7 @@ db.once("open", () => {
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../tmdt/views/login.html"));
 });
+
 
 const User = mongoose.model("User", {
   email: String,
