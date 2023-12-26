@@ -1104,4 +1104,9 @@ a {
   .products-1 {
     width: 100%;
   }
+  .carousel-item img {
+  max-width: 90%;
+  margin: 30px auto;
+  height: 400px;
+}
 }
