@@ -466,7 +466,6 @@ i {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  flex-direction: column;
 }
 
 .products-1 {
@@ -663,12 +662,12 @@ i {
 }
 
 .Explore-text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
 }
 
 .Explore-text h2 {
@@ -706,6 +705,8 @@ i {
 
 .products-explore-1 {
   text-align: center;
+  padding: 10px;
+  margin: 10px;
 }
 
 .products-explore-1 a {
@@ -1034,6 +1035,12 @@ a {
     flex: 1;
     margin: 5px 0;
   }
+  .Threadwork-items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
   .Price_items {
     display: flex;
     flex-wrap: wrap;
@@ -1090,11 +1097,9 @@ a {
   .Threadwork-text a {
     margin: 0;
   }
-
-  .Threadwork-items {
-    justify-content: flex-start;
+  .products-explore-1 {
+    text-align: center;
   }
-
   .products-1 {
     width: 100%;
   }
