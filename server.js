@@ -25,19 +25,30 @@ db.once("open", () => {
 });
 
 app.use(bodyParser.json());
-app.use(express.static('public'))
-app.use('/css', express.static(__dirname + "public/css"));
-app.use('/images', express.static(__dirname + "public/images"));
-app.use('/js', express.static(__dirname + "public/js"));
-app.set('views', './views');
-app.set('view engine', 'html');
+app.use(express.static("public"));
+app.use("/css", express.static(__dirname + "public/css"));
+app.use("/images", express.static(__dirname + "public/images"));
+app.use("/js", express.static(__dirname + "public/js"));
+app.set("views", "./views");
+app.set("view engine", "html");
 app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "../tmdt/views/index.html"));
+});
+app.get("/tmdt/views/register.html", (req, res) => {
+  res.sendFile(path.join(__dirname, "../tmdt/views/paintings.html"));
+});
+app.get("/tmdt/views/register.html", (req, res) => {
   res.sendFile(path.join(__dirname, "../tmdt/views/login.html"));
 });
 app.get("/tmdt/views/register.html", (req, res) => {
   res.sendFile(path.join(__dirname, "../tmdt/views/register.html"));
 });
-
+app.get("/tmdt/views/register.html", (req, res) => {
+  res.sendFile(path.join(__dirname, "../tmdt/views/cart.html"));
+});
+app.get("/tmdt/views/register.html", (req, res) => {
+  res.sendFile(path.join(__dirname, "../tmdt/views/card.html"));
+});
 
 const User = mongoose.model("User", {
   email: String,
