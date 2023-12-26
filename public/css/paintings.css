@@ -181,6 +181,7 @@ ul li {
 .logo-left a img {
   width: 200px;
   margin-left: 30px;
+  border-radius: 50%;
 }
 .logo-right a {
   margin-left: 10px;
@@ -214,6 +215,11 @@ ul li {
   display: flex;
   justify-content: center;
   flex-grow: 1;
+}
+.navbar-brand img {
+  width: 100px;
+  margin-left: 30px;
+  border-radius: 50%;
 }
 .container-fluid img {
   width: 100px;
@@ -939,7 +945,7 @@ a {
   .h1 {
     margin: 20px auto;
     font-size: 1.5em;
-    text-align: center; 
+    text-align: center;
   }
   .p p {
     font-size: 14px;

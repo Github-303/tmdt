@@ -13,12 +13,6 @@ const path = require("path");
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use(bodyParser.json());
-app.use(express.static('public'))
-app.use('/css', express.static(__dirname + "public/css"));
-app.use('/images', express.static(__dirname + "public/images"));
-app.use('/js',express.static(__dirname + "public/js"));
-
 mongoose.connect(process.env.MONGODB_URI);
 
 const db = mongoose.connection;
@@ -30,6 +24,13 @@ db.once("open", () => {
   console.log("Connected to MongoDB");
 });
 
+app.use(bodyParser.json());
+app.use(express.static('public'))
+app.use('/css', express.static(__dirname + "public/css"));
+app.use('/images', express.static(__dirname + "public/images"));
+app.use('/js', express.static(__dirname + "public/js"));
+app.set('views', './views');
+app.set('view engine', 'html');
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../tmdt/views/login.html"));
 });

@@ -90,6 +90,7 @@ header {
 .menu_top_logo_left a img {
   width: 40px;
   margin-left: 30px;
+  border-radius: 50%;
 }
 
 .menu_top {
