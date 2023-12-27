@@ -128,7 +128,9 @@ i {
 .menu_top_logo_right {
   margin-top: 50px;
 }
-
+.collapse ul{
+  margin: 0 auto;
+}
 /* Navbar Styling */
 .navbar {
   background-color: #ffffff; /* Background color */
