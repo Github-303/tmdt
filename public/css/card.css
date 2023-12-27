@@ -86,9 +86,9 @@ header {
 }
 
 .menu_top_logo_left a img {
-  width: 40px;
+  width: 200px;
   margin-left: 30px;
-  border-radius: 50%;
+  border-radius: 10px;
 }
 
 .menu_top {
@@ -124,7 +124,7 @@ i {
 }
 
 .menu_top_logo_right {
-  margin-top: 7px;
+  margin-top: 50px;
 }
 
 .navbar {
