@@ -596,10 +596,9 @@ i {
   font-size: 44px;
   display: flex;
   align-self: flex-start;
-  margin: 0px;
   font-weight: normal;
   text-align: left;
-  margin-left: 0;
+  margin: 30px;
 }
 
 .Explore-text a {
