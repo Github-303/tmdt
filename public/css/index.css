@@ -49,13 +49,11 @@ header {
   justify-content: center;
   align-items: center;
   height: 60px;
-  /* Điều chỉnh chiều cao theo nhu cầu của bạn */
 }
 
 .content_top_center {
   display: flex;
   flex-direction: row;
-  /* Hiển thị phần tử theo chiều dọc */
   align-items: center;
   text-align: center;
 }
@@ -67,14 +65,11 @@ header {
   font-family: "Crimson Text", serif;
   box-sizing: border-box;
   transition: color 0s;
-  /* Thêm hiệu ứng màu khi hover */
 }
 
 .content_top_center a:hover {
   color: #fff;
-  /* Giữ màu văn bản #fff khi hover */
   text-decoration: underline;
-  /* Thêm gạch chân khi hover */
 }
 
 .content_top_center p {
@@ -128,43 +123,50 @@ i {
 .menu_top_logo_right {
   margin-top: 50px;
 }
-.collapse ul{
+.collapse ul {
   margin: 0 auto;
 }
-/* Navbar Styling */
+
 .navbar {
-  background-color: #ffffff; /* Background color */
-  padding: 15px 0; /* Padding for the entire navbar */
+  background-color: #ffffff;
+  padding: 15px 0;
 }
 
 .navbar-brand {
-  color: white; /* Text color */
-  font-size: 24px; /* Font size */
-  font-weight: bold; /* Font weight */
-  text-decoration: none; /* Remove underline */
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .navbar-nav {
-  list-style-type: none; /* Remove list style */
-  display: flex; /* Display items in a row */
+  list-style-type: none;
+  display: flex;
   flex-direction: column;
 }
 
 .nav-item {
   margin: 20px;
 }
-.nav-item a{
+.nav-item a {
+  border-bottom: 1px solid silver;
+  border-radius: 5px;
+  background-color: rgba(219, 213, 213, 0.411);
+  font-size: 18px;
   color: #000;
+  padding: 10px;
+  margin-left: 5px;
+  font-family: Crimson Text, serif;
 }
 .nav-link {
-  padding: 5px;
-  color: rgb(99, 99, 99); /* Text color */
-  text-decoration: none; /* Remove underline */
-  font-size: 18px; /* Font size */
+  padding: 10px;
+  color: rgb(99, 99, 99);
+  text-decoration: none;
+  font-size: 18px;
 }
 
 .nav-link:hover {
-  color: #ffc107; /* Text color on hover */
+  color: #ffc107;
 }
 .search-container {
   position: relative;
@@ -194,7 +196,7 @@ i {
 .ion-ios-search {
   color: black;
 }
-/* Custom styles for carousel */
+
 #carouselExampleIndicators {
   overflow: hidden;
 }
@@ -202,52 +204,46 @@ i {
 .carousel-inner {
   transition: transform 0.5s ease-in-out;
   display: flex;
-  width: 300%; /* Set to the number of slides (100% for each slide) */
+  width: 300%;
 }
 
 .carousel-item {
-  width: 90%;
+  width: 95%;
   flex: 0 0 auto;
 }
 .carousel-item img {
   max-width: 90%;
   margin: 30px auto;
-  height: 700px;
+  height: 540px;
 }
 
 /*--------------------h1_text--------------------------------*/
 .h1_text {
-  width: 100%;
-  font-size: 28px;
+  width: 85%;
+  font-size: 36px;
   font-weight: 300;
-  margin: 50px auto 0px;
+  margin: 80px auto;
   text-align: center;
   color: rgb(51, 51, 51);
-  font-family: Helvetica, sans-serif;
+  font-family: Crimson Text, serif;
 }
 
 /*-------------------------Three-Pictures-------------------------------*/
 .Advertisement_picture_three {
   display: flex;
-  /* Sử dụng flexbox để xếp ảnh trong một hàng ngang */
 }
 
 .Advertisement_picture_three .picture-1,
 .Advertisement_picture_three .picture-2,
 .Advertisement_picture_three .picture-3 {
   flex: 1;
-  /* Chia đều không gian trong hàng ngang */
   margin: 5px;
-  /* Khoảng cách giữa các ảnh */
   text-align: center;
-  /* Căn giữa nội dung trong mỗi ảnh */
 }
 
 .Advertisement_picture_three img {
   max-width: 100%;
-  /* Đảm bảo rằng ảnh không vượt quá kích thước của các phần tử chứa nó */
   height: auto;
-  /* Đảm bảo tỷ lệ khung hình không bị méo */
 }
 
 .Advertisement_picture_three .picture-1 a img,
@@ -257,54 +253,22 @@ i {
   max-width: 100%;
 }
 
-.Advertisement_picture_three .picture-1 .text_pic1 h2 {
-  color: rgb(51, 51, 51);
-  font-family: Crimson Text, serif;
-  margin: 0px auto;
-  font-weight: normal;
-  font-size: 36px;
-}
-
-.Advertisement_picture_three .picture-1 .text_pic1 a {
-  color: rgb(51, 51, 51);
-  font-family: Helvetica, sans-serif;
-  margin: 8px 0px 0px;
-  text-decoration: underline;
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 0.7px;
-}
-
+.Advertisement_picture_three .picture-1 .text_pic1 h2,
+.Advertisement_picture_three .picture-3 .text_pic3 h2,
 .Advertisement_picture_three .picture-2 .text_pic2 h2 {
   color: rgb(51, 51, 51);
   font-family: Crimson Text, serif;
-  margin: 0px auto;
+  margin: 50px auto;
   font-weight: normal;
   font-size: 36px;
 }
 
-.Advertisement_picture_three .picture-2 .text_pic2 a {
-  color: rgb(51, 51, 51);
-  font-family: Helvetica, sans-serif;
-  margin: 8px 0px 0px;
-  text-decoration: underline;
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 0.7px;
-}
-
-.Advertisement_picture_three .picture-3 .text_pic3 h2 {
-  color: rgb(51, 51, 51);
-  font-family: Crimson Text, serif;
-  margin: 0px auto;
-  font-weight: normal;
-  font-size: 36px;
-}
-
+.Advertisement_picture_three .picture-1 .text_pic1 a,
+.Advertisement_picture_three .picture-2 .text_pic2 a,
 .Advertisement_picture_three .picture-3 .text_pic3 a {
   color: rgb(51, 51, 51);
   font-family: Helvetica, sans-serif;
-  margin: 8px 0px 0px;
+  margin: 8px auto;
   text-decoration: underline;
   text-transform: uppercase;
   font-weight: bold;
@@ -314,35 +278,26 @@ i {
 /*------------------------- Category-------------------------------*/
 .Category {
   display: flex;
-  /* Sử dụng flexbox để xếp thẻ h2 và thẻ a cùng một hàng ngang */
   flex-direction: column;
-  /* Đặt hướng của flexbox thành cột */
   align-items: center;
-  /* Căn giữa theo chiều ngang */
 }
 
 .Category h2 {
-  margin: 0;
-  /* Loại bỏ margin mặc định của thẻ h2 */
+  margin: 20px;
   font-size: 40px;
+  font-family: Crimson Text, serif;
 }
 
 .Category_items {
   display: flex;
   flex-wrap: wrap;
-  /* Sử dụng flexbox để xếp các thẻ a cùng một hàng ngang */
 }
 .Category_items a {
   margin: 10px;
   display: flex;
-  /* Sử dụng flexbox cho mỗi thẻ a */
   align-items: center;
-  /* Căn giữa nội dung theo chiều ngang */
   padding: 10px;
-  /* Thêm padding để tạo hình chữ nhật xung quanh chữ */
-  /* Khoảng cách giữa các thẻ a */
   border: 1px solid rgb(51, 51, 51);
-  /* Đường viền cho hình chữ nhật */
   color: black;
   text-decoration: none;
   transition: color 0s;
@@ -350,7 +305,6 @@ i {
   width: 200px;
   height: 60px;
   font-size: 14px;
-  /* Điều chỉnh độ rộng của khung chữ nhật */
   justify-content: center;
   font-family: Helvetica, sans-serif;
 }
@@ -363,13 +317,14 @@ i {
 .Features {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
 }
 
 .Features h2 {
   font-family: Crimson Text, serif;
   font-weight: normal;
-  font-size: 60px;
+  font-size: 40px;
+  margin-left: 70px;
 }
 
 .pictures_Features {
@@ -383,8 +338,7 @@ i {
   padding: 5px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  /* Căn nội dung về phía trái */
+  align-items: center;
 }
 
 .Features-1 img,
@@ -393,51 +347,34 @@ i {
   height: auto;
 }
 
-.Features-1 h2 {
-  font-size: 44px;
-  line-height: 40px;
-  margin: 15px 0px;
-}
-
-.Features-1 h3 {
-  font-family: Helvetica, sans-serif;
-  font-size: 22px;
-  margin: 10px 0px 20px;
-}
-
-.Features-1 a {
-  font-size: 14px;
-  color: rgb(51, 51, 51);
-  text-decoration: underline;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
+.Features-1 h2,
 .Features-2 h2 {
-  font-size: 44px;
+  font-size: 36px;
   line-height: 40px;
   margin: 15px 0px;
 }
 
-.Features-2 a {
-  font-size: 14px;
-  color: rgb(51, 51, 51);
-  text-decoration: underline;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
+.Features-1 h3,
 .Features-2 h3 {
   font-family: Helvetica, sans-serif;
-  font-size: 22px;
+  font-size: 18px;
   margin: 10px 0px 20px;
+}
+
+.Features-1 a,
+.Features-2 a {
+  font-size: 12px;
+  color: rgb(51, 51, 51);
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 /*---------------------------------------------*/
 .Threadwork {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
 }
 
 .Threadwork-text {
@@ -448,19 +385,10 @@ i {
 
 .Threadwork-text h2 {
   margin-left: 70px;
-}
-
-.Threadwork-text a {
-  font-size: 14px;
-  font-weight: bold;
-  text-decoration: underline;
-  text-transform: uppercase;
-  color: rgb(51, 51, 51);
-  margin-right: 70px;
-}
-
-.Threadwork-text a:hover {
-  color: black;
+  margin-top: 20px;
+  font-family: Crimson Text, serif;
+  font-weight: normal;
+  font-size: 40px;
 }
 
 .Threadwork-items {
@@ -471,11 +399,10 @@ i {
 
 .products-1 {
   text-align: center;
-  padding: 10px;
-  margin: 10px;
 }
 
 .products-1 a {
+  margin: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -483,7 +410,8 @@ i {
   text-decoration: none;
   color: black;
   transition: color 0s;
-  /* Căn phụ đề về phía bên trái */
+  font-size: 16px;
+  text-transform: uppercase;
 }
 
 .products-1 a:hover {
@@ -491,7 +419,7 @@ i {
 }
 
 .products-1 img {
-  max-width: 200px;
+  max-width: 500px;
   height: auto;
 }
 
@@ -510,6 +438,7 @@ i {
 
 .Stars-text h2 {
   margin-left: 70px;
+  font-family: Crimson Text, serif;
 }
 
 .Stars-text a {
@@ -534,36 +463,27 @@ i {
 /*---------------- Shop-by-price-------------------------*/
 .Price {
   display: flex;
-  /* Sử dụng flexbox để xếp thẻ h2 và thẻ a cùng một hàng ngang */
   flex-direction: column;
-  /* Đặt hướng của flexbox thành cột */
   align-items: center;
-  /* Căn giữa theo chiều ngang */
 }
 
 .Price h2 {
   margin: 0;
-  /* Loại bỏ margin mặc định của thẻ h2 */
   font-size: 40px;
+  font-family: Crimson Text, serif;
 }
 
 .Price_items {
   display: flex;
   flex-wrap: wrap;
-  /* Sử dụng flexbox để xếp các thẻ a cùng một hàng ngang */
 }
 
 .Price_items a {
   display: flex;
-  /* Sử dụng flexbox cho mỗi thẻ a */
   align-items: center;
-  /* Căn giữa nội dung theo chiều ngang */
   padding: 10px;
-  /* Thêm padding để tạo hình chữ nhật xung quanh chữ */
   margin: 10px;
-  /* Khoảng cách giữa các thẻ a */
   border: 1px solid rgb(51, 51, 51);
-  /* Đường viền cho hình chữ nhật */
   color: black;
   text-decoration: none;
   transition: color 0s;
@@ -571,7 +491,6 @@ i {
   width: 200px;
   height: 60px;
   font-size: 14px;
-  /* Điều chỉnh độ rộng của khung chữ nhật */
   justify-content: center;
   font-family: Helvetica, sans-serif;
 }
@@ -717,7 +636,6 @@ i {
   text-align: left;
   color: black;
   transition: color 0s;
-  /* Căn phụ đề về phía bên trái */
 }
 
 .products-explore-1 a:hover {
@@ -758,11 +676,8 @@ i {
   height: 175px;
   background-color: rgb(51, 51, 51);
   overflow: hidden;
-  /* Loại bỏ phần nội dung vượt ra ngoài khung */
   justify-content: space-between;
-  /* Chia đều các topic-text theo chiều dọc */
   align-items: center;
-  /* Canh giữa theo chiều ngang */
   margin-left: 0px;
 }
 
@@ -885,7 +800,6 @@ i {
   color: var(--sonic-silver);
   font-size: 25px;
 }
-/* Follow Us Section */
 .footer-follow-us {
   background: var(--eerie-black);
   padding: 30px 0;
@@ -1005,7 +919,8 @@ a {
   margin-left: 5px;
   height: 80%;
 }
-/* Media queries for responsive design */
+
+
 @media (max-width: 768px) {
   .menu_top {
     flex-direction: column;
@@ -1035,6 +950,19 @@ a {
   .Advertisement_picture_three .picture-3 {
     flex: 1;
     margin: 5px 0;
+  }
+  .Threadwork-text h2 {
+    margin-left: 20px;
+    font-size: 24px;
+  }
+
+  .products-1 a {
+    margin: 10px;
+    font-size: 14px;
+  }
+
+  .products-1 img {
+    max-width: 100%;
   }
   .Threadwork-items {
     display: flex;
@@ -1094,10 +1022,6 @@ a {
     align-items: center;
   }
 
-  .Threadwork-text h2,
-  .Threadwork-text a {
-    margin: 0;
-  }
   .products-explore-1 {
     text-align: center;
   }
@@ -1107,6 +1031,38 @@ a {
   .carousel-item img {
     max-width: 90%;
     margin: 30px auto;
-    height: 400px;
+    height: 250px;
+  }
+
+  .navbar {
+    list-style-type: none;
+    display: flex;
+    background-color: #f8f8f8ef;
+    padding: 15px 0;
+  }
+
+  .navbar-brand {
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .nav-item {
+    margin: 10px 10px 0 0;
+    width: 100%;
+  }
+
+  .nav-link {
+    border-bottom: 2px solid transparent;
+    background-color: rgb(255, 255, 255);
+    font-size: 16px;
+    color: #494949;
+    text-decoration: none;
+    padding: 10px;
+    transition: border 0.3s ease;
+  }
+
+  .nav-link:hover {
+    background-color: #ebf4fcdc;
   }
 }
