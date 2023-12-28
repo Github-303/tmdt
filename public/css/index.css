@@ -1597,9 +1597,9 @@ a {
   }
 
   .container-fluid {
+    left: 0;
     width: 100%;
-    height: inherit;
-    background-color: #fdfdfd;
+    background-color: #f9f1f0;
     position: fixed;
     z-index: 1001;
   }
@@ -1630,7 +1630,7 @@ a {
 
   .nav-link {
     border-bottom: 2px solid transparent;
-    background-color: rgb(255, 255, 255);
+    background-color: #fadcd9;
     font-size: 16px;
     color: #494949;
     text-decoration: none;
@@ -1640,6 +1640,6 @@ a {
   }
 
   .nav-link:hover {
-    background-color: #ebf4fcdc;
+    background-color: #fadcd9;
   }
 }
