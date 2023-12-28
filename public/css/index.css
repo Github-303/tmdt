@@ -577,6 +577,9 @@ i {
   font-weight: normal;
   font-size: 40px;
 }
+.Threadwork-text a{
+  color: #000;
+}
 .Threadwork .showcase {
   flex: 1;
   max-width: 400px;
@@ -720,7 +723,7 @@ i {
 /*--------------------Rising-Stars-----------------------------*/
 .Rising_Stars {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: left;
 }
 
@@ -736,7 +739,7 @@ i {
 }
 .Rising_Stars .showcase {
   flex: 1;
-  max-width: 400px;
+  max-width: 600px;
   margin: 10px;
   text-align: left;
   border: 1px solid var(--cultured);
@@ -950,7 +953,10 @@ i {
 
 /*-----------------------Explore----------------------*/
 .Explore {
-  display: flex;
+display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 30px;
+  row-gap: 10px;
 }
 
 .Explore-text {
@@ -972,7 +978,7 @@ i {
 .Explore .showcase {
   flex: 1;
   margin: 30px;
-  max-width: 600px;
+  width: 360px;
   text-align: left;
   border: 1px solid var(--cultured);
   border-radius: var(--border-radius-md);
@@ -1376,7 +1382,7 @@ a {
     margin: 5px 0;
   }
 
-  .Threadwork {
+  .Threadwork , .Explore{
     grid-template-columns: 1fr;
     align-items: center;
     width: 100%;
@@ -1405,12 +1411,6 @@ a {
     align-content: flex-start;
     justify-content: center;
     align-items: flex-start;
-  }
-  .Stars-items {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-wrap: wrap;
   }
   .Price_items a,
   .Category_items a,
