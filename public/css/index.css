@@ -447,6 +447,7 @@ i {
 }
 
 .Features h2 {
+  font-size: 30px;
   margin-left: 70px;
 }
 
@@ -629,7 +630,7 @@ i {
   margin-top: 20px;
   font-family: Crimson Text, serif;
   font-weight: normal;
-  font-size: 40px;
+  font-size: 30px;
 }
 
 .Threadwork-text a {
@@ -811,6 +812,7 @@ i {
 }
 
 .Stars-text h2 {
+  font-size: 30px;
   margin-left: 70px;
   font-family: Crimson Text, serif;
 }
@@ -1068,12 +1070,12 @@ i {
 .Explore-text h2 {
   color: rgb(51, 51, 51);
   font-family: Crimson Text, serif;
-  font-size: 44px;
+  font-size: 30px;
+  margin-left: 70px;
   display: flex;
   align-self: flex-start;
   font-weight: normal;
   text-align: left;
-  margin: 30px;
 }
 
 .Explore .showcase {
@@ -1520,11 +1522,6 @@ a {
     align-items: center;
   }
 
-  .Threadwork-text h2 {
-    margin-left: 20px;
-    font-size: 24px;
-  }
-
   .Threadwork-items {
     display: flex;
     justify-content: center;
@@ -1567,22 +1564,9 @@ a {
     padding: 20px;
   }
 
-  .Explore-text h2,
-  .Explore-text a {
-    margin-left: 0;
-  }
-
-  .Explore-text a {
-    margin: 10px 0;
-  }
-
   .Threadwork-text {
     flex-direction: column;
     align-items: center;
-  }
-
-  .products-explore-1 {
-    text-align: center;
   }
 
   .carousel-item img {
