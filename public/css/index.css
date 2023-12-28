@@ -39,6 +39,8 @@
 }
 body {
   max-width: 100%;
+  position: relative;
+  z-index: 1;
 }
 header {
   background-color: #a14d43;
@@ -80,7 +82,7 @@ header {
 
 /*-----------------------Menu--------------------------------------*/
 .menu {
-  border: 1px solid rgb(178, 171, 171);
+  border-bottom: 1px solid rgb(178, 171, 171);
   padding: 10px;
 }
 
@@ -129,7 +131,7 @@ i {
 
 .navbar {
   background-color: #ffffff;
-  padding: 15px 0;
+  padding: 0;
 }
 
 .navbar-brand {
@@ -146,12 +148,11 @@ i {
 }
 
 .nav-item {
-  margin: 20px;
+  margin: 2px 30px 0 30px;
 }
 .nav-item a {
-  border-bottom: 1px solid silver;
-  border-radius: 5px;
-  background-color: rgba(219, 213, 213, 0.411);
+  border-radius: 1px;
+  background-color: rgba(255, 255, 255, 0.911);
   font-size: 18px;
   color: #000;
   padding: 10px;
@@ -219,9 +220,10 @@ i {
 
 /*--------------------h1_text--------------------------------*/
 .h1_text {
+  word-spacing: 3px;
   width: 85%;
-  font-size: 36px;
-  font-weight: 300;
+  font-size: 30px;
+  font-weight: 200;
   margin: 80px auto;
   text-align: center;
   color: rgb(51, 51, 51);
@@ -282,28 +284,24 @@ i {
   align-items: center;
 }
 
-.Category h2 {
-  margin: 20px;
-  font-size: 40px;
-  font-family: Crimson Text, serif;
-}
-
 .Category_items {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
 }
 .Category_items a {
-  margin: 10px;
+  margin: 3px 30px 0 10px;
   display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   padding: 10px;
   border: 1px solid rgb(51, 51, 51);
   color: black;
   text-decoration: none;
   transition: color 0s;
-  margin-top: 30px;
-  width: 200px;
-  height: 60px;
+  width: 150px;
+  height: 50px;
   font-size: 14px;
   justify-content: center;
   font-family: Helvetica, sans-serif;
@@ -919,7 +917,6 @@ a {
   height: 80%;
 }
 
-
 @media (max-width: 768px) {
   .menu_top {
     flex-direction: column;
@@ -1024,6 +1021,7 @@ a {
   .products-explore-1 {
     text-align: center;
   }
+
   .products-1 {
     width: 100%;
   }
@@ -1036,8 +1034,39 @@ a {
   .navbar {
     list-style-type: none;
     display: flex;
-    background-color: #f8f8f8ef;
     padding: 15px 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+  }
+  .fixed-navbar {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: inherit;
+    background-color: #fdfdfd;
+    position: fixed;
+    z-index: 1001;
+  }
+  .container-fluid {
+    width: 100%;
+    height: inherit;
+    background-color: #fdfdfd;
+    position: fixed;
+    z-index: 1001;
+  }
+  .navbar-collapse {
+    transition: transform 0.3s ease;
+  }
+
+  .navbar-collapse.collapsing {
+    transform: translateX(-100%);
+  }
+
+  .navbar-collapse.show {
+    transform: translateX(0);
   }
 
   .navbar-brand {
@@ -1058,6 +1087,7 @@ a {
     color: #494949;
     text-decoration: none;
     padding: 10px;
+    margin-left: 20px !important;
     transition: border 0.3s ease;
   }
 
