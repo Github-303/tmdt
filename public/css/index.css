@@ -414,7 +414,7 @@ i {
   flex-direction: column;
   align-items: left;
 }
-.Features h2{
+.Features h2 {
   margin-left: 70px;
 }
 .pictures_Features {
@@ -564,14 +564,12 @@ i {
 
 /*---------------------------------------------*/
 .Threadwork {
-  display: flex;
-  align-items: left;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 30px;
+  row-gap: 10px;
 }
 
-.Threadwork-text {
-  display: flex;
-  justify-content: space-between;
-}
 
 .Threadwork-text h2 {
   margin-left: 70px;
@@ -582,7 +580,7 @@ i {
 }
 .Threadwork .showcase {
   flex: 1;
-  max-width: 600px;
+  max-width: 400px;
   margin: 10px;
   text-align: left;
   border: 1px solid var(--cultured);
@@ -737,25 +735,146 @@ i {
   margin-left: 70px;
   font-family: Crimson Text, serif;
 }
+.Rising_Stars .showcase {
+  flex: 1;
+  max-width: 400px;
+  margin: 10px;
+  text-align: left;
+  border: 1px solid var(--cultured);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  transition: var(--transition-timing);
+}
 
-.Stars-text a {
-  font-size: 14px;
-  font-weight: bold;
-  text-decoration: underline;
+.Rising_Stars .showcase:hover {
+  box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.1);
+}
+
+.Rising_Stars .showcase-banner {
+  position: relative;
+}
+.Rising_Stars .product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-timing);
+}
+.Rising_Stars .product-img.default {
+  position: relative;
+  z-index: 1;
+}
+.Rising_Stars .product-img.hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  opacity: 0;
+}
+.Rising_Stars .showcase:hover .product-img.hover {
+  opacity: 1;
+}
+.Rising_Stars .showcase:hover .product-img.default {
+  opacity: 0;
+}
+.Rising_Stars .showcase:hover .product-img {
+  transform: scale(1.1);
+}
+.Rising_Stars .showcase-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: var(--ocean-green);
+  font-size: var(--fs-8);
+  font-weight: var(--weight-500);
+  color: var(--white);
+  padding: 0 8px;
+  border-radius: var(--border-radius-sm);
+  z-index: 3;
+}
+.Rising_Stars .showcase-badge.angle {
+  top: 8px;
+  left: -29px;
+  transform: rotate(-45deg);
   text-transform: uppercase;
-  color: rgb(51, 51, 51);
-  margin-right: 70px;
+  font-size: 11px;
+  padding: 5px 40px;
+}
+.Rising_Stars .showcase-badge.black {
+  background: var(--eerie-black);
+}
+.Rising_Stars .showcase-badge.pink {
+  background: var(--salmon-pink);
+}
+.Rising_Stars .showcase-actions {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  transform: translateX(50px);
+  transition: var(--transition-timing);
+  z-index: 3;
+}
+.Rising_Stars .showcase:hover .showcase-actions {
+  transform: translateX(0);
+}
+.Rising_Stars .btn-action {
+  background: var(--white);
+  color: var(--sonic-silver);
+  margin-bottom: 5px;
+  border: 1px solid var(--cultured);
+  padding: 5px;
+  border-radius: var(--border-radius-sm);
+  transition: var(--transition-timing);
+}
+.Rising_Stars .btn-action:hover {
+  background: var(--eerie-black);
+  color: var(--white);
+  border-color: var(--eerie-black);
+}
+.Rising_Stars .showcase-content {
+  padding: 15px 20px 0;
+}
+.Rising_Stars .showcase-category {
+  font-family: Crimson Text, serif;
+  color: var(--salmon-pink);
+  font-size: var(--fs-9);
+  font-weight: var(--weight-500);
+  text-transform: uppercase;
+  margin-bottom: 10px;
 }
 
-.Stars-text a:hover {
-  color: black;
+.Rising_Stars .showcase-title {
+  font-family: Crimson Text, serif;
+  color: var(--sonic-silver);
+  font-size: var(--fs-8);
+  font-weight: var(--weight-300);
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  transition: var(--transition-timing);
 }
-
-.Stars-items {
+.Rising_Stars .showcase-title:hover {
+  color: var(--eerie-black);
+}
+.Rising_Stars .showcase-rating {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  color: var(--sandy-brown);
+  margin-bottom: 10px;
 }
+.Rising_Stars .price-box {
+  display: flex;
+  gap: 10px;
+  font-size: var(--fs-7);
+  color: var(--eerie-black);
+  margin-bottom: 10px;
+}
+.Rising_Stars .price {
+  font-weight: var(--weight-700);
+}
+.Rising_Stars del {
+  color: var(--sonic-silver);
+}
+
 
 /*---------------- Shop-by-price-------------------------*/
 .Price {
@@ -975,168 +1094,6 @@ i {
   justify-content: space-between;
   align-items: center;
   margin-left: 0px;
-}
-/*----------------------products--------------------*/
-.product-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  column-gap: 70px;
-  row-gap: 10px;
-  margin: 30px 50px 10px 50px;
-}
-.product-grid .showcase {
-  border: 1px solid var(--cultured);
-  border-radius: var(--border-radius-md);
-  overflow: hidden;
-  transition: var(--transition-timing);
-}
-
-.product-grid .showcase:hover {
-  box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.1);
-}
-
-.product-grid .showcase-banner {
-  position: relative;
-}
-
-.product-grid .product-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: var(--transition-timing);
-}
-
-.product-grid .product-img.default {
-  position: relative;
-  z-index: 1;
-}
-
-.product-grid .product-img.hover {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  opacity: 0;
-}
-
-.product-grid .showcase:hover .product-img.hover {
-  opacity: 1;
-}
-
-.product-grid .showcase:hover .product-img.default {
-  opacity: 0;
-}
-
-.product-grid .showcase:hover .product-img {
-  transform: scale(1.1);
-}
-
-.product-grid .showcase-badge {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  background: var(--ocean-green);
-  font-size: var(--fs-8);
-  font-weight: var(--weight-500);
-  color: var(--white);
-  padding: 0 8px;
-  border-radius: var(--border-radius-sm);
-  z-index: 3;
-}
-
-.product-grid .showcase-badge.angle {
-  top: 8px;
-  left: -29px;
-  transform: rotate(-45deg);
-  text-transform: uppercase;
-  font-size: 11px;
-  padding: 5px 40px;
-}
-
-.product-grid .showcase-badge.black {
-  background: var(--eerie-black);
-}
-
-.product-grid .showcase-badge.pink {
-  background: var(--salmon-pink);
-}
-
-.product-grid .showcase-actions {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 20px;
-  transform: translateX(50px);
-  transition: var(--transition-timing);
-  z-index: 3;
-}
-
-.product-grid .showcase:hover .showcase-actions {
-  transform: translateX(0);
-}
-
-.product-grid .btn-action {
-  background: var(--white);
-  color: var(--sonic-silver);
-  margin-bottom: 5px;
-  border: 1px solid var(--cultured);
-  padding: 5px;
-  border-radius: var(--border-radius-sm);
-  transition: var(--transition-timing);
-}
-
-.product-grid .btn-action:hover {
-  background: var(--eerie-black);
-  color: var(--white);
-  border-color: var(--eerie-black);
-}
-
-.product-grid .showcase-content {
-  padding: 15px 20px 0;
-}
-
-.product-grid .showcase-category {
-  color: var(--salmon-pink);
-  font-size: var(--fs-9);
-  font-weight: var(--weight-500);
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-
-.product-grid .showcase-title {
-  color: var(--sonic-silver);
-  font-size: var(--fs-8);
-  font-weight: var(--weight-300);
-  text-transform: capitalize;
-  letter-spacing: 1px;
-  margin-bottom: 10px;
-  transition: var(--transition-timing);
-}
-
-.product-grid .showcase-title:hover {
-  color: var(--eerie-black);
-}
-
-.product-grid .showcase-rating {
-  display: flex;
-  color: var(--sandy-brown);
-  margin-bottom: 10px;
-}
-
-.product-grid .price-box {
-  display: flex;
-  gap: 10px;
-  font-size: var(--fs-7);
-  color: var(--eerie-black);
-  margin-bottom: 10px;
-}
-
-.product-grid .price {
-  font-weight: var(--weight-700);
-}
-
-.product-grid del {
-  color: var(--sonic-silver);
 }
 
 /*----------------------footer----------------------*/
@@ -1402,23 +1359,22 @@ a {
     flex-direction: column;
   }
 
-  .Advertisement_picture_three .showcase {
+  .Advertisement_picture_three .showcase,
+  .Rising_Stars .showcase {
     flex: 1;
     margin: 5px 0;
+  }
+
+  .Threadwork {
+    grid-template-columns: 1fr;
+    align-items: center;
+    width: 100%;
   }
   .Threadwork-text h2 {
     margin-left: 20px;
     font-size: 24px;
   }
 
-  .products-1 a {
-    margin: 10px;
-    font-size: 14px;
-  }
-
-  .products-1 img {
-    max-width: 100%;
-  }
   .Threadwork-items {
     display: flex;
     justify-content: center;
@@ -1447,7 +1403,7 @@ a {
   }
   .Price_items a,
   .Category_items a,
-  .Threadwork-text a{
+  .Threadwork-text a {
     margin: 10px 0;
   }
   .Find_Art_You_Love {
