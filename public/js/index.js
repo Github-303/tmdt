@@ -7,21 +7,33 @@ document.addEventListener("DOMContentLoaded", function () {
       navbar.classList.remove("fixed-navbar");
     }
   });
-  let showcaseContainers = document.querySelectorAll(".showcase");
+  let description = document.getElementById("description");
+  let viewMoreButton = document.getElementById("view-button");
 
-  showcaseContainers.forEach(function (container) {
-    let description = container.querySelector(".description");
-    let viewMoreButton = container.querySelector(".view-more-button");
-
-    viewMoreButton.addEventListener("click", function () {
-      description.classList.toggle("full-description");
-      viewMoreButton.textContent = description.classList.contains(
-        "full-description"
-      )
-        ? "View less"
-        : "View more";
-    });
+  viewMoreButton.addEventListener("click", function () {
+    description.classList.toggle("full-description");
+    viewMoreButton.textContent = description.classList.contains(
+      "full-description"
+    )
+      ? "View less"
+      : "View more";
   });
+
+  // let showcaseContainers = document.querySelectorAll(".showcase");
+
+  // showcaseContainers.forEach(function (container) {
+  //   let description = container.querySelector(".description");
+  //   let viewMoreButton = container.querySelector(".view-more-button");
+
+  //   viewMoreButton.addEventListener("click", function () {
+  //     description.classList.toggle("full-description");
+  //     viewMoreButton.textContent = description.classList.contains(
+  //       "full-description"
+  //     )
+  //       ? "View less"
+  //       : "View more";
+  //   });
+  // });
   const myCarouselElement = document.querySelector("#myCarousel");
 
   const carousel = new bootstrap.Carousel(myCarouselElement, {
@@ -29,4 +41,3 @@ document.addEventListener("DOMContentLoaded", function () {
     touch: false,
   });
 });
-

@@ -556,7 +556,7 @@ i {
   margin-bottom: 10px;
   transition: var(--transition-timing);
 }
-.showcase .showcase-title {
+.showcase-title {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -564,10 +564,17 @@ i {
   -webkit-box-orient: vertical;
 }
 
-.showcase .showcase-title .full-description {
+.showcase-title.full-description {
   -webkit-line-clamp: unset;
 }
-.showcase .view-more-button {
+#view-button {
+  background: var(--white);
+  color: var(--sonic-silver);
+  margin-bottom: 5px;
+  border: none;
+  transition: var(--transition-timing);
+}
+.view-more-button {
   background: var(--white);
   color: var(--sonic-silver);
   margin-bottom: 5px;
