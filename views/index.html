@@ -6,7 +6,7 @@
       <title>LotusArt Gallery</title>
       <meta name="description" content="" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <link rel="stylesheet" type="text/css" href="/css/index.css" />
+      <script src="/tmdt/public/js/index.js"></script>
       <link rel="stylesheet" type="text/css" href="/tmdt/public/css/index.css" />
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -100,25 +100,6 @@
          </div>
          </div>
       </nav>
-      <script>
-         document.addEventListener("DOMContentLoaded", function () {
-           let navbar = document.querySelector(".container-fluid");
-           let description = document.getElementById('description');
-           let viewMoreButton = document.getElementById('view-more-button');
-           window.addEventListener("scroll", function () {
-             if (window.scrollY > 0) {
-               navbar.classList.add("fixed-navbar");
-             } else {
-               navbar.classList.remove("fixed-navbar");
-             }
-           });
-           viewMoreButton.addEventListener('click', function () {
-    description.classList.toggle('full-description');
-    viewMoreButton.textContent = description.classList.contains('full-description') ? 'View less' : 'View more';
-  });
-         });
-
-      </script>
       <hr />
       <div id="carouselExampleCaptions" class="carousel slide">
          <div class="carousel-indicators">
@@ -329,13 +310,13 @@
                <div class="showcase-content">
                   <a href="#" class="showcase-category">Enigmatic Charms</a>
                   <h3>
-                     <a href="#" class="showcase-title" id="description">In this portrait painting, the artist skillfully portrays 
+                     <a href="#" class="showcase-title description">In this portrait painting, the artist skillfully portrays 
                       a woman with enigmatic charms. The subject's eyes hold a hint of mystery and intrigue, 
                       drawing the viewer into her captivating gaze. 
                       The artist's use of vibrant colors and bold brushstrokes adds depth and vitality to the portrait, capturing the woman's vibrant personality. This painting celebrates the allure of femininity and invites viewers to 
                       contemplate the stories and emotions that lie behind the subject's enigmatic expression.</a>
                   </h3>
-                  <button id="view-more-button" class="view-button">View more</button>
+                  <button class="view-more-button">View more</button>
                   <div class="showcase-rating">
                      <i class="bi bi-star-fill"></i>
                      <i class="bi bi-star-fill"></i>
@@ -364,15 +345,16 @@
                   </div>
                </div>
                <div class="showcase-content">
-                  <a href="#" class="showcase-category">Graceful Elegance</a>
+                  <a href="#" class="showcase-category" >Graceful Elegance</a>
                   <h3>
-                     <a href="#" class="showcase-title">This portrait painting of a woman radiates graceful elegance. 
+                     <a href="#" class="showcase-title description" >This portrait painting of a woman radiates graceful elegance. 
                       The artist captures the subject's poise and beauty with meticulous brushwork and 
                       attention to detail. The woman's refined features are accentuated by soft lighting, 
                       creating a sense of serenity and timeless allure. 
                       The portrait exudes a sense of sophistication and captures the essence of femininity, 
                       showcasing the subject's inner strength and grace. </a>
                   </h3>
+                  <button class="view-more-button" >View more</button>
                   <div class="showcase-rating">
                      <i class="bi bi-star-fill"></i>
                      <i class="bi bi-star-fill"></i>
@@ -413,11 +395,12 @@
             <div class="showcase-content">
                <a href="#" class="showcase-category">Serene Reflections</a>
                <h3>
-                  <a href="#" class="showcase-title">A tranquil ink painting that depicts 
+                  <a href="#" class="showcase-title description">A tranquil ink painting that depicts 
                     a serene landscape with a calm river reflecting the surrounding mountains. 
                     The brushstrokes create a sense of stillness and harmony, 
                     inviting the viewer to find inner peace within the artwork</a>
                </h3>
+               <button class="view-more-button" >View more</button>
                <div class="showcase-rating">
                   <i class="bi bi-star-fill"></i>
                   <i class="bi bi-star-fill"></i>
@@ -448,11 +431,12 @@
             <div class="showcase-content">
                <a href="#" class="showcase-category">Dancing Shadows</a>
                <h3>
-                  <a href="#" class="showcase-title">This ink painting captures the playfulness 
+                  <a href="#" class="showcase-title description">This ink painting captures the playfulness 
                     of shadows as they dance across a sunlit garden. 
                     The artist skillfully portrays the interplay of light and dark, 
                     bringing a sense of movement and energy to the composition</a>
                </h3>
+               <button class="view-more-button" >View more</button>
                <div class="showcase-rating">
                   <i class="bi bi-star-fill"></i>
                   <i class="bi bi-star-fill"></i>
@@ -483,11 +467,12 @@
             <div class="showcase-content">
                <a href="#" class="showcase-category">Misty Mountains</a>
                <h3>
-                  <a href="#" class="showcase-title">Inspired by traditional Chinese landscape paintings, 
+                  <a href="#" class="showcase-title description">Inspired by traditional Chinese landscape paintings, 
                     this ink artwork depicts mist-shrouded mountains emerging from the clouds. 
                     The subtle gradation of ink washes creates a sense of depth and mystery, 
                     transporting the viewer to a realm of tranquility</a>
                </h3>
+               <button class="view-more-button" >View more</button>
                <div class="showcase-rating">
                   <i class="bi bi-star-fill"></i>
                   <i class="bi bi-star-fill"></i>
@@ -518,11 +503,12 @@
             <div class="showcase-content">
                <a href="#" class="showcase-category">Graceful Lotus</a>
                <h3>
-                  <a href="#" class="showcase-title">A graceful ink painting showcasing a blooming lotus flower 
+                  <a href="#" class="showcase-title description">A graceful ink painting showcasing a blooming lotus flower 
                     floating on a calm pond. The artist's precise brushwork captures 
                     the elegance and purity of the lotus, 
                     symbolizing enlightenment and spiritual growth.</a>
                </h3>
+               <button class="view-more-button" >View more</button>
                <div class="showcase-rating">
                   <i class="bi bi-star-fill"></i>
                   <i class="bi bi-star-fill"></i>
@@ -552,11 +538,12 @@
             <div class="showcase-content">
                <a href="#" class="showcase-category">Dancing Dragons</a>
                <h3>
-                  <a href="#" class="showcase-title">This dynamic ink painting portrays two spirited dragons engaged 
+                  <a href="#" class="showcase-title description">This dynamic ink painting portrays two spirited dragons engaged 
                     in an enthralling dance. The bold and expressive brushstrokes convey 
                     their powerful movements and mythical presence, capturing the essence of 
                     these legendary creatures.</a>
                </h3>
+               <button class="view-more-button" >View more</button>
                <div class="showcase-rating">
                   <i class="bi bi-star-fill"></i>
                   <i class="bi bi-star-fill"></i>
@@ -587,11 +574,12 @@
             <div class="showcase-content">
                <a href="#" class="showcase-category">Flowing Harmony</a>
                <h3>
-                  <a href="#" class="showcase-title">An ink painting that portrays a flowing river winding 
+                  <a href="#" class="showcase-title description">An ink painting that portrays a flowing river winding 
                     through a lush landscape. The artist's rhythmic brushwork and 
                     harmonious composition convey a sense of balance and unity, 
                     reflecting the beauty of nature's interconnectedness.</a>
                </h3>
+               <button class="view-more-button" >View more</button>
                <div class="showcase-rating">
                   <i class="bi bi-star-fill"></i>
                   <i class="bi bi-star-fill"></i>
@@ -622,12 +610,13 @@
             <div class="showcase-content">
                <a href="#" class="showcase-category">Tranquil Blossoms</a>
                <h3>
-                  <a href="#" class="showcase-title">Delicate cherry blossoms adorning slender branches 
+                  <a href="#" class="showcase-title description">Delicate cherry blossoms adorning slender branches 
                     are the focal point of this ink painting. 
                     The artist's meticulous ink washes and fine lines capture the ephemeral 
                     beauty of the blossoms, 
                     creating a serene and contemplative atmosphere.</a>
                </h3>
+               <button class="view-more-button" >View more</button>
                <div class="showcase-rating">
                   <i class="bi bi-star-fill"></i>
                   <i class="bi bi-star-fill"></i>
@@ -657,11 +646,12 @@
             <div class="showcase-content">
                <a href="#" class="showcase-category">Silent Strength</a>
                <h3>
-                  <a href="#" class="showcase-title">This ink artwork showcases a solitary bamboo tree standing 
+                  <a href="#" class="showcase-title description">This ink artwork showcases a solitary bamboo tree standing 
                     tall amidst a serene landscape. The strong and confident brushstrokes 
                     symbolize resilience and inner strength, 
                     reminding us of the power of perseverance in the face of challenges.</a>
                </h3>
+               <button class="view-more-button" >View more</button>
                <div class="showcase-rating">
                   <i class="bi bi-star-fill"></i>
                   <i class="bi bi-star-fill"></i>
@@ -692,11 +682,12 @@
             <div class="showcase-content">
                <a href="#" class="showcase-category">Serendipitous Rhythm</a>
                <h3>
-                  <a href="#" class="showcase-title">A lively ink painting that captures the spontaneous 
+                  <a href="#" class="showcase-title description">A lively ink painting that captures the spontaneous 
                     rhythm of falling raindrops on a rooftop. The artist's expressive brushwork and 
                     splatters of ink create a sense of movement and joy,
                      celebrating the beauty found in unexpected moments.</a>
                </h3>
+               <button class="view-more-button" >View more</button>
                <div class="showcase-rating">
                   <i class="bi bi-star-fill"></i>
                   <i class="bi bi-star-fill"></i>
@@ -727,11 +718,12 @@
             <div class="showcase-content">
                <a href="#" class="showcase-category">Gentle Waves</a>
                <h3>
-                  <a href="#" class="showcase-title">Inspired by the ebb and flow of ocean waves, 
+                  <a href="#" class="showcase-title description">Inspired by the ebb and flow of ocean waves, 
                     this ink painting portrays the gentle movement of water. 
                     The artist's fluid brushstrokes and varying shades of ink convey a sense of 
                     tranquility and the soothing power of nature.</a>
                </h3>
+               <button class="view-more-button" >View more</button>
                <div class="showcase-rating">
                   <i class="bi bi-star-fill"></i>
                   <i class="bi bi-star-fill"></i>
@@ -762,11 +754,12 @@
             <div class="showcase-content">
                <a href="#" class="showcase-category">Timeless Calligraphy</a>
                <h3>
-                  <a href="#" class="showcase-title">This ink artwork showcases a masterful display of calligraphy, 
+                  <a href="#" class="showcase-title description">This ink artwork showcases a masterful display of calligraphy, 
                     with bold and flowing brushstrokes forming elegant Chinese characters. 
                     The artist's skill and precision in capturing the essence of the written word reflect the beauty 
                     and artistry of traditional calligraphy.</a>
                </h3>
+               <button class="view-more-button" >View more</button>
                <div class="showcase-rating">
                   <i class="bi bi-star-fill"></i>
                   <i class="bi bi-star-fill"></i>
@@ -796,12 +789,13 @@
             <div class="showcase-content">
                <a href="#" class="showcase-category">Enigmatic Reflections</a>
                <h3>
-                  <a href="#" class="showcase-title">This captivating ink painting portrays 
+                  <a href="#" class="showcase-title description">This captivating ink painting portrays 
                     a moonlit night reflecting on a tranquil lake. 
                     The artist skillfully captures the mysterious and enchanting atmosphere with 
                     delicate brushwork and subtle ink washes. The moon's gentle glow illuminates the scene, 
                     creating a sense of serenity and inviting contemplation of the unknown.</a>
                </h3>
+               <button class="view-more-button" >View more</button>
                <div class="showcase-rating">
                   <i class="bi bi-star-fill"></i>
                   <i class="bi bi-star-fill"></i>
@@ -840,11 +834,12 @@
             <div class="showcase-content">
                <a href="#" class="showcase-category">Golden Tranquility</a>
                <h3>
-                  <a href="#" class="showcase-title">A mesmerizing lacquer painting that showcases a 
+                  <a href="#" class="showcase-title description">A mesmerizing lacquer painting that showcases a 
                     serene landscape with golden hues. The layers of lacquer create a rich and lustrous surface, 
                     enhancing the depth and texture of the artwork. The composition exudes a sense of tranquility, 
                     evoking a feeling of peacefulness and harmony.</a>
                </h3>
+               <button class="view-more-button" >View more</button>
                <div class="showcase-rating">
                   <i class="bi bi-star-fill"></i>
                   <i class="bi bi-star-fill"></i>
@@ -874,12 +869,13 @@
             <div class="showcase-content">
                <a href="#" class="showcase-category">Elegance in Red</a>
                <h3>
-                  <a href="#" class="showcase-title">This exquisite lacquer painting features intricate designs 
+                  <a href="#" class="showcase-title description">This exquisite lacquer painting features intricate designs 
                     and patterns in shades of red. The meticulous application of lacquer 
                     highlights the delicate details, giving the artwork a glossy and polished finish. 
                     The composition exudes elegance and sophistication, 
                     capturing the viewer's attention with its vibrant red tones.</a>
                </h3>
+               <button class="view-more-button" >View more</button>
                <div class="showcase-rating">
                   <i class="bi bi-star-fill"></i>
                   <i class="bi bi-star-fill"></i>
@@ -910,12 +906,13 @@
             <div class="showcase-content">
                <a href="#" class="showcase-category">Blossoming Serenity</a>
                <h3>
-                  <a href="#" class="showcase-title">A captivating lacquer painting that depicts blooming 
+                  <a href="#" class="showcase-title description">A captivating lacquer painting that depicts blooming 
                     flowers against a serene backdrop. The layers of lacquer create a smooth and glossy surface, 
                     enhancing the vibrant colors and intricate details of the floral arrangement. 
                     The composition radiates a sense of serenity and natural beauty, 
                     inviting the viewer to appreciate the delicate blossoms.</a>
                </h3>
+               <button class="view-more-button" >View more</button>
                <div class="showcase-rating">
                   <i class="bi bi-star-fill"></i>
                   <i class="bi bi-star-fill"></i>
@@ -946,12 +943,13 @@
             <div class="showcase-content">
                <a href="#" class="showcase-category">Enigmatic Depths</a>
                <h3>
-                  <a href="#" class="showcase-title">This intriguing lacquer painting showcases 
+                  <a href="#" class="showcase-title description">This intriguing lacquer painting showcases 
                     a deep and mysterious underwater scene. The layers of lacquer create a sense of depth,
                      mimicking the elusive nature of the underwater world. 
                      The dark and rich tones evoke a sense of mystery and curiosity, 
                     immersing the viewer in a captivating and enigmatic realm.</a>
                </h3>
+               <button class="view-more-button" >View more</button>
                <div class="showcase-rating">
                   <i class="bi bi-star-fill"></i>
                   <i class="bi bi-star-fill"></i>
@@ -982,13 +980,14 @@
             <div class="showcase-content">
                <a href="#" class="showcase-category">Harmonious Fusion</a>
                <h3>
-                  <a href="#" class="showcase-title">A stunning lacquer painting that combines 
+                  <a href="#" class="showcase-title description">A stunning lacquer painting that combines 
                     traditional and contemporary elements in a harmonious blend. 
                     The layers of lacquer create a glossy and reflective surface, 
                     enhancing the contrast between vibrant colors and bold brushstrokes. 
                     The composition exudes a sense of fusion and balance, 
                     bridging the gap between tradition and modernity.</a>
                </h3>
+               <button class="view-more-button" >View more</button>
                <div class="showcase-rating">
                   <i class="bi bi-star-fill"></i>
                   <i class="bi bi-star-fill"></i>
@@ -1044,13 +1043,14 @@
             <div class="showcase-content">
                <a href="#" class="showcase-category">Timeless Grandeur</a>
                <h3>
-                  <a href="#" class="showcase-title">An exquisite antique painting that exudes a sense of 
+                  <a href="#" class="showcase-title description">An exquisite antique painting that exudes a sense of 
                     timeless grandeur. The artwork showcases a regal scene, with noble figures dressed 
                     in elaborate attire. The meticulous brushwork and use of rich, 
                     earthy tones capture the opulence and majesty of the era in which it was created. 
                     This antique painting is a testament to the skill and artistry of the past, 
                     transporting viewers to a bygone era of elegance and splendor.</a>
                </h3>
+               <button class="view-more-button" >View more</button>
                <div class="showcase-rating">
                   <i class="bi bi-star-fill"></i>
                   <i class="bi bi-star-fill"></i>
@@ -1081,13 +1081,14 @@
             <div class="showcase-content">
                <a href="#" class="showcase-category">Mystical Landscapes</a>
                <h3>
-                  <a href="#" class="showcase-title">This antique painting depicts mystical landscapes, 
+                  <a href="#" class="showcase-title description">This antique painting depicts mystical landscapes, 
                     transporting viewers to ethereal realms. The artist's mastery of 
                     perspective and atmospheric effects creates a sense of depth and enchantment. 
                     The use of subdued colors and delicate brushwork adds to the ethereal quality of the painting, 
                     evoking a sense of mystery and wonder. This antique artwork invites viewers to 
                     immerse themselves in the beauty of an otherworldly realm.</a>
                </h3>
+               <button class="view-more-button" >View more</button>
                <div class="showcase-rating">
                   <i class="bi bi-star-fill"></i>
                   <i class="bi bi-star-fill"></i>
@@ -1117,7 +1118,7 @@
             <div class="showcase-content">
                <a href="#" class="showcase-category">Portrait of Grace</a>
                <h3>
-                  <a href="#" class="showcase-title">An antique portrait painting that captures the grace and 
+                  <a href="#" class="showcase-title description">An antique portrait painting that captures the grace and 
                     beauty of its subject. The artist's attention to detail is evident in the intricate 
                     rendering of facial features and the delicate play of light and shadow. 
                     The portrait exudes a sense of elegance and refinement, 
@@ -1125,6 +1126,7 @@
                     This antique painting serves as a timeless tribute to the individual depicted, 
                     preserving their presence and allure for generations to come.</a>
                </h3>
+               <button class="view-more-button" >View more</button>
                <div class="showcase-rating">
                   <i class="bi bi-star-fill"></i>
                   <i class="bi bi-star-fill"></i>
@@ -1291,14 +1293,6 @@
             </p>
          </div>
       </footer>
-      <script>
-         const myCarouselElement = document.querySelector("#myCarousel");
-         
-         const carousel = new bootstrap.Carousel(myCarouselElement, {
-           interval: 2000,
-           touch: false,
-         });
-      </script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
       <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
    </body>

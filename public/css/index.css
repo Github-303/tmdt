@@ -564,10 +564,10 @@ i {
   -webkit-box-orient: vertical;
 }
 
-.showcase-title.full-description {
+.showcase-title .full-description .view-more-button {
   -webkit-line-clamp: unset;
 }
-.view-button {
+.view-more-button {
   background: var(--white);
   color: var(--sonic-silver);
   margin-bottom: 5px;
@@ -611,9 +611,8 @@ i {
 .Threadwork-text h2 {
   margin-left: 70px;
   margin-top: 20px;
-  font-family: Crimson Text, serif;
   font-weight: normal;
-  font-size: 30px;
+  font-size: var(--wp--preset--font-size--large);
 }
 
 .Threadwork-text a {
@@ -736,18 +735,16 @@ i {
 }
 
 .Threadwork .showcase-category {
-  font-family: Crimson Text, serif;
   color: var(--salmon-pink);
-  font-size: var(--fs-9);
+  font-size: var(--fs-3);
   font-weight: var(--weight-500);
   text-transform: uppercase;
   margin-bottom: 10px;
 }
 
 .Threadwork .showcase-title {
-  font-family: Crimson Text, serif;
   color: var(--sonic-silver);
-  font-size: var(--fs-8);
+  font-size: var(--wp--preset--font-size--medium);
   font-weight: var(--weight-300);
   text-transform: capitalize;
   letter-spacing: 1px;
@@ -795,9 +792,8 @@ i {
 }
 
 .Stars-text h2 {
-  font-size: 30px;
+  font-size: var(--wp--preset--font-size--large);
   margin-left: 70px;
-  font-family: Crimson Text, serif;
 }
 
 .Rising_Stars .showcase {
@@ -916,18 +912,16 @@ i {
 }
 
 .Rising_Stars .showcase-category {
-  font-family: Crimson Text, serif;
   color: var(--salmon-pink);
-  font-size: var(--fs-9);
+  font-size: var(--fs-3);
   font-weight: var(--weight-500);
   text-transform: uppercase;
   margin-bottom: 10px;
 }
 
 .Rising_Stars .showcase-title {
-  font-family: Crimson Text, serif;
   color: var(--sonic-silver);
-  font-size: var(--fs-8);
+  font-size: var(--wp--preset--font-size--medium);
   font-weight: var(--weight-300);
   text-transform: capitalize;
   letter-spacing: 1px;
@@ -999,10 +993,13 @@ i {
 }
 
 .Find_text p {
+  font-family: Crimson Text, serif;
   margin: 0px;
-  font-size: 18px;
+  font-size: var(--fs-2);
   line-height: 24px;
   font-weight: 300;
+  text-align: center;
+  word-spacing: 7px;
 }
 
 .Find_text img {
@@ -1052,8 +1049,7 @@ i {
 
 .Explore-text h2 {
   color: rgb(51, 51, 51);
-  font-family: Crimson Text, serif;
-  font-size: 30px;
+  font-size: var(--wp--preset--font-size--large);
   margin-left: 70px;
   display: flex;
   align-self: flex-start;
@@ -1178,7 +1174,7 @@ i {
 
 .Explore .showcase-category {
   color: var(--salmon-pink);
-  font-size: var(--fs-9);
+  font-size: var(--fs-3);
   font-weight: var(--weight-500);
   text-transform: uppercase;
   margin-bottom: 10px;
@@ -1186,7 +1182,7 @@ i {
 
 .Explore .showcase-title {
   color: var(--sonic-silver);
-  font-size: var(--fs-8);
+  font-size: var(--wp--preset--font-size--medium);
   font-weight: var(--weight-300);
   text-transform: capitalize;
   letter-spacing: 1px;
