@@ -7,14 +7,6 @@ document.addEventListener("DOMContentLoaded", function () {
       navbar.classList.remove("fixed-navbar");
     }
   });
-  const myCarouselElement = document.querySelector("#myCarousel");
-
-  const carousel = new bootstrap.Carousel(myCarouselElement, {
-    interval: 2000,
-    touch: false,
-  });
-});
-document.addEventListener("DOMContentLoaded", function () {
   let showcaseContainers = document.querySelectorAll(".showcase");
 
   showcaseContainers.forEach(function (container) {
@@ -30,4 +22,11 @@ document.addEventListener("DOMContentLoaded", function () {
         : "View more";
     });
   });
+  const myCarouselElement = document.querySelector("#myCarousel");
+
+  const carousel = new bootstrap.Carousel(myCarouselElement, {
+    interval: 2000,
+    touch: false,
+  });
 });
+

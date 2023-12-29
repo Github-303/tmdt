@@ -556,7 +556,7 @@ i {
   margin-bottom: 10px;
   transition: var(--transition-timing);
 }
-.showcase-title {
+.showcase .showcase-title {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -564,10 +564,10 @@ i {
   -webkit-box-orient: vertical;
 }
 
-.showcase-title .full-description .view-more-button {
+.showcase .showcase-title .full-description {
   -webkit-line-clamp: unset;
 }
-.view-more-button {
+.showcase .view-more-button {
   background: var(--white);
   color: var(--sonic-silver);
   margin-bottom: 5px;
