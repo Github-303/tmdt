@@ -29,12 +29,15 @@
   --border-radius-sm: 5px;
 
   --transition-timing: 0.2s ease;
+  --wp--preset--font-size--small: 13px;
+  --wp--preset--font-size--medium: 20px;
+  --wp--preset--font-size--large: 36px;
+  --wp--preset--font-size--x-large: 42px;
 }
 
 * {
   margin: 0;
   padding: 0;
-  font-family: Crimson Text, serif;
   text-decoration: none;
   box-sizing: border-box;
 }
@@ -43,6 +46,7 @@ body {
   max-width: 100%;
   position: relative;
   z-index: 1;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 header {
@@ -68,6 +72,7 @@ header {
   color: #fff;
   text-decoration: underline;
   font-family: "Crimson Text", serif;
+  font-size: var(--wp--preset--font-size--medium);
   box-sizing: border-box;
   transition: color 0s;
 }
@@ -79,6 +84,7 @@ header {
 
 .content_top_center p {
   margin-top: 5px;
+  font-size: var(--wp--preset--font-size--medium);
   color: #fff;
   font-family: "Crimson Text", serif;
 }
@@ -104,21 +110,20 @@ header {
   color: rgb(130, 0, 0);
   margin-left: 10px;
   margin-right: 30px;
-  font-family: Helvetica, sans-serif;
 }
 
 .menu_top_logo_right a.text {
+  font-size: var(--wp--preset--font-size--medium);
   color: black;
-  font-size: 18px;
   text-decoration: none;
-  font-weight: 300;
+  font-weight: 500;
 }
 
 .fa-regular.fa-hard-drive,
 .fa-regular.fa-heart,
 .bi .bi-cart-fill {
   color: rgb(130, 0, 0);
-  font-size: 22px;
+  font-size: var(--wp--preset--font-size--medium);
   font-weight: bold;
 }
 
@@ -141,7 +146,7 @@ i {
 
 .navbar-brand {
   color: white;
-  font-size: 24px;
+  font-size: var(--wp--preset--font-size--x-large);
   font-weight: bold;
   text-decoration: none;
 }
@@ -159,11 +164,11 @@ i {
 .nav-item a {
   border-radius: 1px;
   background-color: rgba(255, 255, 255, 0.911);
-  font-size: 18px;
+  font-size: var(--wp--preset--font-size--medium);
   color: #000;
   padding: 10px;
   margin-left: 5px;
-  font-family: Crimson Text, serif;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 .nav-link {
