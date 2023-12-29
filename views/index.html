@@ -103,7 +103,8 @@
       <script>
          document.addEventListener("DOMContentLoaded", function () {
            let navbar = document.querySelector(".container-fluid");
-         
+           let description = document.getElementById('description');
+           let viewMoreButton = document.getElementById('view-more-button');
            window.addEventListener("scroll", function () {
              if (window.scrollY > 0) {
                navbar.classList.add("fixed-navbar");
@@ -111,7 +112,12 @@
                navbar.classList.remove("fixed-navbar");
              }
            });
+           viewMoreButton.addEventListener('click', function () {
+    description.classList.toggle('full-description');
+    viewMoreButton.textContent = description.classList.contains('full-description') ? 'View less' : 'View more';
+  });
          });
+
       </script>
       <hr />
       <div id="carouselExampleCaptions" class="carousel slide">
@@ -175,14 +181,6 @@
          </button>
       </div>
       <hr />
-      <!--<div class="Category">
-         <div class="Category_items">
-            <a href="#portrait_painting">Portrait painting</a>
-            <a href="#ink_painting">Ink painting </a>
-            <a href="#lacquer_painting">Lacquer painting</a>
-            <a href="#antique_paintings">Antique paintings</a>
-         </div>
-      </div>-->
       <hr style="margin: 50px" />
       <h1 class="h1_text">
          LotusArt Gallery </br> A place that celebrates and showcases prestigious
@@ -331,12 +329,13 @@
                <div class="showcase-content">
                   <a href="#" class="showcase-category">Enigmatic Charms</a>
                   <h3>
-                     <a href="#" class="showcase-title">In this portrait painting, the artist skillfully portrays 
+                     <a href="#" class="showcase-title" id="description">In this portrait painting, the artist skillfully portrays 
                       a woman with enigmatic charms. The subject's eyes hold a hint of mystery and intrigue, 
                       drawing the viewer into her captivating gaze. 
                       The artist's use of vibrant colors and bold brushstrokes adds depth and vitality to the portrait, capturing the woman's vibrant personality. This painting celebrates the allure of femininity and invites viewers to 
                       contemplate the stories and emotions that lie behind the subject's enigmatic expression.</a>
                   </h3>
+                  <button id="view-more-button" class="view-button">View more</button>
                   <div class="showcase-rating">
                      <i class="bi bi-star-fill"></i>
                      <i class="bi bi-star-fill"></i>

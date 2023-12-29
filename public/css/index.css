@@ -365,7 +365,7 @@ i {
 
 .Advertisement_picture_three .showcase-category {
   color: var(--salmon-pink);
-  font-size: var(--fs-9);
+  font-size: var(--fs-3);
   font-weight: var(--weight-500);
   text-transform: uppercase;
   margin-bottom: 10px;
@@ -373,7 +373,7 @@ i {
 
 .Advertisement_picture_three .showcase-title {
   color: var(--sonic-silver);
-  font-size: var(--fs-8);
+  font-size: var(--wp--preset--font-size--medium);
   font-weight: var(--weight-300);
   text-transform: capitalize;
   letter-spacing: 1px;
@@ -407,51 +407,15 @@ i {
   color: var(--sonic-silver);
 }
 
-/*------------------------- Category-------------------------------*/
-.Category {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.Category_items {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-.Category_items a {
-  margin: 3px 30px 0 10px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
-  padding: 10px;
-  border: 1px solid rgb(51, 51, 51);
-  color: black;
-  text-decoration: none;
-  transition: color 0s;
-  width: 150px;
-  height: 50px;
-  font-size: 14px;
-  justify-content: center;
-  font-family: Helvetica, sans-serif;
-}
-
-.Category_items a:hover {
-  color: black;
-}
-
 /*---------------------Features----------------------------*/
 .Features {
-  font-family: Crimson Text, serif;
   display: flex;
   flex-direction: column;
   align-items: left;
 }
 
 .Features h2 {
-  font-size: 30px;
+  font-size: var(--wp--preset--font-size--large);
   margin-left: 70px;
 }
 
@@ -576,25 +540,40 @@ i {
 }
 
 .Features .showcase-category {
-  font-family: Crimson Text, serif;
   color: var(--salmon-pink);
-  font-size: var(--fs-9);
+  font-size: var(--fs-3);
   font-weight: var(--weight-500);
   text-transform: uppercase;
   margin-bottom: 10px;
 }
 
 .Features .showcase-title {
-  font-family: Crimson Text, serif;
   color: var(--sonic-silver);
-  font-size: var(--fs-8);
+  font-size: var(--wp--preset--font-size--medium);
   font-weight: var(--weight-300);
   text-transform: capitalize;
   letter-spacing: 1px;
   margin-bottom: 10px;
   transition: var(--transition-timing);
 }
+.showcase-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
 
+.showcase-title.full-description {
+  -webkit-line-clamp: unset;
+}
+.view-button {
+  background: var(--white);
+  color: var(--sonic-silver);
+  margin-bottom: 5px;
+  border: none;
+  transition: var(--transition-timing);
+}
 .Features .showcase-title:hover {
   color: var(--eerie-black);
 }
