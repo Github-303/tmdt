@@ -1,84 +1,57 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f8f9fa;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  overflow: hidden;
+  font-family: "Arial", sans-serif;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f4f4f4;
 }
 
 .login-container {
   max-width: 400px;
-  margin: 50px auto;
-  padding: 30px;
-  background-color: #ffffff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
+  margin: 100px auto;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
 }
 
-h1 {
-  font-size: 24px;
-  color: #333;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.login-option {
-  margin-bottom: 20px;
+h2 {
   text-align: center;
 }
 
-.fb-login,
-.surna-login {
-  display: inline-block;
-  background-color: #3b5998;
-  color: #ffffff;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 4px;
-  font-size: 14px;
-  margin-bottom: 10px; /* Add margin-bottom to create spacing */
+form {
+  display: flex;
+  flex-direction: column;
 }
 
-.login-form input[type="email"],
-.login-form input[type="password"] {
-  width: 100%;
+input {
   padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ddd;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 14px;
 }
 
-.forgot-password {
-  color: #333;
-  text-decoration: none;
-  font-size: 14px;
-  display: block;
-  margin-bottom: 15px;
-}
-
-button[type="submit"] {
-  width: 100%;
-  padding: 10px;
-  background-color: #3b5998;
-  color: #ffffff;
+button {
+  padding: 12px;
+background-color: #62b2e3;
+  color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 16px;
 }
 
-button[type="submit"]:hover {
-  background-color: #2d4373;
+button:hover {
+background-color: #62b2e2;
 }
-
-.register {
-  color: #333;
-  text-decoration: none;
-  font-size: 14px;
+label {
   display: block;
-  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
 }

@@ -2,35 +2,46 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="/css/login.css" />
-    <link rel="stylesheet" type="text/css" href="/tmdt/public/css/login.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/tmdt/public/css/login.css" />
     <script src="/tmdt/public/js/login.js"></script>
     <title>Login</title>
   </head>
-
   <body>
     <div class="login-container">
-      <h1>Welcome to LotusArt</h1>
-      <div class="login-option">
-        <a href="/tmdt/views/index.html" class="fb-login">Go Pic Shop</a>
-      </div>
-      <div class="login-option">
-        <a href="#" class="surna-login">OR</a>
-      </div>
-      <form class="login-form">
-        <input type="email" name="email" placeholder="Email Address" required />
+      <h2>Login</h2>
+      <form id="login-form">
+        <label for="userType">Authentication:</label>
+        <select id="userType" name="userType">
+          <option value="admin">Admin</option>
+          <option value="user">User</option>
+        </select>
+        <label for="username">Username:</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="admin"
+          required
+        />
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+        <label for="password">Password:</label>
         <input
           type="password"
+          id="password"
           name="password"
-          placeholder="Password"
-          required />
-        <a href="#" class="forgot-password">FORGOT PASSWORD?</a>
-        <button type="submit">Log In</button>
+          placeholder="admin"
+          required
+        />
+
+        <button type="button" onclick="login()">Login</button>
+
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
       </form>
-      <a href="/tmdt/views/register.html" class="register"
-        >Don't have an account? REGISTER</a
-      >
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
   </body>
 </html>
