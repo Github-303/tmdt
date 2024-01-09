@@ -3,9 +3,9 @@ function login() {
             var username = document.getElementById("username").value;
             var password = document.getElementById("password").value;
 
-            if (userType === "admin" && username === "admin" && password === "admin") {
-                window.location.href = "manager.html";
-            } else if (userType === "user") {
+            if (userType === "user" && username === "user" && password === "user") {
+                window.location.href = "/tmdt/views/card.html";
+            } else if (userType === "admin") {
                 alert("User login logic here");
             } else {
                 alert("Invalid credentials. Please try again.");
@@ -16,7 +16,7 @@ function login() {
             var profile = googleUser.getBasicProfile();
             if (userType === "admin") {
                 alert("Admin logged in using Google Sign-In");
-                window.location.href = "manager.html";
+                window.location.href = "/tmdt/views/card.html.html";
             } else if (userType === "user") {
                 alert("User logged in using Google Sign-In");
             }
