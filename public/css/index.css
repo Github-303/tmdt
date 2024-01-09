@@ -149,6 +149,15 @@ grid-template-columns: repeat(2,1fr);
 .list-cart .item-cart:nth-child(even){
   background-color: #eee1;
 }
+.totalPrice{
+  width: 100px;
+  height: 30px;
+  background-color: #555;
+  margin: auto;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+}
 .list-cart{
   overflow: auto;
 }
