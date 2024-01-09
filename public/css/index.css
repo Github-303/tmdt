@@ -149,14 +149,19 @@ grid-template-columns: repeat(2,1fr);
 .list-cart .item-cart:nth-child(even){
   background-color: #eee1;
 }
-.totalPrice{
-  width: 100px;
+.shopping-cart .totalPrice{
+  display: grid;
+  grid-template-columns: 70px 70px;
+  width: 400px;
   height: 30px;
   background-color: #555;
-  margin: auto;
+  margin-bottom: 30px;
   align-content: center;
   justify-content: center;
   text-align: center;
+}
+.totalPrice span{
+  margin-right: 50px;
 }
 .list-cart{
   overflow: auto;
