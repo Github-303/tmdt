@@ -90,7 +90,7 @@ header {
 }
 .shopping-cart {
   position: fixed;
-  z-index: 103;
+  z-index: 9999;
   width: 400px;
   background-color: #494949;
   color: #eee;
@@ -1547,6 +1547,7 @@ a {
   .menu_top {
     flex-direction: column;
     align-items: center;
+    margin-bottom: 20px;
   }
 
   .menu_top_logo_right {
@@ -1666,7 +1667,7 @@ a {
     width: 100%;
     background-color: #f9f1f0;
     position: fixed;
-    z-index: 1001;
+    z-index: 100;
   }
 
   .navbar-collapse {

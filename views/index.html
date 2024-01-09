@@ -46,19 +46,6 @@
          </div>
       </div>
    </div>
-   <script>
-      let iconcart = document.querySelector('.icon-cart');
-      let closecart = document.querySelector('.close-cart');
-      let body = document.querySelector('body');
-
-      iconcart.addEventListener('click', () => {
-         body.classList.toggle('show-cart');
-      });
-
-      closecart.addEventListener('click', () => {
-         body.classList.remove('show-cart');
-      });
-   </script>
    <div class="shopping-cart">
       <h1>Shopping cart</h1>
       <div class="list-cart">
@@ -154,10 +141,12 @@
       LotusArt Gallery </br> A place that celebrates and showcases prestigious
       artworks.
    </h1>
-   <div class="Advertisement_picture_three">
-      <div class="showcase">
-         <div class="showcase-banner">
-            <img src="/tmdt/public/images/picture1.png" alt="#" width="300" class="product-img default" />
+   <div class="listProduct">
+
+      <div class="Advertisement_picture_three">
+         <div class="showcase">
+            <div class="showcase-banner">
+               <img src="/tmdt/public/images/picture1.png" alt="#" width="300" class="product-img default" />
             <img src="/tmdt/public/images/picture1.png" alt="#" width="300" class="product-img hover" />
             <p class="showcase-badge angle black">15%</p>
             <div class="showcase-actions">
@@ -438,8 +427,8 @@
                   this ink artwork depicts mist-shrouded mountains emerging from the clouds.
                   The subtle gradation of ink washes creates a sense of depth and mystery,
                   transporting the viewer to a realm of tranquility</a>
-            </h3>
-            <button class="view-more-button">View more</button>
+               </h3>
+               <button class="view-more-button">View more</button>
             <div class="showcase-rating">
                <i class="bi bi-star-fill"></i>
                <i class="bi bi-star-fill"></i>
@@ -510,9 +499,9 @@
                   in an enthralling dance. The bold and expressive brushstrokes convey
                   their powerful movements and mythical presence, capturing the essence of
                   these legendary creatures.</a>
-            </h3>
-            <button class="view-more-button">View more</button>
-            <div class="showcase-rating">
+               </h3>
+               <button class="view-more-button">View more</button>
+               <div class="showcase-rating">
                <i class="bi bi-star-fill"></i>
                <i class="bi bi-star-fill"></i>
                <i class="bi bi-star-fill"></i>
@@ -546,10 +535,10 @@
                   through a lush landscape. The artist's rhythmic brushwork and
                   harmonious composition convey a sense of balance and unity,
                   reflecting the beauty of nature's interconnectedness.</a>
-            </h3>
-            <button class="view-more-button">View more</button>
-            <div class="showcase-rating">
-               <i class="bi bi-star-fill"></i>
+               </h3>
+               <button class="view-more-button">View more</button>
+               <div class="showcase-rating">
+                  <i class="bi bi-star-fill"></i>
                <i class="bi bi-star-fill"></i>
                <i class="bi bi-star-fill"></i>
                <i class="bi bi-star-fill"></i>
@@ -583,7 +572,7 @@
                   The artist's meticulous ink washes and fine lines capture the ephemeral
                   beauty of the blossoms,
                   creating a serene and contemplative atmosphere.</a>
-            </h3>
+               </h3>
             <button class="view-more-button">View more</button>
             <div class="showcase-rating">
                <i class="bi bi-star-fill"></i>
@@ -618,9 +607,9 @@
                   tall amidst a serene landscape. The strong and confident brushstrokes
                   symbolize resilience and inner strength,
                   reminding us of the power of perseverance in the face of challenges.</a>
-            </h3>
-            <button class="view-more-button">View more</button>
-            <div class="showcase-rating">
+               </h3>
+               <button class="view-more-button">View more</button>
+               <div class="showcase-rating">
                <i class="bi bi-star-fill"></i>
                <i class="bi bi-star-fill"></i>
                <i class="bi bi-star-fill"></i>
@@ -654,8 +643,8 @@
                   rhythm of falling raindrops on a rooftop. The artist's expressive brushwork and
                   splatters of ink create a sense of movement and joy,
                   celebrating the beauty found in unexpected moments.</a>
-            </h3>
-            <button class="view-more-button">View more</button>
+               </h3>
+               <button class="view-more-button">View more</button>
             <div class="showcase-rating">
                <i class="bi bi-star-fill"></i>
                <i class="bi bi-star-fill"></i>
@@ -807,10 +796,10 @@
                   serene landscape with golden hues. The layers of lacquer create a rich and lustrous surface,
                   enhancing the depth and texture of the artwork. The composition exudes a sense of tranquility,
                   evoking a feeling of peacefulness and harmony.</a>
-            </h3>
-            <button class="view-more-button">View more</button>
-            <div class="showcase-rating">
-               <i class="bi bi-star-fill"></i>
+               </h3>
+               <button class="view-more-button">View more</button>
+               <div class="showcase-rating">
+                  <i class="bi bi-star-fill"></i>
                <i class="bi bi-star-fill"></i>
                <i class="bi bi-star-fill"></i>
                <i class="bi bi-star-fill"></i>
@@ -880,9 +869,9 @@
                   enhancing the vibrant colors and intricate details of the floral arrangement.
                   The composition radiates a sense of serenity and natural beauty,
                   inviting the viewer to appreciate the delicate blossoms.</a>
-            </h3>
-            <button class="view-more-button">View more</button>
-            <div class="showcase-rating">
+               </h3>
+               <button class="view-more-button">View more</button>
+               <div class="showcase-rating">
                <i class="bi bi-star-fill"></i>
                <i class="bi bi-star-fill"></i>
                <i class="bi bi-star-fill"></i>
@@ -917,9 +906,9 @@
                   mimicking the elusive nature of the underwater world.
                   The dark and rich tones evoke a sense of mystery and curiosity,
                   immersing the viewer in a captivating and enigmatic realm.</a>
-            </h3>
-            <button class="view-more-button">View more</button>
-            <div class="showcase-rating">
+               </h3>
+               <button class="view-more-button">View more</button>
+               <div class="showcase-rating">
                <i class="bi bi-star-fill"></i>
                <i class="bi bi-star-fill"></i>
                <i class="bi bi-star-fill"></i>
@@ -971,7 +960,7 @@
          </div>
       </div>
    </div>
-   </div>
+</div>
    </div>
    </div>
    <hr />
@@ -1094,9 +1083,9 @@
                   reflecting the societal ideals of the time.
                   This antique painting serves as a timeless tribute to the individual depicted,
                   preserving their presence and allure for generations to come.</a>
-            </h3>
-            <button class="view-more-button">View more</button>
-            <div class="showcase-rating">
+               </h3>
+               <button class="view-more-button">View more</button>
+               <div class="showcase-rating">
                <i class="bi bi-star-fill"></i>
                <i class="bi bi-star-fill"></i>
                <i class="bi bi-star-fill"></i>
@@ -1110,6 +1099,7 @@
          </div>
       </div>
    </div>
+</div>
 
    <hr />
    <footer class="footer">
