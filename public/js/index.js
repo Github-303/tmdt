@@ -147,7 +147,23 @@ document.addEventListener("DOMContentLoaded", () => {
       0
     );
   };
+  listCartHTML.addEventListener("click", (event) => {
+    let target = event.target;
+    let productId = target.dataset.id;
 
+    if (target.classList.contains("minus")) {
+      changeQuantityCart(productId, "minus");
+    } else if (target.classList.contains("plus")) {
+      changeQuantityCart(productId, "plus");
+    }
+  });
+
+  // ... (Phần code khác đã được cung cấp trước đó)
+
+  // Function to fetch product information based on ID
+  const getProductById = (productId) => {
+    return products.find((product) => product.id === productId);
+  };
   // Function to handle changes in the cart (e.g., quantity adjustments)
   const changeQuantityCart = (productId, type) => {
     let positionItemInCart = cart.findIndex((item) => item.id === productId);
@@ -201,59 +217,65 @@ function checkout() {
 }
 hienthidanhsachitemgiohang();
 function truyxuatsanphamtheoid(id) {
-  var jsondanhsachsanpham = localStorage.getItem('list-cart');
+  var jsondanhsachsanpham = localStorage.getItem("list-cart");
   var danhsachsanpham = JSON.parse(jsondanhsachsanpham);
-  for (var i = 0; i < danhsachsanpham.length; i++){
+  for (var i = 0; i < danhsachsanpham.length; i++) {
     var sanphamhientai = danhsachsanpham[i];
-    if (sanphamhientai.id = id) {
+    if ((sanphamhientai.id = id)) {
       return sanphamhientai;
     }
   }
-  
 }
 function laygiohangtulocalstorgare() {
   var giohang = new Array();
-  var jsongiohang = localStorage.getItem('giohang')
-  if (jsongiohang != null)
-    giohang = JSON.parse(jsongiohang);
+  var jsongiohang = localStorage.getItem("giohang");
+  if (jsongiohang != null) giohang = JSON.parse(jsongiohang);
   return giohang;
-  
 }
 function laysanphamtheoid(idsp) {
   var sanpham = new Object();
   var danhsachsanpham = laygiohangtulocalstorgare();
 
-  for (var i = 0; i < danhsachsanpham.length; i++){
+  for (var i = 0; i < danhsachsanpham.length; i++) {
     var sanphamhientai = danhsachsanpham[i];
     if (sanphamhientai.id == idsp) {
       sanpham = sanphamhientai;
     }
-    sanpham = taodoituongsanpham(sanpham.hinhanh,sanpham.ten, sanpham.giaca, sanpham.id, sanpham.soluong);
+    sanpham = taodoituongsanpham(
+      sanpham.hinhanh,
+      sanpham.ten,
+      sanpham.giaca,
+      sanpham.id,
+      sanpham.soluong
+    );
     return sanpham;
   }
-  
 }
 function hienthidanhsachitemgiohang() {
   var danhsachitemgiohang = laygiohangtulocalstorgare();
   var HTML = chuyendanhsachitemgiohangsanghtml(danhsachitemgiohang);
-  var nodegiohang = document.getElementsByClassName('shopping-cart');
+  var nodegiohang = document.getElementsByClassName("shopping-cart");
   nodegiohang.innerHTML = HTML;
 }
 function chuyendanhsachitemgiohangsanghtml(listcart) {
-  var htmlTong = '';
-  for (var i = 0; i < listcart.length; i++){
+  var htmlTong = "";
+  for (var i = 0; i < listcart.length; i++) {
     htmlTong = htmlTong + chuyendoidoituongitemgiohangsanghtml(listcart[i]);
   }
   return htmlTong;
 }
 function chuyendoidoituongitemgiohangsanghtml(itemcart) {
-  var item = laysanphamtheoid(itemcart.idsp)
+  var item = laysanphamtheoid(itemcart.idsp);
   var html =
     '<div class="item-cart">\n' +
     '            <div class="img-cart">\n' +
-    '               <img src="'+sanpham.hinhanh+'" alt="">\n' +
+    '               <img src="' +
+    sanpham.hinhanh +
+    '" alt="">\n' +
     "            </div>\n" +
-    '            <div class="name-cart">'+sanpham.ten+'</div>\n' +
+    '            <div class="name-cart">' +
+    sanpham.ten +
+    "</div>\n" +
     '            <div class="total-price">\n' +
     "               $4500'\n" +
     "            </div>\n" +
@@ -265,5 +287,4 @@ function chuyendoidoituongitemgiohangsanghtml(itemcart) {
     "         </div>";
 
   return html;
-
 }

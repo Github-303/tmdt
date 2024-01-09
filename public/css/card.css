@@ -216,6 +216,18 @@ i {
   flex: 1 0 10rem;
 }
 
+.left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.giftcard-img {
+  text-align: center;
+}
+img {
+  width: 100%;
+}
 label {
   display: block;
   margin-bottom: 5px;
