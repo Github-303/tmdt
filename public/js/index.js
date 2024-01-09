@@ -19,21 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
       : "View more";
   });
 
-  // let showcaseContainers = document.querySelectorAll(".showcase");
-
-  // showcaseContainers.forEach(function (container) {
-  //   let description = container.querySelector(".description");
-  //   let viewMoreButton = container.querySelector(".view-more-button");
-
-  //   viewMoreButton.addEventListener("click", function () {
-  //     description.classList.toggle("full-description");
-  //     viewMoreButton.textContent = description.classList.contains(
-  //       "full-description"
-  //     )
-  //       ? "View less"
-  //       : "View more";
-  //   });
-  // });
   const myCarouselElement = document.querySelector("#myCarousel");
 
   const carousel = new bootstrap.Carousel(myCarouselElement, {
@@ -41,3 +26,4 @@ document.addEventListener("DOMContentLoaded", function () {
     touch: false,
   });
 });
+

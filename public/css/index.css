@@ -88,7 +88,73 @@ header {
   color: #fff;
   font-family: "Crimson Text", serif;
 }
+.shopping-cart {
+  position: fixed;
+  z-index: 103;
+  width: 400px;
+  background-color: #494949;
+  color: #eee;
+  inset: 0 -400px 0 auto;
+  display: grid;
+  grid-template-rows: 70px 1fr 70px;
+  transition: .5s;
+}
+body.show-cart .shopping-cart{
+  inset: 0 0 0 auto;
+  
+}
 
+.shopping-cart h1{
+  padding: 20px;
+  margin: 0;
+  font-weight: 300;
+}
+.shopping-cart .btn-cart {
+display: grid;
+grid-template-columns: repeat(2,1fr);
+}
+.shopping-cart .btn-cart button{
+  background-color: #45a049;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+.shopping-cart .btn-cart .close-cart{
+  background-color: #eee;
+}
+.shopping-cart .list-cart .item-cart img{
+  width: 100%;
+}
+.shopping-cart .list-cart .item-cart{
+  display: grid;
+  grid-template-columns: 70px 150px 50px 1fr;
+  gap: 10px;
+  text-align: center;
+  align-items: center;
+}
+.list-cart .quantity-cart span{
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-color: #eee;
+  color: #555;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.list-cart .quantity-cart span:nth-child(2){
+  background-color: transparent;
+  color: #eee;
+}
+
+.list-cart .item-cart:nth-child(even){
+  background-color: #eee1;
+}
+.list-cart{
+  overflow: auto;
+}
+.list-cart::-webkit-scrollbar{
+  width: 0px;
+}
 /*-----------------------Menu--------------------------------------*/
 .menu {
   border-bottom: 1px solid rgb(178, 171, 171);
@@ -107,7 +173,7 @@ header {
 }
 
 .menu_top_logo_right a {
-  color: rgb(130, 0, 0);
+  position: relative;
   margin-left: 10px;
   margin-right: 30px;
 }
@@ -122,7 +188,7 @@ header {
 .fa-regular.fa-hard-drive,
 .fa-regular.fa-heart,
 .bi .bi-cart-fill {
-  color: rgb(130, 0, 0);
+  color: #212529;
   font-size: var(--wp--preset--font-size--medium);
   font-weight: bold;
 }
@@ -130,7 +196,20 @@ header {
 i {
   font-size: 22px;
 }
-
+.menu_top_logo_right span {
+  position: absolute;
+  color: #fdfdfd;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #914643;
+  text-align: center;
+  border-radius: 50%;
+  justify-content: center;
+  align-content: center;
+  top: 50%;
+  right: -10px;
+}
 .menu_top_logo_right {
   margin-top: 50px;
 }
