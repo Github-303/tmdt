@@ -39,12 +39,25 @@
             <a href="/tmdt/views/index.html"><img src="/tmdt/public/images/logo/logo.png" alt="" /></a>
          </div>
          <div class="menu_top_logo_right">
-            <a href="/tmdt/views/login.html" class="text">Log in | Sign Up</a>
+            <a href="" class="text" id="loginText">Log in | Sign Up</a>
             <a href="/tmdt/views/card.html"><i class="fa-regular fa-hard-drive"></i></a>
             <a href=""><i class="fa-regular fa-heart"></i><span>1</span></a>
             <a class="icon-cart"><i class="bi bi-cart-fill"></i><span>4</span></a>
          </div>
       </div>
+   </div>
+   <div class="login-container">
+      <h2>Login</h2>
+      <form id="login-form">
+         <label for="username">Username:</label>
+         <input type="text" id="username" name="username" placeholder="user" required />
+         <label for="password">Password:</label>
+         <input type="password" id="password" name="password" placeholder="user" required />
+
+         <button type="submit">Login</button>
+
+         <div class="g-signin2" data-onsuccess="onSignIn"></div>
+      </form>
    </div>
    <div class="shopping-cart">
       <h1>Shopping cart</h1>
@@ -105,7 +118,7 @@
                <span class="plus">+</span>
             </div>
          </div>
-         
+
       </div>
       <div class="totalPrice"><span>Total:</span>$18000</div>
       <div class="btn-cart">
@@ -191,7 +204,7 @@
          <div class="showcase-banner">
             <img src="/tmdt/public/images/picture1.png" alt="#" width="300" class="product-img default" />
             <img src="/tmdt/public/images/picture1.png" alt="#" width="300" class="product-img hover" />
-            <p class="showcase-badge angle black">15%</p>
+            <p class="showcase-badge">15%</p>
             <div class="showcase-actions">
                <button class="btn-action">
                   <i class="bi bi-heart"></i>
@@ -1289,6 +1302,65 @@
    </footer>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+   <script type="text/javascript">
+      $(document).ready(function () {
+         var loginContainer = $(".login-container");
+         var loginText = $("#loginText");
+         var reopenLoginButton = $("#reopenLogin");
+
+         // Biến kiểm tra đã đăng nhập hay chưa
+         var isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+         if(isLoggedIn){
+            loginText.html('<i class="fa fa-user"></i>');
+         }
+         function showLoginContainer() {
+            // Nếu chưa đăng nhập và chưa lưu trạng thái đăng nhập, thì mới hiển thị form login
+            if (!isLoggedIn) {
+               loginContainer.fadeIn();
+            }
+         }
+
+         function hideLoginContainer() {
+            loginContainer.fadeOut();
+            // Hiển thị nút mở lại form đăng nhập sau khi ẩn form
+            reopenLoginButton.show();
+         }
+
+         function handleLogin() {
+            var username = $("#username").val();
+            var password = $("#password").val();
+
+            if (username === "user" && password === "user") {
+               window.location.href = "/tmdt/views/index.html";
+               hideLoginContainer();
+
+               // Đổi chữ "Login" thành biểu tượng hoặc văn bản khác
+               loginText.html('<i class="fa fa-user"></i>'); // Sử dụng Font Awesome làm biểu tượng
+
+               // Đánh dấu đã đăng nhập và lưu trạng thái vào localStorage
+               isLoggedIn = true;
+               localStorage.setItem("isLoggedIn", "true");
+            } else {
+               // Xử lý khi đăng nhập không thành công (ở đây có thể hiển thị thông báo lỗi)
+               alert("Invalid username or password. Please try again.");
+            }
+         }
+
+         // Sự kiện mở lại form đăng nhập
+         reopenLoginButton.on("click", function () {
+            showLoginContainer();
+            // Ẩn nút mở lại form
+            reopenLoginButton.hide();
+         });
+
+         hideLoginContainer();
+
+         $("#login-form").on("submit", function (event) {
+            event.preventDefault();
+            handleLogin();
+         });
+      });
+   </script>
 </body>
 
 </html>
