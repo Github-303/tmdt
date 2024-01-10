@@ -28,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 document.addEventListener("DOMContentLoaded", () => {
-  // Selecting necessary elements
   let listCartHTML = document.querySelector(".list-cart");
   let iconCart = document.querySelector(".icon-cart");
   let iconCartSpan = document.querySelector(".icon-cart span");
@@ -37,193 +36,110 @@ document.addEventListener("DOMContentLoaded", () => {
   let products = [];
   let cart = [];
 
-  // Toggle the shopping cart visibility when clicking the cart icon
   iconCart.addEventListener("click", () => {
     body.classList.toggle("show-cart");
   });
 
-  // Close the shopping cart when clicking the close button
   closeCart.addEventListener("click", () => {
     body.classList.remove("show-cart");
   });
 
-  // Function to add product data to HTML
-  const addDataToHTML = () => {
-    if (products.length > 0) {
-      products.forEach((product) => {
-        let newProduct = document.createElement("div");
-        newProduct.dataset.id = product.id;
-        newProduct.classList.add("item-cart");
-        newProduct.innerHTML = `
-          <div class="showcase">
-            <!-- Your product HTML structure here -->
-            <div class="showcase-actions">
-               <button class="btn-action">
-                  <i class="bi bi-heart"></i>
-               </button>
-               <button class="btn-action" data-id="${product.id}">
-                  <i class="bi bi-cart-plus"></i>
-               </button>
-            </div>
-          </div>
-        `;
-        listCartHTML.appendChild(newProduct);
-      });
-    }
-  };
-
-  // Event listener for the "Add to Cart" button in each product
-  listCartHTML.addEventListener("click", (event) => {
+  // Thay đổi sự kiện click từ listCartHTML sang document
+  document.addEventListener("click", (event) => {
     let positionClick = event.target;
-    if (positionClick.classList.contains("btn-action")) {
-      let productId = positionClick.dataset.id;
-      addToCart(productId);
-    }
-  });
+    // Sử dụng classList.contains để kiểm tra có phải là nút "cartButton" không
+    if (positionClick.classList.contains("cartButton")) {
+      let showcaseContent = positionClick.closest(".showcase-content");
+      let productName =
+        showcaseContent.querySelector(".showcase-title").textContent;
+      let productPrice = showcaseContent
+        .querySelector(".price")
+        .textContent.replace("$", "");
 
-  // Function to add a product to the cart
-  const addToCart = (productId) => {
-    let productToAdd = products.find((product) => product.id === productId);
+      let existingProduct = cart.find((item) => item.name === productName);
 
-    if (productToAdd) {
-      let positionThisProductInCart = cart.findIndex(
-        (item) => item.id === productToAdd.id
-      );
-
-      if (positionThisProductInCart === -1) {
+      if (existingProduct) {
+        existingProduct.quantity += 1;
+      } else {
         cart.push({
-          id: productToAdd.id,
-          name: productToAdd.name,
-          price: productToAdd.price,
+          name: productName,
+          price: parseFloat(productPrice),
           quantity: 1,
         });
-      } else {
-        cart[positionThisProductInCart].quantity += 1;
       }
 
       addCartToMemory();
       addCartToHTML();
     }
-  };
+  });
 
-  // Function to save the cart data to local storage
-  const addCartToMemory = () => {
-    localStorage.setItem("cart", JSON.stringify(cart));
-  };
-
-  // Function to update the cart in the HTML
   const addCartToHTML = () => {
-    // Update your cart HTML structure based on the cart array
-    // For simplicity, let's assume there's a container with the class "cart-container"
     let listCartHTML = document.querySelector(".list-cart");
-    listCartHTML.innerHTML = ""; // Clear existing cart content
+    listCartHTML.innerHTML = "";
 
     if (cart.length > 0) {
       cart.forEach((item) => {
         let newItem = document.createElement("div");
         newItem.classList.add("item-cart");
         newItem.innerHTML = `
-          <!-- Your cart item HTML structure here -->
-        <div class="img-cart">
-          <img src="${item.image}" alt="${item.name}">
-        </div>
-        <div class="name-cart">${item.name}</div>
-        <div class="total-price">
-          $${item.price * item.quantity}
-        </div>
-        <div class="quantity-cart">
-          <span class="minus">-</span>
-          <span>${item.quantity}</span>
-          <span class="plus">+</span>
-        </div>
+          <div class="img-cart">
+            <img src="/tmdt/public/images/default-image.jpg" alt="${item.name}">
+          </div>
+          <div class="name-cart">${item.name}</div>
+          <div class="total-price">
+            $${item.price * item.quantity}
+          </div>
+          <div class="quantity-cart">
+            <span class="minus">-</span>
+            <span>${item.quantity}</span>
+            <span class="plus">+</span>
+          </div>
         `;
         listCartHTML.appendChild(newItem);
       });
     }
 
-    // Update the cart icon span with the total quantity
     iconCartSpan.innerText = cart.reduce(
       (total, item) => total + item.quantity,
       0
     );
   };
-  listCartHTML.addEventListener("click", (event) => {
-    let target = event.target;
-    let productId = target.dataset.id;
 
-    if (target.classList.contains("minus")) {
-      changeQuantityCart(productId, "minus");
-    } else if (target.classList.contains("plus")) {
-      changeQuantityCart(productId, "plus");
-    }
-  });
-
-  // ... (Phần code khác đã được cung cấp trước đó)
-
-  // Function to fetch product information based on ID
-  const getProductById = (productId) => {
-    return products.find((product) => product.id === productId);
-  };
-  // Function to handle changes in the cart (e.g., quantity adjustments)
-  const changeQuantityCart = (productId, type) => {
-    let positionItemInCart = cart.findIndex((item) => item.id === productId);
-
-    if (positionItemInCart >= 0) {
-      let info = cart[positionItemInCart];
-
-      switch (type) {
-        case "plus":
-          cart[positionItemInCart].quantity += 1;
-          break;
-
-        default:
-          let changeQuantity = cart[positionItemInCart].quantity - 1;
-
-          if (changeQuantity > 0) {
-            cart[positionItemInCart].quantity = changeQuantity;
-          } else {
-            cart.splice(positionItemInCart, 1);
-          }
-          break;
-      }
-    }
-
-    addCartToHTML();
-    addCartToMemory();
+  const addCartToMemory = () => {
+    localStorage.setItem("cart", JSON.stringify(cart));
   };
 
-  // Function to initialize the application
+  const getCartFromMemory = () => {
+    const storedCart = localStorage.getItem("cart");
+    return storedCart ? JSON.parse(storedCart) : [];
+  };
+
   const initApp = () => {
-    // Assuming you have a way to fetch your products data (e.g., from a JSON file)
     fetch("products.json")
       .then((response) => response.json())
       .then((data) => {
         products = data;
-        addDataToHTML();
-
-        // Get data cart from memory
-        if (localStorage.getItem("cart")) {
-          cart = JSON.parse(localStorage.getItem("cart"));
-          addCartToHTML();
-        }
+        cart = getCartFromMemory();
+        addCartToHTML();
       });
   };
-  initApp();
+
+  initApp(); // Gọi hàm initApp để khởi tạo ứng dụng
 });
+
 function checkout() {
   window.location.href = "/tmdt/views/card.html";
 }
 document.addEventListener("DOMContentLoaded", function () {
-    // Số lượng like và sản phẩm trong giỏ hàng
-    let likeCount = 1;
-    let cartCount = 4;
+  let likeCount = 1;
+  let cartCount = 4;
 
-    // Cập nhật số lượng hiển thị ban đầu
-    document.getElementById("likeCount").textContent = likeCount;
-    document.getElementById("cartCount").textContent = cartCount;
+  document.getElementById("likeCount").textContent = likeCount;
+  document.getElementById("cartCount").textContent = cartCount;
 
-    // Bắt sự kiện click cho nút "Like"
-    document.getElementById("likeButton").addEventListener("click", function (event) {
+  document
+    .getElementById("likeButton")
+    .addEventListener("click", function (event) {
       event.preventDefault();
 
       likeCount++;
@@ -231,15 +147,18 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("likeCount").textContent = likeCount;
     });
 
-    // Bắt sự kiện click cho nút "Add to Cart"
-    document.getElementById("cartButton").addEventListener("click", function (event) {
+  document
+    .getElementById("cartButton")
+    .addEventListener("click", function (event) {
       event.preventDefault();
       cartCount++;
 
       document.getElementById("cartCount").textContent = cartCount;
     });
-  // Bắt sự kiện click cho nút "Like"
-    document.getElementById("likeButton1").addEventListener("click", function (event) {
+
+  document
+    .getElementById("likeButton1")
+    .addEventListener("click", function (event) {
       event.preventDefault();
 
       likeCount++;
@@ -247,15 +166,18 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("likeCount").textContent = likeCount;
     });
 
-    // Bắt sự kiện click cho nút "Add to Cart"
-    document.getElementById("cartButton1").addEventListener("click", function (event) {
+  document
+    .getElementById("cartButton1")
+    .addEventListener("click", function (event) {
       event.preventDefault();
       cartCount++;
 
       document.getElementById("cartCount").textContent = cartCount;
     });
-  // Bắt sự kiện click cho nút "Like"
-    document.getElementById("likeButton2").addEventListener("click", function (event) {
+
+  document
+    .getElementById("likeButton2")
+    .addEventListener("click", function (event) {
       event.preventDefault();
 
       likeCount++;
@@ -263,15 +185,18 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("likeCount").textContent = likeCount;
     });
 
-    // Bắt sự kiện click cho nút "Add to Cart"
-    document.getElementById("cartButton2").addEventListener("click", function (event) {
+  document
+    .getElementById("cartButton2")
+    .addEventListener("click", function (event) {
       event.preventDefault();
       cartCount++;
 
       document.getElementById("cartCount").textContent = cartCount;
     });
-  // Bắt sự kiện click cho nút "Like"
-    document.getElementById("likeButton3").addEventListener("click", function (event) {
+
+  document
+    .getElementById("likeButton3")
+    .addEventListener("click", function (event) {
       event.preventDefault();
 
       likeCount++;
@@ -279,15 +204,18 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("likeCount").textContent = likeCount;
     });
 
-    // Bắt sự kiện click cho nút "Add to Cart"
-    document.getElementById("cartButton3").addEventListener("click", function (event) {
+  document
+    .getElementById("cartButton3")
+    .addEventListener("click", function (event) {
       event.preventDefault();
       cartCount++;
 
       document.getElementById("cartCount").textContent = cartCount;
     });
-  // Bắt sự kiện click cho nút "Like"
-    document.getElementById("likeButton4").addEventListener("click", function (event) {
+
+  document
+    .getElementById("likeButton4")
+    .addEventListener("click", function (event) {
       event.preventDefault();
 
       likeCount++;
@@ -295,15 +223,18 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("likeCount").textContent = likeCount;
     });
 
-    // Bắt sự kiện click cho nút "Add to Cart"
-    document.getElementById("cartButton4").addEventListener("click", function (event) {
+  document
+    .getElementById("cartButton4")
+    .addEventListener("click", function (event) {
       event.preventDefault();
       cartCount++;
 
       document.getElementById("cartCount").textContent = cartCount;
     });
-  // Bắt sự kiện click cho nút "Like"
-    document.getElementById("likeButton5").addEventListener("click", function (event) {
+
+  document
+    .getElementById("likeButton5")
+    .addEventListener("click", function (event) {
       event.preventDefault();
 
       likeCount++;
@@ -311,12 +242,12 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("likeCount").textContent = likeCount;
     });
 
-    // Bắt sự kiện click cho nút "Add to Cart"
-    document.getElementById("cartButton5").addEventListener("click", function (event) {
+  document
+    .getElementById("cartButton5")
+    .addEventListener("click", function (event) {
       event.preventDefault();
       cartCount++;
 
       document.getElementById("cartCount").textContent = cartCount;
     });
-  });
-
+});
