@@ -41,8 +41,8 @@
          <div class="menu_top_logo_right">
             <a href="" class="text" id="loginText">Log in | Sign Up</a>
             <a href="/tmdt/views/card.html"><i class="fa-regular fa-hard-drive"></i></a>
-            <a href=""><i class="fa-regular fa-heart"></i><span>1</span></a>
-            <a class="icon-cart"><i class="bi bi-cart-fill"></i><span>4</span></a>
+            <a href=""><i class="fa-regular fa-heart"></i><span id="likeCount">1</span></a>
+            <a class="icon-cart"><i class="bi bi-cart-fill"></i><span id="cartCount">4</span></a>
          </div>
       </div>
    </div>
@@ -206,10 +206,10 @@
             <img src="/tmdt/public/images/picture1.png" alt="#" width="300" class="product-img hover" />
             <p class="showcase-badge">15%</p>
             <div class="showcase-actions">
-               <button class="btn-action">
+               <button id="likeButton" class="btn-action">
                   <i class="bi bi-heart"></i>
                </button>
-               <button class="btn-action">
+               <button id="cartButton" class="btn-action">
                   <i class="bi bi-cart-plus"></i>
                </button>
             </div>
@@ -238,10 +238,10 @@
             <img src="/tmdt/public/images/picture2.png" alt="#" width="300" class="product-img hover" />
             <p class="showcase-badge">15%</p>
             <div class="showcase-actions">
-               <button class="btn-action">
+               <button id="likeButton1" class="btn-action">
                   <i class="bi bi-heart"></i>
                </button>
-               <button class="btn-action">
+               <button id="cartButton1" class="btn-action">
                   <i class="bi bi-cart-plus"></i>
                </button>
             </div>
@@ -270,10 +270,10 @@
             <img src="/tmdt/public/images/picture3.png" alt="#" width="300" class="product-img hover" />
             <p class="showcase-badge angle black">15%</p>
             <div class="showcase-actions">
-               <button class="btn-action">
+               <button id="likeButton2" class="btn-action">
                   <i class="bi bi-heart"></i>
                </button>
-               <button class="btn-action">
+               <button id="cartButton2" class="btn-action">
                   <i class="bi bi-cart-plus"></i>
                </button>
             </div>
@@ -307,10 +307,10 @@
                <img src="/tmdt/public/images/pic1.png" alt="#" class="product-img hover" width="300">
                <p class="showcase-badge angle black">sale</p>
                <div class="showcase-actions">
-                  <button class="btn-action">
+                  <button id="likeButton3" class="btn-action">
                      <i class="bi bi-heart"></i>
                   </button>
-                  <button class="btn-action">
+                  <button id="cartButton3" class="btn-action">
                      <i class="bi bi-cart-plus"></i>
                   </button>
                </div>
@@ -347,10 +347,10 @@
                <img src="/tmdt/public/images/pic2.png" alt="#" class="product-img hover" width="300">
                <p class="showcase-badge angle black">sale</p>
                <div class="showcase-actions">
-                  <button class="btn-action">
+                  <button id="likeButton4" class="btn-action">
                      <i class="bi bi-heart"></i>
                   </button>
-                  <button class="btn-action">
+                  <button id="cartButton4" class="btn-action">
                      <i class="bi bi-cart-plus"></i>
                   </button>
                </div>
@@ -396,10 +396,10 @@
             <img src="/tmdt/public/images/threadwork1.png" alt="#" class="product-img hover" width="300">
             <p class="showcase-badge angle pink">new</p>
             <div class="showcase-actions">
-               <button class="btn-action">
+               <button id="likeButton5" class="btn-action">
                   <i class="bi bi-heart"></i>
                </button>
-               <button class="btn-action">
+               <button id="cartButton5" class="btn-action">
                   <i class="bi bi-cart-plus"></i>
                </button>
             </div>
@@ -1310,7 +1310,7 @@
 
          // Biến kiểm tra đã đăng nhập hay chưa
          var isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-         if(isLoggedIn){
+         if (isLoggedIn) {
             loginText.html('<i class="fa fa-user"></i>');
          }
          function showLoginContainer() {

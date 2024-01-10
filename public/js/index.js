@@ -208,10 +208,115 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
   };
-
-  // Initialize the application
   initApp();
 });
 function checkout() {
   window.location.href = "/tmdt/views/card.html";
 }
+document.addEventListener("DOMContentLoaded", function () {
+    // Số lượng like và sản phẩm trong giỏ hàng
+    let likeCount = 1;
+    let cartCount = 4;
+
+    // Cập nhật số lượng hiển thị ban đầu
+    document.getElementById("likeCount").textContent = likeCount;
+    document.getElementById("cartCount").textContent = cartCount;
+
+    // Bắt sự kiện click cho nút "Like"
+    document.getElementById("likeButton").addEventListener("click", function (event) {
+      event.preventDefault();
+
+      likeCount++;
+
+      document.getElementById("likeCount").textContent = likeCount;
+    });
+
+    // Bắt sự kiện click cho nút "Add to Cart"
+    document.getElementById("cartButton").addEventListener("click", function (event) {
+      event.preventDefault();
+      cartCount++;
+
+      document.getElementById("cartCount").textContent = cartCount;
+    });
+  // Bắt sự kiện click cho nút "Like"
+    document.getElementById("likeButton1").addEventListener("click", function (event) {
+      event.preventDefault();
+
+      likeCount++;
+
+      document.getElementById("likeCount").textContent = likeCount;
+    });
+
+    // Bắt sự kiện click cho nút "Add to Cart"
+    document.getElementById("cartButton1").addEventListener("click", function (event) {
+      event.preventDefault();
+      cartCount++;
+
+      document.getElementById("cartCount").textContent = cartCount;
+    });
+  // Bắt sự kiện click cho nút "Like"
+    document.getElementById("likeButton2").addEventListener("click", function (event) {
+      event.preventDefault();
+
+      likeCount++;
+
+      document.getElementById("likeCount").textContent = likeCount;
+    });
+
+    // Bắt sự kiện click cho nút "Add to Cart"
+    document.getElementById("cartButton2").addEventListener("click", function (event) {
+      event.preventDefault();
+      cartCount++;
+
+      document.getElementById("cartCount").textContent = cartCount;
+    });
+  // Bắt sự kiện click cho nút "Like"
+    document.getElementById("likeButton3").addEventListener("click", function (event) {
+      event.preventDefault();
+
+      likeCount++;
+
+      document.getElementById("likeCount").textContent = likeCount;
+    });
+
+    // Bắt sự kiện click cho nút "Add to Cart"
+    document.getElementById("cartButton3").addEventListener("click", function (event) {
+      event.preventDefault();
+      cartCount++;
+
+      document.getElementById("cartCount").textContent = cartCount;
+    });
+  // Bắt sự kiện click cho nút "Like"
+    document.getElementById("likeButton4").addEventListener("click", function (event) {
+      event.preventDefault();
+
+      likeCount++;
+
+      document.getElementById("likeCount").textContent = likeCount;
+    });
+
+    // Bắt sự kiện click cho nút "Add to Cart"
+    document.getElementById("cartButton4").addEventListener("click", function (event) {
+      event.preventDefault();
+      cartCount++;
+
+      document.getElementById("cartCount").textContent = cartCount;
+    });
+  // Bắt sự kiện click cho nút "Like"
+    document.getElementById("likeButton5").addEventListener("click", function (event) {
+      event.preventDefault();
+
+      likeCount++;
+
+      document.getElementById("likeCount").textContent = likeCount;
+    });
+
+    // Bắt sự kiện click cho nút "Add to Cart"
+    document.getElementById("cartButton5").addEventListener("click", function (event) {
+      event.preventDefault();
+      cartCount++;
+
+      document.getElementById("cartCount").textContent = cartCount;
+    });
+  });
+
