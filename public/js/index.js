@@ -44,10 +44,9 @@ document.addEventListener("DOMContentLoaded", () => {
     body.classList.remove("show-cart");
   });
 
-  // Thay đổi sự kiện click từ listCartHTML sang document
   document.addEventListener("click", (event) => {
     let positionClick = event.target;
-    // Sử dụng classList.contains để kiểm tra có phải là nút "cartButton" không
+
     if (positionClick.classList.contains("cartButton")) {
       let showcaseContent = positionClick.closest(".showcase-content");
       let productName =
@@ -124,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   };
 
-  initApp(); // Gọi hàm initApp để khởi tạo ứng dụng
+  initApp();
 });
 
 function checkout() {

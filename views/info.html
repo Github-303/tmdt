@@ -27,7 +27,7 @@
         <a href="/tmdt/views/index.html"><img src="/tmdt/public/images/logo/logo.png" alt="" /></a>
       </div>
       <div class="menu_top_logo_right">
-        <a href="/tmdt/views/login.html" class="text">Log in | Sign Up</a>
+        <a href="" class="text">Log in | Sign Up</a>
         <a href="/tmdt/views/card.html"><i class="fa-regular fa-hard-drive"></i></a>
         <a href=""><i class="fa-regular fa-heart"></i></a>
         <a href="/tmdt/views/cart.html"><i class="bi bi-cart-fill"></i></a>
@@ -36,14 +36,15 @@
   </div>
   <div class="container">
     <div class="product-details">
-      <h1 class="product-title">Product Name</h1>
-      <img class="product-img" src="/tmdt/public/images/products/pic1.png" alt="Product Image" />
+      <h1 class="product-title">Product Art</h1>
+      <img class="product-img" src="/tmdt/public/images/pic1.png" alt="Product Image" />
     </div>
 
     <div class="description">
       <div class="action-buttons">
         <a href="#" class="product-button" id="addToCartBtn">Add to Cart</a>
-        <a href="#" class="product-button">Buy Now</a>
+        <a href="/tmdt/views/card.html" class="product-button">Buy Now</a>
+        <div id="notification"></div>
       </div>
       <div class="info">
         <h3>Painting Description</h3>
@@ -74,39 +75,40 @@
     </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  
+
   <script>
     $(document).ready(function () {
-      // Initialize an empty cart array
       let cart = [];
-
-      // Event listener for Add to Cart button
       $('#addToCartBtn').on('click', function () {
-        // You need to replace this with the actual product information
         const product = {
           name: 'Product Name',
-          price: 200, // Product price
+          price: 4200, 
         };
 
-        // Add the product to the cart
         addToCart(product);
 
-        // Update the cart UI
         updateCartUI();
+
+        showNotification('Product added to cart!');
       });
 
-      // Function to add a product to the cart
       function addToCart(product) {
         cart.push(product);
       }
 
-      // Function to update the cart UI
       function updateCartUI() {
-        // You can update the UI to display the cart contents
-        // For simplicity, let's just log the cart to the console
+
         console.log('Cart:', cart);
+      }
+
+      function showNotification(message) {
+        const notificationElement = document.getElementById('notification');
+        notificationElement.textContent = message;
       }
     });
   </script>
+  <hr>
   <div class="filter-hr" data-type="hr"></div>
 
 
