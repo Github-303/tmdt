@@ -89,13 +89,13 @@ header {
   font-family: "Crimson Text", serif;
 }
 .login-container {
-  position: absolute;
-  display: none;
+  position: fixed;
   z-index: 105;
-  right: 50%;
-  top: 30%;
+  left: 50%;
+  top: 50%;
   width: 400px;
-  margin: 100px auto;
+  margin: auto;
+  transform: translate(-50%, -50%);
   background-color: white;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
