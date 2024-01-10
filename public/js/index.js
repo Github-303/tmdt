@@ -33,7 +33,56 @@ document.addEventListener("DOMContentLoaded", () => {
   let iconCartSpan = document.querySelector(".icon-cart span");
   let body = document.querySelector("body");
   let closeCart = document.querySelector(".close-cart");
-  let products = [];
+  let products = [
+    {
+      id: 1,
+      name: " LOTUS POND REFLECTIONS",
+      price: 4800,
+      image: "/tmdt/public/images/picture1.png",
+    },
+    {
+      id: 2,
+      name: " LOTUS IN FULL BLOOM",
+      price: 4800,
+      image: "/tmdt/public/images/picture2.png",
+    },
+    {
+      id: 3,
+      name: " BLOOMING SERENITY",
+      price: 4800,
+      image: "/tmdt/public/images/picture3.png",
+    },
+    {
+      id: 4,
+      name: " ENIGMATIC CHARMS",
+      price: 4500,
+      image: "/tmdt/public/images/products/pic2.png",
+    },
+    {
+      id: 5,
+      name: " GRACEFUL ELEGANCE",
+      price: 4500,
+      image: "/tmdt/public/images/pic2.png",
+    },
+    {
+      id: 6,
+      name: "SERENE REFLECTIONS",
+      price: 2500,
+      image: "/tmdt/public/images/threadwork1.png",
+    },
+    {
+      id: 7,
+      name: "GOLDEN TRANQUILITY",
+      price: 2500,
+      image: "/tmdt/public/images/star1.png",
+    },
+    {
+      id: 8,
+      name: "TIMELESS GRANDEUR",
+      price: 3200,
+      image: "/tmdt/public/images/explore1.png",
+    },
+  ];
   let cart = [];
 
   iconCart.addEventListener("click", () => {
