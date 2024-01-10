@@ -89,6 +89,7 @@ header {
   font-family: "Crimson Text", serif;
 }
 .login-container {
+  display: block;
   position: fixed;
   z-index: 105;
   left: 50%;

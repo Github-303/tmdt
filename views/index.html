@@ -39,7 +39,7 @@
             <a href="/tmdt/views/index.html"><img src="/tmdt/public/images/logo/logo.png" alt="" /></a>
          </div>
          <div class="menu_top_logo_right">
-            <a href="" class="text" id="loginText">Log in | Sign Up</a>
+            <a href="" class="text" id="loginText"><i class="fa fa-user"></i></a>
             <a href="/tmdt/views/card.html"><i class="fa-regular fa-hard-drive"></i></a>
             <a href=""><i class="fa-regular fa-heart"></i><span id="likeCount">1</span></a>
             <a class="icon-cart"><i class="bi bi-cart-fill"></i><span id="cartCount">4</span></a>
@@ -1308,13 +1308,13 @@
          var loginText = $("#loginText");
          var reopenLoginButton = $("#reopenLogin");
 
-         // Biến kiểm tra đã đăng nhập hay chưa
+         
          var isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
          if (isLoggedIn) {
             loginText.html('<i class="fa fa-user"></i>');
          }
          function showLoginContainer() {
-            // Nếu chưa đăng nhập và chưa lưu trạng thái đăng nhập, thì mới hiển thị form login
+            
             if (!isLoggedIn) {
                loginContainer.fadeIn();
             }
@@ -1322,7 +1322,7 @@
 
          function hideLoginContainer() {
             loginContainer.fadeOut();
-            // Hiển thị nút mở lại form đăng nhập sau khi ẩn form
+            
             reopenLoginButton.show();
          }
 
@@ -1334,22 +1334,21 @@
                window.location.href = "/tmdt/views/index.html";
                hideLoginContainer();
 
-               // Đổi chữ "Login" thành biểu tượng hoặc văn bản khác
-               loginText.html('<i class="fa fa-user"></i>'); // Sử dụng Font Awesome làm biểu tượng
+               
+               loginText.html('<i class="fa fa-user"></i>'); 
 
-               // Đánh dấu đã đăng nhập và lưu trạng thái vào localStorage
+               
                isLoggedIn = true;
                localStorage.setItem("isLoggedIn", "true");
             } else {
-               // Xử lý khi đăng nhập không thành công (ở đây có thể hiển thị thông báo lỗi)
+            
                alert("Invalid username or password. Please try again.");
             }
          }
 
-         // Sự kiện mở lại form đăng nhập
          reopenLoginButton.on("click", function () {
             showLoginContainer();
-            // Ẩn nút mở lại form
+
             reopenLoginButton.hide();
          });
 
