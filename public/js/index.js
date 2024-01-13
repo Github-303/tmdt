@@ -66,7 +66,8 @@ document.addEventListener("DOMContentLoaded", () => {
             quantity: 1,
           });
         }
-    };
+      }
+    });
   });
   function addProductToCart(product) {
     var existingProduct = cart.find((item) => item.name === product.name);
@@ -76,8 +77,9 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       cart.push(product);
     }
-
     showCart();
+
+    calculateTotal();
   }
   function showCart() {
     var cartList = document.querySelector(".list-cart");
@@ -97,23 +99,24 @@ document.addEventListener("DOMContentLoaded", () => {
           <span>${item.quantity}</span>
           <span class="plus">+</span>
         </div>
-        <div class="item-actions">
-          <button class="btn btn-danger btn-sm remove" data-id="${
-            item.id
-          }">Remove</button>
-        </div>
       `;
 
       cartList.appendChild(cartItem);
     });
   }
 
+  function calculateTotal() {
+    var totalElement = document.querySelector(".total");
+    var total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+    totalElement.innerText = "$" + total.toFixed(2);
+  }
+
   function checkout() {
     window.location.href = "/tmdt/views/card.html";
   }
 
-  let likeCount = 1;
-  let cartCount = 4;
+  let likeCount = 0;
+  let cartCount = 0;
 
   document.getElementById("likeCount").textContent = likeCount;
   document.getElementById("cartCount").textContent = cartCount;
