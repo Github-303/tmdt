@@ -19,6 +19,7 @@
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css" />
@@ -61,8 +62,8 @@
    </div>
    <div class="shopping-cart">
       <h1>Shopping cart</h1>
-      <div class="list-cart">
-         <div class="item-cart">
+      <div id="cartList" class="list-cart">
+         <div class="item-cart" id="cart-item">
             <div class="img-cart">
                <img src="/tmdt/public/images/pic1.png" alt="">
             </div>
@@ -199,8 +200,8 @@
       artworks.
    </h1>
 
-   <div class="Advertisement_picture_three">
-      <div class="showcase">
+   <div class="Advertisement_picture_three" id="productList">
+      <div class="showcase" >
          <div class="showcase-banner">
             <img src="/tmdt/public/images/picture1.png" alt="#" width="300" class="product-img default" />
             <img src="/tmdt/public/images/picture1.png" alt="#" width="300" class="product-img hover" />
@@ -215,7 +216,8 @@
             </div>
          </div>
          <div class="showcase-content">
-            <a href="/tmdt/views/info.html" class="showcase-category">Lotus Pond Reflections</a>
+            <a href="/tmdt/views/info.html" class="showcase-category">
+               Lotus Pond Reflections</a>
             <a href="/tmdt/views/info.html">
                <h3 class="showcase-title">2023 Rising Stars</h3>
             </a>

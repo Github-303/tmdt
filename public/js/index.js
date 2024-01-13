@@ -27,62 +27,11 @@ document.addEventListener("DOMContentLoaded", function () {
     touch: false,
   });
 });
+
 document.addEventListener("DOMContentLoaded", () => {
-  let listCartHTML = document.querySelector(".list-cart");
   let iconCart = document.querySelector(".icon-cart");
-  let iconCartSpan = document.querySelector(".icon-cart span");
   let body = document.querySelector("body");
   let closeCart = document.querySelector(".close-cart");
-  let products = [
-    {
-      id: 1,
-      name: " LOTUS POND REFLECTIONS",
-      price: 4800,
-      image: "/tmdt/public/images/picture1.png",
-    },
-    {
-      id: 2,
-      name: " LOTUS IN FULL BLOOM",
-      price: 4800,
-      image: "/tmdt/public/images/picture2.png",
-    },
-    {
-      id: 3,
-      name: " BLOOMING SERENITY",
-      price: 4800,
-      image: "/tmdt/public/images/picture3.png",
-    },
-    {
-      id: 4,
-      name: " ENIGMATIC CHARMS",
-      price: 4500,
-      image: "/tmdt/public/images/products/pic2.png",
-    },
-    {
-      id: 5,
-      name: " GRACEFUL ELEGANCE",
-      price: 4500,
-      image: "/tmdt/public/images/pic2.png",
-    },
-    {
-      id: 6,
-      name: "SERENE REFLECTIONS",
-      price: 2500,
-      image: "/tmdt/public/images/threadwork1.png",
-    },
-    {
-      id: 7,
-      name: "GOLDEN TRANQUILITY",
-      price: 2500,
-      image: "/tmdt/public/images/star1.png",
-    },
-    {
-      id: 8,
-      name: "TIMELESS GRANDEUR",
-      price: 3200,
-      image: "/tmdt/public/images/explore1.png",
-    },
-  ];
   let cart = [];
 
   iconCart.addEventListener("click", () => {
@@ -93,92 +42,88 @@ document.addEventListener("DOMContentLoaded", () => {
     body.classList.remove("show-cart");
   });
 
-  document.addEventListener("click", (event) => {
-    let positionClick = event.target;
+  let btn = document.querySelectorAll("button");
+  btn.forEach(function (button, index) {
+    button.addEventListener("click", function (event) {
+      var btnItem = event.target;
+      var product = btnItem.closest(".showcase");
 
-    if (positionClick.classList.contains("cartButton")) {
-      let showcaseContent = positionClick.closest(".showcase-content");
-      let productName =
-        showcaseContent.querySelector(".showcase-title").textContent;
-      let productPrice = showcaseContent
-        .querySelector(".price")
-        .textContent.replace("$", "");
+      if (product) {
+        var productImg = product.querySelector(".product-img.default");
+        var productName = product.querySelector(
+          ".showcase-content .showcase-category"
+        );
+        var productPrice = product.querySelector(".showcase-content .price");
 
-      let existingProduct = cart.find((item) => item.name === productName);
+        // Kiểm tra xem các phần tử có tồn tại không
+        if (productImg && productName && productPrice) {
+          var productImgSrc = productImg.getAttribute("src");
+          var productNameText = productName.innerText;
+          var productPriceText = productPrice.innerText;
 
-      if (existingProduct) {
-        existingProduct.quantity += 1;
+          console.log("Product Name:", productNameText);
+          console.log("Product Price:", productPriceText);
+          console.log("Product Image Src:", productImgSrc);
+          addProductToCart({
+            name: productNameText,
+            price: parseFloat(productPriceText.replace("$", "")),
+            image: productImgSrc,
+            quantity: 1, // Bạn có thể cần xác định số lượng mặc định
+          });
+        } else {
+          console.log("Some elements not found.");
+        }
       } else {
-        cart.push({
-          name: productName,
-          price: parseFloat(productPrice),
-          quantity: 1,
-        });
+        console.log("Product not found.");
       }
-
-      addCartToMemory();
-      addCartToHTML();
-    }
+    });
   });
+  function addProductToCart(product) {
+    // Kiểm tra xem sản phẩm đã tồn tại trong giỏ hàng chưa
+    var existingProduct = cart.find((item) => item.name === product.name);
 
-  const addCartToHTML = () => {
-    let listCartHTML = document.querySelector(".list-cart");
-    listCartHTML.innerHTML = "";
-
-    if (cart.length > 0) {
-      cart.forEach((item) => {
-        let newItem = document.createElement("div");
-        newItem.classList.add("item-cart");
-        newItem.innerHTML = `
-          <div class="img-cart">
-            <img src="/tmdt/public/images/default-image.jpg" alt="${item.name}">
-          </div>
-          <div class="name-cart">${item.name}</div>
-          <div class="total-price">
-            $${item.price * item.quantity}
-          </div>
-          <div class="quantity-cart">
-            <span class="minus">-</span>
-            <span>${item.quantity}</span>
-            <span class="plus">+</span>
-          </div>
-        `;
-        listCartHTML.appendChild(newItem);
-      });
+    if (existingProduct) {
+      existingProduct.quantity += 1;
+    } else {
+      cart.push(product);
     }
 
-    iconCartSpan.innerText = cart.reduce(
-      (total, item) => total + item.quantity,
-      0
-    );
-  };
+    // Hiển thị giỏ hàng
+    showCart();
+  }
+  function showCart() {
+    var cartList = document.querySelector(".list-cart");
+    cartList.innerHTML = "";
 
-  const addCartToMemory = () => {
-    localStorage.setItem("cart", JSON.stringify(cart));
-  };
+    cart.forEach(function (item) {
+      var cartItem = document.createElement("div");
+      cartItem.classList.add("item-cart");
+      cartItem.innerHTML = `
+        <div class="img-cart">
+          <img src="${item.image}" alt="${item.name}">
+        </div>
+        <div class="name-cart">${item.name}</div>
+        <div class="total-price">$${item.price * item.quantity}</div>
+        <div class="quantity-cart">
+          <span class="minus">-</span>
+          <span>${item.quantity}</span>
+          <span class="plus">+</span>
+        </div>
+        <div class="item-actions">
+          <button class="btn btn-danger btn-sm remove" data-id="${
+            item.id
+          }">Remove</button>
+        </div>
+      `;
 
-  const getCartFromMemory = () => {
-    const storedCart = localStorage.getItem("cart");
-    return storedCart ? JSON.parse(storedCart) : [];
-  };
+      cartList.appendChild(cartItem);
+    });
+  }
 
-  const initApp = () => {
-    fetch("products.json")
-      .then((response) => response.json())
-      .then((data) => {
-        products = data;
-        cart = getCartFromMemory();
-        addCartToHTML();
-      });
-  };
+  function checkout() {
+    window.location.href = "/tmdt/views/card.html";
+  }
 
-  initApp();
-});
-
-function checkout() {
-  window.location.href = "/tmdt/views/card.html";
-}
-document.addEventListener("DOMContentLoaded", function () {
   let likeCount = 1;
   let cartCount = 4;
 
@@ -189,9 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .getElementById("likeButton")
     .addEventListener("click", function (event) {
       event.preventDefault();
-
       likeCount++;
-
       document.getElementById("likeCount").textContent = likeCount;
     });
 
@@ -200,102 +143,24 @@ document.addEventListener("DOMContentLoaded", function () {
     .addEventListener("click", function (event) {
       event.preventDefault();
       cartCount++;
-
       document.getElementById("cartCount").textContent = cartCount;
     });
 
-  document
-    .getElementById("likeButton1")
-    .addEventListener("click", function (event) {
-      event.preventDefault();
+  for (let i = 1; i <= 5; i++) {
+    document
+      .getElementById(`likeButton${i}`)
+      .addEventListener("click", function (event) {
+        event.preventDefault();
+        likeCount++;
+        document.getElementById("likeCount").textContent = likeCount;
+      });
 
-      likeCount++;
-
-      document.getElementById("likeCount").textContent = likeCount;
-    });
-
-  document
-    .getElementById("cartButton1")
-    .addEventListener("click", function (event) {
-      event.preventDefault();
-      cartCount++;
-
-      document.getElementById("cartCount").textContent = cartCount;
-    });
-
-  document
-    .getElementById("likeButton2")
-    .addEventListener("click", function (event) {
-      event.preventDefault();
-
-      likeCount++;
-
-      document.getElementById("likeCount").textContent = likeCount;
-    });
-
-  document
-    .getElementById("cartButton2")
-    .addEventListener("click", function (event) {
-      event.preventDefault();
-      cartCount++;
-
-      document.getElementById("cartCount").textContent = cartCount;
-    });
-
-  document
-    .getElementById("likeButton3")
-    .addEventListener("click", function (event) {
-      event.preventDefault();
-
-      likeCount++;
-
-      document.getElementById("likeCount").textContent = likeCount;
-    });
-
-  document
-    .getElementById("cartButton3")
-    .addEventListener("click", function (event) {
-      event.preventDefault();
-      cartCount++;
-
-      document.getElementById("cartCount").textContent = cartCount;
-    });
-
-  document
-    .getElementById("likeButton4")
-    .addEventListener("click", function (event) {
-      event.preventDefault();
-
-      likeCount++;
-
-      document.getElementById("likeCount").textContent = likeCount;
-    });
-
-  document
-    .getElementById("cartButton4")
-    .addEventListener("click", function (event) {
-      event.preventDefault();
-      cartCount++;
-
-      document.getElementById("cartCount").textContent = cartCount;
-    });
-
-  document
-    .getElementById("likeButton5")
-    .addEventListener("click", function (event) {
-      event.preventDefault();
-
-      likeCount++;
-
-      document.getElementById("likeCount").textContent = likeCount;
-    });
-
-  document
-    .getElementById("cartButton5")
-    .addEventListener("click", function (event) {
-      event.preventDefault();
-      cartCount++;
-
-      document.getElementById("cartCount").textContent = cartCount;
-    });
+    document
+      .getElementById(`cartButton${i}`)
+      .addEventListener("click", function (event) {
+        event.preventDefault();
+        cartCount++;
+        document.getElementById("cartCount").textContent = cartCount;
+      });
+  }
 });
