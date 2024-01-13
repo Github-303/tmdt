@@ -55,31 +55,20 @@ document.addEventListener("DOMContentLoaded", () => {
         );
         var productPrice = product.querySelector(".showcase-content .price");
 
-        // Kiểm tra xem các phần tử có tồn tại không
         if (productImg && productName && productPrice) {
           var productImgSrc = productImg.getAttribute("src");
           var productNameText = productName.innerText;
           var productPriceText = productPrice.innerText;
-
-          console.log("Product Name:", productNameText);
-          console.log("Product Price:", productPriceText);
-          console.log("Product Image Src:", productImgSrc);
           addProductToCart({
             name: productNameText,
             price: parseFloat(productPriceText.replace("$", "")),
             image: productImgSrc,
-            quantity: 1, // Bạn có thể cần xác định số lượng mặc định
+            quantity: 1,
           });
-        } else {
-          console.log("Some elements not found.");
         }
-      } else {
-        console.log("Product not found.");
-      }
-    });
+    };
   });
   function addProductToCart(product) {
-    // Kiểm tra xem sản phẩm đã tồn tại trong giỏ hàng chưa
     var existingProduct = cart.find((item) => item.name === product.name);
 
     if (existingProduct) {
@@ -88,7 +77,6 @@ document.addEventListener("DOMContentLoaded", () => {
       cart.push(product);
     }
 
-    // Hiển thị giỏ hàng
     showCart();
   }
   function showCart() {
