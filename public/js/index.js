@@ -69,6 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+  
   function addProductToCart(product) {
     var existingProduct = cart.find((item) => item.name === product.name);
 
@@ -95,9 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="name-cart">${item.name}</div>
         <div class="total-price">$${item.price * item.quantity}</div>
         <div class="quantity-cart">
-          <span class="minus">-</span>
-          <span>${item.quantity}</span>
-          <span class="plus">+</span>
+          <span class="minus">${item.quantity}</span>
         </div>
       `;
 
