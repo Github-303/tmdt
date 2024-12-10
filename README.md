@@ -1,1 +1,1 @@
-# 22t2 project tmdt khanh + nguyen 
+# project frontend về thương mại điện từ
